@@ -41,3 +41,13 @@ Browser checks show the new navigation, source count, complete result ledger, co
 Tanzania source SHA-256 matches the publisher; no kWh conversion, forest retraining or current-derived planner input was made. KIT archive access succeeded, but throttling/slow throughput prevented complete retrieval; its partial archive is explicitly excluded from validation and release ZIPs. No measured kWh/cold-start validation or growth accuracy is established.
 
 The final 23-asset offline snapshot reached Ready, was reloaded, and displayed the Metered evidence view with all four result rows. Temporary viewport overrides were reset. Portable and private ZIP integrity/exclusion checks passed; partial files and request headers/cookies are excluded.
+
+## Landing-page release — version 3.2.0
+
+The root URL now serves the AimEnergy landing page; planner.html preserves the full application. All38 JavaScript regressions pass with updated checks for separate entry pages, JPEG serving and the expanded offline allowlist. Five offline tests also pass after adding fragment canonicalization assertions.
+
+Desktop1366×900 and mobile390×844 layouts were inspected without page-level horizontal overflow. The mobile menu opens/closes, Escape returns focus, the actual product image loads, the household-model deep link opens the model lab, and Home returns to the landing page. The interactive preview uses real Orii Gangodye inputs and the shared engine: displayed energy changes1,570→2,065kWh/month when a hypothetical mill is added. It does not overwrite saved planner inputs.
+
+The27-asset field-v4 snapshot reached Ready. With the verified owned server stopped, the landing page and preview worked. An initial offline section link exposed a cache-key fragment issue, which was fixed and covered by assertions. The final server-unavailability retest successfully navigated field→Home/landing→planner.html#field with the offline-ready indication and assessment workspace intact. The server was restored afterward. No universal browser/device offline guarantee is claimed.
+
+This is an integrated local prototype release; no public hosting deployment was performed. Screenshot: screenshots/landing-page.jpg.

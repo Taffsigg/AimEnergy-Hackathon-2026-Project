@@ -6,7 +6,7 @@ import { calculateDemand, defaultInputs } from './dist/engine.js';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const BODY_LIMIT = 64 * 1024;
-const MIME = { '.webmanifest':'application/manifest+json; charset=utf-8', '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.geojson': 'application/geo+json', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webp': 'image/webp' };
+const MIME = { '.jpg':'image/jpeg', '.webmanifest':'application/manifest+json; charset=utf-8', '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.geojson': 'application/geo+json', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webp': 'image/webp' };
 const LIMITATION = 'Household predictions concern a survey payment-derived consumption proxy. Village low/base/high demand values are uncalibrated planning scenarios, not calibrated prediction intervals or metered-site validation.';
 const own = (value, key) => Object.prototype.hasOwnProperty.call(value, key);
 const object = value => value !== null && typeof value === 'object' && !Array.isArray(value);

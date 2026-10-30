@@ -22,7 +22,9 @@ test('health and static app are available; raw source and traversal are blocked'
   const base = await running(t);
   const health = await fetch(base + '/api/health');
   assert.equal(health.status, 200); assert.equal((await health.json()).planningReady, true);
-  const page = await fetch(base + '/'); assert.equal(page.status, 200); assert.match(await page.text(), /AimEnergy/);
+  const page = await fetch(base + '/'); assert.equal(page.status, 200); assert.match(await page.text(), /Before the grid/);
+  const planner = await fetch(base + '/planner.html'); assert.equal(planner.status, 200); assert.match(await planner.text(), /src="\.\/app.js"/);
+  for (const asset of ['/landing.js', '/landing.css', '/images/field-assessment.jpg']) assert.equal((await fetch(base + asset)).status, 200, asset);
   assert.equal((await fetch(base + '/', { method: 'HEAD' })).status, 200);
   for (const pathname of ['/server.mjs', '/package.json', '/Data/source.json', '/Models/model.json', '/.git/config', '/missing.js', '/api/missing', '/%2e%2e/package.json', '/%2e%2e%5cpackage.json']) assert.equal(await raw(base, pathname), 404, pathname);
   assert.equal((await fetch(base + '/api/predict')).status, 405);

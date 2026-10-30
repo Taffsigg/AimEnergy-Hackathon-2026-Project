@@ -1,12 +1,12 @@
 /* Offline field kit: only an explicit PREPARE message writes a complete snapshot. */
-const VERSION = 'field-v3';
+const VERSION = 'field-v4';
 const ROOT = new URL('./', self.location.href);
 const PREFIX = `aimenergy-${encodeURIComponent(ROOT.pathname)}-${VERSION}-`;
 const META = `${PREFIX}metadata`;
 const POINTER = new URL('__offline_active__', ROOT).href;
 const COMPLETE = new URL('__offline_complete__', ROOT).href;
 const CORE = [
-  'index.html', 'app.js', 'engine.js', 'styles.css', 'ai-lab.js', 'ai-lab.css',
+  'index.html', 'planner.html', 'landing.css', 'landing.js', 'images/field-assessment.jpg', 'app.js', 'engine.js', 'styles.css', 'ai-lab.js', 'ai-lab.css',
   'metered-lab.js', 'data/metered-evidence.json', 'ml-model.js', 'field-core.js', 'field-lab.js', 'field-lab.css', 'offline.js',
   'manifest.webmanifest', 'icons/offline-icon.svg',
   'data/boundaries.geojson', 'data/catalog.json', 'data/ml-evaluation.json',
@@ -20,6 +20,8 @@ function cacheKey(request) {
   if (request.method !== 'GET') return null;
   const url = new URL(request.url);
   if (url.origin !== ROOT.origin || url.search) return null;
+  // Navigation fragments select a workspace; they do not identify another asset.
+  url.hash = '';
   if (url.href === ROOT.href) return new URL('index.html', ROOT).href;
   return ALLOWED.has(url.href) ? url.href : null;
 }

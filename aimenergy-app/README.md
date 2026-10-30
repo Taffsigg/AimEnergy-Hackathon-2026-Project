@@ -8,7 +8,7 @@ Requires Node.js 20+. No npm install is needed for serving or JavaScript tests.
 
     npm start
 
-Open http://127.0.0.1:4173 and choose AI model lab. The Start AimEnergy.cmd launcher also starts the server. Keep its window open; Ctrl+C stops it. API health is /api/health.
+Open http://127.0.0.1:4173 for the landing page, choose Open prototype, then AI model lab. The planner is also available directly at http://127.0.0.1:4173/planner.html. The Start AimEnergy.cmd launcher also starts the server. Keep its window open; Ctrl+C stops it. API health is /api/health.
 
 ## Actual ML
 
@@ -69,3 +69,7 @@ Open Field assessment for the evidence passport, five sensitivity-ranked priorit
 Open **Metered evidence** for the real Tanzania data audit and four later-day current-shape comparisons, including the comparison where RMSE favors the flat baseline. The source has 40,809 minute records from one site, not measured kWh labels for our village model. See docs/METERED_EVIDENCE.md for reproduction and CC BY-NC 3.0 conditions. Raw metered files and curves remain local; the noncommercial research exhibit is separate from model inference.
 
 Data/templates/site_month.csv and its dictionary provide an empty operator aggregate template. docs/PILOT_PROTOCOL.md freezes the proposed target, site-split design, baselines, acceptance process and draft outreach. No operator message has been sent or partnership claimed.
+
+## Landing page
+
+The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, an actual field-workspace screenshot and scoped evidence results. Open prototype launches planner.html; direct links can open the AI, field and evidence workspaces. Offline snapshot field-v4 includes both pages. See docs/LANDING_PAGE.md.

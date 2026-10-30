@@ -1,7 +1,7 @@
 # AimEnergy — complete project guide
 
 **Project:** AimEnergy  
-**Version:** 3.1.0  
+**Version:** 3.2.0  
 **Documentation date:** 30 October 2026  
 **Challenge:** Global Energy Hackathon, Brief 03 — Predict mini-grid demand before building  
 **Working directory:** `C:\Users\Dell\Downloads\AimEnergy\AimEnergy Project\aimenergy-app`
@@ -46,7 +46,7 @@ Set-Location 'C:\Users\Dell\Downloads\AimEnergy\AimEnergy Project\aimenergy-app'
 npm start
 ```
 
-Open **http://127.0.0.1:4173/**. Alternatively, double-click `Start AimEnergy.cmd`. Keep the server terminal open; press Ctrl+C to stop it. Run through HTTP rather than opening `dist/index.html` directly with a `file:` URL.
+Open **http://127.0.0.1:4173/** for the landing page, then choose **Open prototype**. The planner is directly available at **http://127.0.0.1:4173/planner.html**. Alternatively, double-click `Start AimEnergy.cmd`. Keep the server terminal open; press Ctrl+C to stop it. Run through HTTP rather than opening `dist/index.html` directly with a `file:` URL.
 
 The default server binds to `127.0.0.1`, port `4173`. To use another local port:
 
@@ -88,6 +88,7 @@ Avoided oversizing, capital savings, fewer outages and faster assessments are po
 
 | Workspace | What it does |
 |---|---|
+| Landing page | Public-facing introduction with real map geometry, live mill scenario and links into the complete prototype |
 | Demand overview | Interactive village map; household/business/service breakdown; first-month energy and average-day peak; 24-month low/base/high scenarios |
 | Village explorer | Search and filter 411 Lamwo villages; inspect curated candidate/existing labels; create manual locations with supplied inputs |
 | Saved scenarios | Retain planning scenarios locally and compare alternative assumptions |
@@ -113,7 +114,9 @@ aimenergy-app/
 ├── server.mjs                 Static serving and HTTP API
 ├── Start AimEnergy.cmd        Windows launcher
 ├── dist/                      Only publicly served application files
-│   ├── index.html
+│   ├── index.html             Landing page
+│   ├── planner.html           Full planning application
+│   ├── landing.css / landing.js
 │   ├── app.js                 Navigation, planning UI, scenarios and exports
 │   ├── engine.js              Deterministic demand calculations
 │   ├── ai-lab.js              Model-lab UI
@@ -359,7 +362,7 @@ Applying an assessment uses its baseline plus its answers, replacing later plann
 4. Before recording/travel, verify the map, model and evidence screens still load when the app server is unavailable.
 5. After an app/model update, choose **Refresh offline pack**, wait for Ready and reload again.
 
-The current allowlist contains **23 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
+The current allowlist contains **27 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
 
 Field records live in browser local storage, independently of cached application assets. No automatic upload or sync is implemented. Use anonymous aggregate notes and export backups. Clearing browser site data can remove assessments and cached assets. Private browsing, quota limits or device policies can prevent persistence. Readiness on one device is not proof of readiness on another.
 
@@ -577,6 +580,7 @@ Do not place raw household files, credentials, customer identifiers or private o
 | [README.md](README.md) | Short introduction and quick start |
 | [Data/README.md](Data/README.md) | Data workspace and publication policy |
 | [Models/README.md](Models/README.md) | Model artifacts and reproduction boundaries |
+| [Landing page](docs/LANDING_PAGE.md) | Entry-page design, routing and preview behavior |
 | [Architecture](docs/ARCHITECTURE.md) | Runtime, model and source separation |
 | [API](docs/API.md) | Endpoints, input validation, statuses and operations |
 | [Scenario methodology](docs/METHODOLOGY.md) | Demand equations and engineering limits |

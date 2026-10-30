@@ -3,10 +3,17 @@
   "name": "AimEnergy Offline Field Kit",
   "short_name": "AimEnergy",
   "description": "Prepare local planning data and collect field observations on this device.",
-  "start_url": "./",
+  "start_url": "./planner.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f4f7fb",
   "theme_color": "#115e59",
-  "icons": [{ "src": "./icons/offline-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+  "icons": [
+    {
+      "src": "./icons/offline-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-const VERSION = 'field-v3';
+const VERSION = 'field-v4';
 const listeners = new Set();
 let initialized;
 let state = { supported: false, ready: false, online: typeof navigator !== 'undefined' ? navigator.onLine : true, version: VERSION, preparing: false, message: 'Offline kit has not been prepared on this device.' };
