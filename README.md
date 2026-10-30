@@ -2,7 +2,7 @@
 
 ### Better decisions before the first connection.
 
-AimEnergy is an AI-assisted planning prototype for estimating rural mini-grid demand before construction. It connects real village geography, an inspectable household model, editable appliance scenarios and a field-assessment workflow so developers can see what supports an estimate and what to investigate next.
+AimEnergy is an AI-assisted planning prototype for estimating rural mini-grid demand before construction. It connects real village geography, dated satellite imagery, an inspectable household model, editable appliance scenarios and a field-assessment workflow so developers can see what supports an estimate and what to investigate next. Completed drone-survey outputs can be imported locally as additional context.
 
 Built for **Global Energy Hackathon — Brief 03: Predict mini-grid demand before building**. The geographic pilot covers **Lamwo, Uganda**.
 
@@ -34,7 +34,33 @@ Open **http://127.0.0.1:4173/** for the landing page, then select **Open prototy
 
 On Windows, you can double-click `aimenergy-app/Start AimEnergy.cmd`. Keep the server terminal open while using the local app.
 
-For a first demonstration, open **Demo story**, reset to the intended village defaults, compare a baseline with one hypothetical grain mill, then inspect **AI model lab**, **Field assessment** and **Metered evidence**.
+For a first demonstration, open **Demo story**, reset to the intended village defaults, compare a baseline with one hypothetical grain mill, then inspect **AI model lab**, **Satellite & drone**, **Field assessment** and **Metered evidence**.
+
+## Satellite and drone evidence
+
+Open **Satellite & drone** in the planner. If another village is selected, choose **Open the Orii Gangodye example** to see the acquired satellite layer.
+
+![Satellite and drone evidence workspace](aimenergy-app/docs/screenshots/satellite-drone-evidence.jpg)
+
+| Feature | What is available |
+|---|---|
+| Real satellite imagery | A 2024 EOxCloudless / Sentinel-2 annual mosaic for Orii Gangodye, nominal 10 m resolution, with the village boundary overlaid |
+| Source provenance | Mosaic year, extent, resolution, attribution, license and source hash; the annual mosaic is not a single dated acquisition or current survey |
+| Drone-survey features | Local WGS84 GeoJSON import: Point, Polygon and MultiPolygon; up to 2,000 features, 50,000 vertices and 1 MB |
+| Processed survey image | Local PNG/JPEG overlay with user-supplied WGS84 extent; up to 2 MB and 20 million pixels |
+| Building-change view | Import a `year,building_count` CSV, identify its source, and inspect dated estimates with a year selector |
+| Evidence handoff | Retain source and observation date, export evidence JSON, and continue to the selected village's field assessment |
+| Drone illustration | AI-generated concept artwork on the landing page and in the workspace; explicitly separate from real survey evidence |
+
+Automatic imagery coverage is currently **one pilot village**, not all 411 villages. Google Open Buildings Temporal village-count histories have **not** been acquired: local raster processing was blocked by insufficient disk space. The building-change view stays empty until dated observations are supplied; it does not invent a growth curve.
+
+Imports stay in the visitor's browser. They do not upload automatically, retrain the model or change demand assumptions. The app does not control a drone, process raw flight photographs, detect roofs automatically or verify a survey's positional accuracy. Building counts do not establish occupied households, customers or electricity use.
+
+The **field-v5** offline pack includes **33 static assets**, covering the new imagery, artwork and workspace. Prepare or refresh it while online, wait for Ready and reload. Imported records are stored separately from the app snapshot.
+
+The satellite crop is a **noncommercial demonstration asset under CC BY-NC-SA 4.0**. It is attributed to [EOxCloudless](https://cloudless.eox.at) by [EOX IT Services GmbH](https://eox.at): **Contains modified Copernicus Sentinel data 2024**. Commercial deployment needs suitable permission or replacement imagery.
+
+See the [satellite/drone guide](aimenergy-app/docs/REMOTE_EVIDENCE.md) for source details, supported formats, limits, storage and reproduction. The [artwork provenance](aimenergy-app/Data/metadata/drone-illustration.json) records the built-in image-generation tool, prompt and image hash.
 
 ## What the evidence supports
 
@@ -46,6 +72,8 @@ For a first demonstration, open **Demo story**, reset to the intended village de
 | Household interval evaluation | 90% nominal; 77/89 = 86.5% observed coverage | Household survey scope; not village-total coverage |
 | Geographic clustering | Four groups describing village context | Unsupervised descriptions, not electricity-demand labels |
 | RAMP simulation | Seven categories × 30 seeded simulation days | Synthetic timing shapes scaled to scenario energy |
+| Satellite context | Acquired 2024 mosaic for one pilot village, with boundary overlay | Landscape context; not roof-level enumeration, measured demand or current survey evidence |
+| Drone/history imports | Browser-local survey features, processed images and dated counts | User-provided observations; no automatic validation or demand-model change |
 | Tanzania metered research | 40,809 minute current records; four later-day comparisons at one site | Retrospective current-shape diagnostic, not measured kWh or unseen-site validation |
 
 The survey contains **445 unique households**, despite 28,625 source rows. No Lamwo household sample was identified. Village totals and growth remain **uncalibrated planning scenarios**; low/high values are assumption envelopes, not confidence intervals. Independent unseen-site kWh validation is still an outstanding Brief 03 requirement.
@@ -78,7 +106,7 @@ The [complete project guide](aimenergy-app/READ.md) covers equations, defaults, 
 
 Import this repository into Vercel and set **Root Directory** to **`aimenergy-app`**. Its `vercel.json` selects the prepared **`dist`** output and skips installation/build work that is unnecessary for the static demo.
 
-The landing page, planner, browser-side ML, assessments and exports run in this static deployment. The separate Node `/api/*` endpoints are not included. Saved records remain in each visitor's browser; localhost records do not automatically transfer to a deployed domain.
+The landing page, planner, browser-side ML, acquired satellite example, drone/history import workspace, assessments and exports run in this static deployment. No satellite account or additional API key is needed for the acquired example. The separate Node `/api/*` endpoints are not included. Saved records remain in each visitor's browser; localhost records do not automatically transfer to a deployed domain.
 
 Follow the [Vercel deployment guide](aimenergy-app/docs/VERCEL_DEMO.md) for exact steps and post-deployment checks.
 
@@ -90,7 +118,7 @@ From `aimenergy-app`:
 npm test
 ```
 
-Recorded verification includes **38 JavaScript tests** covering planning invariants, village integration, model parity, API handling, field provenance, routing and offline snapshots. Seven additional Python checks cover private household-data audits and the metered diagnostic when their local data is available. Desktop/mobile flows and prepared offline navigation were checked; details and limits are in the [verification record](aimenergy-app/docs/VERIFICATION.md).
+Recorded verification includes **42 JavaScript tests** covering planning invariants, village integration, model parity, API handling, field provenance, routing, offline snapshots and bounded remote-evidence imports. Seven additional Python checks cover private household-data audits and the metered diagnostic when their local data is available. Browser checks exercised GeoJSON/image/CSV imports, year selection, restoration, evidence export, desktop/mobile layouts and offline-pack preparation. Synthetic QA imports were removed afterward. See the [verification record](aimenergy-app/docs/VERIFICATION.md) for the exact scope and remaining limits.
 
 Normal inference uses the prepared JSON model. Retraining needs the separately documented Python environment and local source data. RAMP uses a separate pinned environment. See [model artifacts](aimenergy-app/Models/README.md), the [data guide](aimenergy-app/Data/README.md) and the [complete guide](aimenergy-app/READ.md) before reproducing research outputs.
 
@@ -112,3 +140,5 @@ The pilot plan depends on an operator agreement, suitable measured customer-kWh 
 Public runtime assets are under `aimenergy-app/dist/`. Raw household data, split membership, private operator records and credentials should not be placed there. The portable source package and private local-data package serve different purposes; consult their data-handling documentation before sharing.
 
 The Tanzania research exhibit uses **CC BY-NC 3.0** data; commercial use/training clearance is not established. It is separate from the household model and planner inputs. Other data and dependencies retain their own terms. Read the [third-party notices](aimenergy-app/docs/THIRD_PARTY_NOTICES.md) for source attribution and the [data guide](aimenergy-app/Data/README.md) for publication boundaries.
+
+The EOX satellite crop has its own **CC BY-NC-SA 4.0** terms. AI-generated drone artwork is labelled as illustration and is never used as measurement or training evidence. Keep `AimEnergy-ML-Local.zip` private; the portable demo package and private local-data archive have different sharing scopes.

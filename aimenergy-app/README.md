@@ -72,8 +72,21 @@ Data/templates/site_month.csv and its dictionary provide an empty operator aggre
 
 ## Landing page
 
-The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, an actual field-workspace screenshot and scoped evidence results. Open prototype launches planner.html; direct links can open the AI, field and evidence workspaces. Offline snapshot field-v4 includes both pages. See docs/LANDING_PAGE.md.
+The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, actual product screenshots, scoped evidence results and labelled AI drone artwork. Open prototype launches planner.html; direct links can open the AI, satellite/drone, field and evidence workspaces. Offline snapshot field-v5 includes both pages and the remote-evidence assets. See [landing-page documentation](docs/LANDING_PAGE.md).
 
 ## Satellite and drone evidence
 
-Open Satellite & drone for the real 2024 EOxCloudless/Sentinel-2 Orii Gangodye crop and boundary overlay. Import completed WGS84 GeoJSON surveys, bounded georeferenced PNG/JPEG images and annual building-count CSVs locally. No annual village-count history has been acquired; the app shows that gap until dated observations are supplied. Drone artwork is AI-generated concept imagery, distinct from real satellite/survey evidence. See docs/REMOTE_EVIDENCE.md for limits, noncommercial imagery licensing, local storage and export.
+Open **Satellite & drone**, or `/planner.html#remote`. Choose **Open the Orii Gangodye example** when another village is selected.
+
+- **Satellite:** real 2024 EOxCloudless/Sentinel-2 annual mosaic, nominal 10 m resolution, with village boundary, source metadata and attribution. Coverage is one acquired pilot example, not all villages; it is not a current or single-acquisition survey.
+- **Drone features:** import completed WGS84 Point/Polygon/MultiPolygon GeoJSON locally, with source and observation date. Limits: 1 MB, 2,000 features and 50,000 vertices.
+- **Survey image:** overlay a processed PNG/JPEG using its supplied geographic extent. Limits: 2 MB and 20 million pixels. Raw-photo processing, GeoTIFF decoding, flight control and automatic building detection are not implemented.
+- **Building change:** import a `year,building_count` CSV, identify the source, and select an observation year. Google village-count histories were not acquired because local raster processing ran out of disk space; the default view shows that gap, not invented growth.
+- **Handoff:** save imports in this browser, export evidence JSON and continue to field assessment. Imports do not automatically change demand assumptions or train the model.
+- **Artwork:** the drone image is AI-generated concept illustration on the landing page and workspace, distinct from real imagery and survey evidence. Its [prompt and provenance](Data/metadata/drone-illustration.json) are recorded.
+
+![Satellite and drone evidence workspace](docs/screenshots/satellite-drone-evidence.jpg)
+
+The EOX crop is included under **CC BY-NC-SA 4.0** for noncommercial demonstration, with visible EOxCloudless/EOX attribution and **Contains modified Copernicus Sentinel data 2024**. Commercial use needs suitable permission or replacement imagery. The **33-asset field-v5** offline pack includes the new workspace; refresh it while connected and reload after Ready. User imports are stored separately from the static pack.
+
+The recorded JavaScript suite now has **42 passing tests**, including remote-evidence validation. Browser QA exercised survey/image/history imports, year selection, restoration, export and phone layouts; synthetic test imports were removed. Read [remote-evidence documentation](docs/REMOTE_EVIDENCE.md), [third-party notices](docs/THIRD_PARTY_NOTICES.md) and the [verification record](docs/VERIFICATION.md) for details.
