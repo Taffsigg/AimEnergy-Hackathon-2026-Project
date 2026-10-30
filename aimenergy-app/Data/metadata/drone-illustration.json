@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "asset": "dist/images/drone-survey-concept.png",
+  "ai_generated": true,
+  "tool": "built-in image_gen",
+  "intent": "Concept artwork only; not survey evidence or an actual location",
+  "prompt": "Use case: stylized-concept. Asset type: polished editorial illustration for AimEnergy's satellite and drone evidence workspace. Primary request: a professional mapping quadcopter drone surveying a small rural East African settlement. Style: premium realistic 3D editorial illustration, clearly conceptual, warm off-white studio backdrop fading into a small isometric terrain diorama of muted green agricultural plots and a few simple rural roofs. Subject: one large recognizable unbranded four-rotor mapping drone with a small downward-facing camera, clean graphite and ivory housing, subtle lime-green accents. Composition: wide landscape 3:2, drone in the foreground across upper center, complete rotors visible, small terrain below, generous breathing space, suitable for a restrained green energy dashboard. Lighting: soft natural studio lighting, gentle shadows, elegant and credible rather than futuristic. Palette: forest green #102b29, sage, lime #c5ed80, warm ivory. Constraints: no text, no lettering, no logos, no watermark, no interface overlays, no satellite imagery imitation, no people, no weapons. This is concept artwork, not a real aerial survey.",
+  "sha256": "bb1adcea15b5b28aa47954f969b9e52ddbca2d98d247c63cadf31f6e86fcff64"
+}

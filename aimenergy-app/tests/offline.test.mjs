@@ -40,6 +40,9 @@ test('offline fallback permits only exact known same-origin static GET paths', (
   assert.equal(key('./#evidence'), 'https://example.test/kit/index.html');
   assert.equal(key('landing.js'), 'https://example.test/kit/landing.js');
   assert.equal(key('images/field-assessment.jpg'), 'https://example.test/kit/images/field-assessment.jpg');
+  assert.equal(key('remote-lab.js'), 'https://example.test/kit/remote-lab.js');
+  assert.equal(key('images/satellite-orii-gangodye-2024.jpg'), 'https://example.test/kit/images/satellite-orii-gangodye-2024.jpg');
+  assert.equal(key('images/drone-survey-concept.png'), 'https://example.test/kit/images/drone-survey-concept.png');
   assert.equal(key('data/ml-model.json'), 'https://example.test/kit/data/ml-model.json');
   for (const path of ['/api/predict', '/api/health', 'data/household-microdata.json', 'data/sites.json?refresh=1', '/other/index.html', 'https://fonts.googleapis.com/css2']) assert.equal(key(path), null, path);
   assert.equal(key('app.js', 'POST'), null);

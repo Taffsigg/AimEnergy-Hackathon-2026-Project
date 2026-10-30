@@ -12,3 +12,11 @@ Input hashes and field-level provenance are in dist/data/catalog.json. No blanke
 ## Tanzania measured-current research exhibit
 
 Hartvigsson, Elias; Ahlgren, Erik (2018), Data for: Comparison of load profiles in a mini-grid: assessment of performance metrics using measured and interview-based data, Mendeley Data V1, DOI 10.17632/bbtn9wxhzm.1. https://data.mendeley.com/datasets/bbtn9wxhzm/1 — CC BY-NC 3.0, https://creativecommons.org/licenses/by-nc/3.0/. Numeric originals remain unchanged locally; aggregate timing diagnostics are derived for this noncommercial research demonstration. Raw records and curves are not publicly served. This source is not used to train the household model or set planner inputs. Commercial deployment/training clearance is not established; replace or clear the research exhibit before commercial use.
+
+## Satellite imagery and drone artwork
+
+The Orii Gangodye 2024 crop is EOxCloudless (https://cloudless.eox.at) by EOX IT Services GmbH (https://eox.at). Contains modified Copernicus Sentinel data 2024. Source announcement: https://www.eox.at/2025/03/sentinel-2-cloudless-2024/. Included under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/) for noncommercial demonstration; commercial deployment needs an appropriate license or replacement imagery. Spatial extent, annual-mosaic date kind and source hash are recorded in dist/data/satellite-evidence.json and Data/metadata/satellite-evidence-audit.json.
+
+Google Open Buildings Temporal 2016–2023 is cited for potential building-history inputs under its source terms, but no village annual raster aggregation was acquired. The empty state is not a zero-growth finding.
+
+The drone illustration is AI-generated conceptual artwork produced with built-in image_gen. It is not an actual flight, site photo, orthomosaic or measured source. Prompt and artifact hash: Data/metadata/drone-illustration.json.

@@ -1,10 +1,10 @@
 # AimEnergy — complete project guide
 
-**Project:** AimEnergy  
-**Version:** 3.2.0  
-**Documentation date:** 30 October 2026  
-**Challenge:** Global Energy Hackathon, Brief 03 — Predict mini-grid demand before building  
-**Working directory:** `C:\Users\Dell\Downloads\AimEnergy\AimEnergy Project\aimenergy-app`
+- **Project:** AimEnergy
+- **Version:** 3.3.0
+- **Documentation date:** 30 October 2026
+- **Challenge:** Global Energy Hackathon, Brief 03 — Predict mini-grid demand before building
+- **Working directory:** `C:\Users\Dell\Downloads\AimEnergy\AimEnergy Project\aimenergy-app`
 
 AimEnergy helps mini-grid developers examine how much electricity a settlement might use before construction. It combines real geographic inputs, a trained household survey-proxy model, reproducible appliance timing simulation and editable demand scenarios. Its field workflow preserves source evidence, identifies sensitive assumptions and records scenario revisions.
 
@@ -93,6 +93,7 @@ Avoided oversizing, capital savings, fewer outages and faster assessments are po
 | Village explorer | Search and filter 411 Lamwo villages; inspect curated candidate/existing labels; create manual locations with supplied inputs |
 | Saved scenarios | Retain planning scenarios locally and compare alternative assumptions |
 | Field assessment | Evidence passport, sensitivity-ranked questions, valid responses, before/after comparison, applied history and exports |
+| Satellite & drone | Dated pilot satellite crop, boundary overlays, locally imported survey features/images and dated building estimates; AI artwork labelled separately |
 | AI model lab | Inspect the household forest, evaluation, feature schema, global importance, profile sensitivity and geographic groups; apply an estimate as an assumption |
 | Metered evidence | Show acquired Tanzania current-data facts, four later-day comparisons, an unfavorable result, source attribution and limitations |
 | Evidence & method | Explain source coverage, scenario equations, assumptions and readiness against the challenge |
@@ -159,7 +160,7 @@ Only `dist/` is served. Placing a file in the project's `Data/` folder does not 
 - Four source centers outside their village polygons are retained with flags rather than silently corrected.
 - API building counts disagree with the processed reference table in 397 villages. The app consistently uses the processed table.
 - NDVI and wind are zero in 366/411 records. Their missingness/coverage meaning is unresolved; they do not drive demand calculations.
-- No live satellite imagery is downloaded or analyzed by this app. Original layer dates are not established by an app/cache timestamp.
+- A pre-acquired 2024 EOxCloudless/Sentinel-2 crop is displayed for Orii Gangodye in Satellite & drone, with its license and provenance. No live acquisition or automated image analysis is performed. Original layer dates are not established by an app/cache timestamp.
 
 Local source copies are in `Data/raw/lamwo/`; compact geographic outputs are in `Data/processed/geospatial/` and `dist/data/`. The original supplied reference repository remains in the parent workspace. Reference pickles are not loaded and Git LFS notebook pointers are not treated as executed notebooks.
 
@@ -362,7 +363,7 @@ Applying an assessment uses its baseline plus its answers, replacing later plann
 4. Before recording/travel, verify the map, model and evidence screens still load when the app server is unavailable.
 5. After an app/model update, choose **Refresh offline pack**, wait for Ready and reload again.
 
-The current allowlist contains **27 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
+The current allowlist contains **33 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
 
 Field records live in browser local storage, independently of cached application assets. No automatic upload or sync is implemented. Use anonymous aggregate notes and export backups. Clearing browser site data can remove assessments and cached assets. Private browsing, quota limits or device policies can prevent persistence. Readiness on one device is not proof of readiness on another.
 
@@ -580,6 +581,7 @@ Do not place raw household files, credentials, customer identifiers or private o
 | [README.md](README.md) | Short introduction and quick start |
 | [Data/README.md](Data/README.md) | Data workspace and publication policy |
 | [Models/README.md](Models/README.md) | Model artifacts and reproduction boundaries |
+| [Satellite and drone evidence](docs/REMOTE_EVIDENCE.md) | Source coverage, imports, imagery licensing and artwork provenance |
 | [Landing page](docs/LANDING_PAGE.md) | Entry-page design, routing and preview behavior |
 | [Architecture](docs/ARCHITECTURE.md) | Runtime, model and source separation |
 | [API](docs/API.md) | Endpoints, input validation, statuses and operations |

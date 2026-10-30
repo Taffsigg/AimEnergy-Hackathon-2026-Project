@@ -24,3 +24,7 @@ Tanzania source ZIP, text files, README, metadata and NC attribution are stored 
 KIT access and suitability are documented separately in metadata/kit-metered-audit.json. Source PDFs and catalogues must not be counted as acquired meter observations.
 
 The templates folder contains a header-only operator CSV and dictionary, not fabricated pilot data.
+
+## Remote evidence
+
+raw/satellite retains acquired source documentation and the real pilot crop locally; metadata/satellite-evidence-audit.json records provenance and hashes. dist/data/satellite-evidence.json is the public manifest. No annual Google village-count series was acquired. metadata/drone-illustration.json records the AI-artwork prompt and hash; artwork is not measurement. Empty templates/drone_survey.geojson and templates/building_history.csv contain no fabricated observations. Imports made through the browser stay in its local storage until explicitly exported. See docs/REMOTE_EVIDENCE.md.

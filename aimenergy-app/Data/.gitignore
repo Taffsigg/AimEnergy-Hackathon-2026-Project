@@ -4,3 +4,4 @@ processed/households.csv
 splits/*.csv
 raw/metered/
 processed/metered/
+raw/satellite/

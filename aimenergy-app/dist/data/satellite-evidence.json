@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "retrieved_at": "2026-10-30T20:51:06.857954+00:00",
+  "sites": [
+    {
+      "site_id": 5502954,
+      "site_name": "Orii Gangodye",
+      "bounds": [
+        32.915643,
+        3.455727,
+        33.011983,
+        3.522065
+      ],
+      "imagery": {
+        "status": "available",
+        "image_path": "./images/satellite-orii-gangodye-2024.jpg",
+        "bounds": [
+          32.913643,
+          3.453727,
+          33.013983,
+          3.524065
+        ],
+        "date": "2024",
+        "date_kind": "annual_mosaic",
+        "resolution_m": 10,
+        "source_name": "EOxCloudless / Copernicus Sentinel-2",
+        "source_url": "https://www.eox.at/2025/03/sentinel-2-cloudless-2024/",
+        "license": "CC BY-NC-SA 4.0 (noncommercial demo only)",
+        "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "attribution": "EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2024)",
+        "attribution_links": [
+          {
+            "label": "EOxCloudless",
+            "url": "https://cloudless.eox.at"
+          },
+          {
+            "label": "EOX IT Services GmbH",
+            "url": "https://eox.at"
+          }
+        ],
+        "request_url": "https://tiles.maps.eox.at/?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=s2cloudless-2024&STYLES=&SRS=EPSG%3A4326&BBOX=32.913643%2C3.453727%2C33.013983%2C3.524065&WIDTH=1115&HEIGHT=783&FORMAT=image%2Fjpeg",
+        "crs": "EPSG:4326",
+        "width_px": 1115,
+        "height_px": 783,
+        "sha256": "ebdee2a3399cc2e82c07ea47f5c9c54fab86b66a9a9d110be4a3f5030a7dcdf0"
+      },
+      "building_history": {
+        "status": "not_acquired",
+        "records": [],
+        "unit": "estimated_buildings",
+        "method": "Required: identify intersecting temporal rasters, sum native building_fractional_count within the village polygon for each annual inference date, handle nodata and overlapping tile coverage, and retain raster provenance. Not executed.",
+        "source_url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_Research_open-buildings-temporal_v1",
+        "license": "CC BY 4.0",
+        "reason": "Public anonymous Google Cloud Storage access was verified, but no village raster aggregation was completed. A temporary rasterio installation failed with OSError [Errno 28] No space left on device. No dated counts are available locally; this is an acquisition/processing gap, not a zero-growth finding.",
+        "years_available": [
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "effective_resolution_m": 4,
+        "download_url": "https://colab.research.google.com/github/google-research/google-research/blob/master/building_detection/open_buildings_temporal_download_region_geotiffs.ipynb"
+      },
+      "limitations": [
+        "The image is a 2024 annual mosaic, not a single dated acquisition or current survey.",
+        "Nominal 10 m imagery cannot reliably enumerate individual buildings or roof areas.",
+        "EOX 2024 imagery is included for noncommercial demonstration; commercial deployment requires an appropriate EOX license or replacement imagery.",
+        "Imagery provides geographical context, not measured electricity demand or cold-start model validation.",
+        "Buildings, households, customers and electricity connections are distinct quantities."
+      ]
+    }
+  ]
+}

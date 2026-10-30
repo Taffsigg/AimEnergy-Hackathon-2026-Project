@@ -16,6 +16,7 @@ Built for **Global Energy Hackathon — Brief 03: Predict mini-grid demand befor
 - **Inspect a trained household model**, its benchmark, feature inputs and evaluation limits before using its output as an assumption.
 - **Take questions into the field:** inspect an evidence passport, answer sensitivity-ranked questions, preserve the baseline and compare a revision.
 - **Prepare for offline assessment**, save scenarios locally and export reports with their assumptions and evidence methods.
+- **Inspect satellite and drone evidence:** a dated pilot mosaic, local survey/image imports and a building-history CSV view; concept artwork stays distinct from measurements. See the [remote-evidence guide](aimenergy-app/docs/REMOTE_EVIDENCE.md).
 - **Review real metered-current evidence** separately from household ML results and village planning scenarios.
 
 ## Run the prototype

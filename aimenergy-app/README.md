@@ -73,3 +73,7 @@ Data/templates/site_month.csv and its dictionary provide an empty operator aggre
 ## Landing page
 
 The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, an actual field-workspace screenshot and scoped evidence results. Open prototype launches planner.html; direct links can open the AI, field and evidence workspaces. Offline snapshot field-v4 includes both pages. See docs/LANDING_PAGE.md.
+
+## Satellite and drone evidence
+
+Open Satellite & drone for the real 2024 EOxCloudless/Sentinel-2 Orii Gangodye crop and boundary overlay. Import completed WGS84 GeoJSON surveys, bounded georeferenced PNG/JPEG images and annual building-count CSVs locally. No annual village-count history has been acquired; the app shows that gap until dated observations are supplied. Drone artwork is AI-generated concept imagery, distinct from real satellite/survey evidence. See docs/REMOTE_EVIDENCE.md for limits, noncommercial imagery licensing, local storage and export.
