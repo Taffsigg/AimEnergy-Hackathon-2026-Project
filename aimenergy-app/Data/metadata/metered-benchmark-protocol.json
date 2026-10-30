@@ -1,0 +1,10 @@
+{
+  "id": "tanzania-current-shape-v1",
+  "status": "retrospective_diagnostic_not_blind_model_validation",
+  "selection": "Both Minigrid1a and Minigrid1b; same site, same aggregate meter entity.",
+  "split": "First complete midnight-to-midnight day trains; ALL subsequent complete days test. Partial days excluded.",
+  "prediction": "Repeat first-day hourly current shares; compare fixed flat 1/24 shares. No tuning.",
+  "target": "24 hourly shares of the reported current column, normalized separately within each evaluation day.",
+  "metrics": "MAE and RMSE of shares, multiplied by 100 for percentage-point display. Lower is better.",
+  "scope": "Timing shape only; no daily total, kWh, RAMP, household forest or unseen-site prediction is evaluated."
+}

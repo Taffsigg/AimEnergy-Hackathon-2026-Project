@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-30T14:17:39.844Z",
+  "status": "public_access_verified_download_incomplete",
+  "metered_rows_acquired": 0,
+  "source": {
+    "title": "High-Resolution Real-World Electricity Data from Three Microgrids in the Global South",
+    "doi": "10.35097/1305",
+    "alternate_doi": "10.5445/IR/1000143466",
+    "publisher": "Karlsruhe Institute of Technology",
+    "authors": [
+      "Matthias Luh",
+      "Kaleb Phipps",
+      "Anthony Britto",
+      "Matthias Wolf",
+      "Marek Lutz",
+      "Johann Kraft"
+    ],
+    "publication_date": "2023-06-21",
+    "landing_url": "https://radar.kit.edu/radar/en/dataset/PxzzPHZdpMnlkMDH",
+    "verified_mirror_url": "https://www.radar-service.eu/radar/en/dataset/PxzzPHZdpMnlkMDH",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "archive": {
+      "advertised_bytes": 988638720,
+      "format": "application/x-tar",
+      "advertised_md5": "2e9a2a7579a1e36a005753290cfd6c17",
+      "content_url_from_public_jsonld": "https://www.radar-service.eu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "downloaded": false,
+      "checksum_verified": false,
+      "partial_path": "Data/raw/metered/kit/10.35097-1305.tar.part",
+      "partial_bytes": 11264000,
+      "partial_usable_for_metrics": false,
+      "complete_files_extracted": [
+        "Data/raw/metered/kit/readme.txt",
+        "Data/raw/metered/kit/dataset.desc_md.xml",
+        "Data/raw/metered/kit/dataset.tech_md.xml"
+      ]
+    }
+  },
+  "access": {
+    "blocker": "Completed raw-file acquisition blocked by source rate limit and low throughput within bounded task: selective requests returned HTTP 429; after backoff full GET returned HTTP 200 but approximately 75–100 KB/s implied several hours.",
+    "evidence": [
+      "Landing HTML: data-js-download-tc-accepted=\"false\"",
+      "Dataset and individual file handlers call RadarUtilities.showDownloadTc before download",
+      "showDownloadTc presents Accept button and POST /radar/ajax/acceptDownloadTc"
+    ],
+    "actions_taken": "Accepted reviewed standard public download terms through official CSRF flow; downloaded initial range bytes and archive README/XML; used paced backoff after HTTP 429; one full archive transfer was stopped at task bound. Graceful termination failed for Windows child curl, so only the verified owned process tree was terminated forcefully. No identity or institutional commitments.",
+    "transport_notes": "Web tool opens timed out. Default Python requests certificate trust failed; Windows curl succeeded without disabling TLS.",
+    "terms_review": {
+      "reviewed_at_utc": "2026-10-30T14:19:59.574Z",
+      "official_terms_url": "https://radar.products.fiz-karlsruhe.de/sites/default/files/radar/docs/terms/RADAR_Terms_for_Data_Users.pdf",
+      "official_terms_date": "December 2025",
+      "embedded_dialog_terms_date": "July 2019",
+      "substantive_comparison": "Same six clauses; minor wording/typo difference in clause 1.",
+      "assessment": "Routine download-use conditions. Limited relationship with FIZ for downloading; service availability and accuracy disclaimers; privacy-policy reference; free access; compliance with dataset license. No institutional service purchase, payment, identity assertion, research-purpose declaration, bespoke data-use agreement, or obligation to register appears in these six clauses.",
+      "registration_clause": "Conditional access to archived datasets if registered/Shibboleth-authorized; does not require registration for the public dataset.",
+      "dataset_license_obligation": "Comply with CC BY 4.0 for this dataset; preserve attribution/license and indicate changes as applicable.",
+      "acceptance_performed": true,
+      "scope_note": "Parent subsequently authorized standard public terms acceptance as necessary to user request; prior authorization blocker resolved.",
+      "acceptance_endpoint": "https://radar.kit.edu/radar/ajax/acceptDownloadTc",
+      "acceptance_response": "HTTP success, JSON {}",
+      "authorization": "Parent authorized reviewed routine public download conditions as necessary to user request."
+    },
+    "no_retry_after_header": true
+  },
+  "paper": {
+    "url": "https://publikationen.bibliothek.kit.edu/1000149157/149088889",
+    "doi": "10.1145/3538637.3539763",
+    "year": 2022,
+    "license": "CC BY 4.0",
+    "evidence_pages_1based": [
+      3,
+      4,
+      5,
+      13
+    ],
+    "extracted_pages_1based": [
+      3,
+      4,
+      10,
+      13
+    ]
+  },
+  "sites": [
+    {
+      "id": "drc_kalenge",
+      "country": "Democratic Republic of the Congo",
+      "location": "Kalenge, Idjwi Island",
+      "latitude": -2.0864,
+      "longitude": 29.0712,
+      "type": "Industrial campus with approximately ten residential buildings and guest house",
+      "generation": "Estimated 20 kW hydropower or alternative 200 kW diesel generator",
+      "measurement": "Overall active power at main distribution feed-in; branch industrial loads also measured",
+      "paper_reported_rows": 399620,
+      "paper_reported_duration_days": 35.6,
+      "paper_reported_availability_percent": 64.94,
+      "nominal_interval_seconds": 5,
+      "connection_date": null,
+      "household_count_exact": null,
+      "limitations": [
+        "Industrial load mix and coordinated operation differ from village households",
+        "Missing data is material",
+        "Some branch consumers unused during recording",
+        "Measured consumption may adapt to available generation"
+      ]
+    },
+    {
+      "id": "rwanda_nyakiramba",
+      "country": "Rwanda",
+      "location": "Nyakiramba, Muhanga district",
+      "latitude": -1.8811,
+      "longitude": 29.6804,
+      "type": "Residential microgrid",
+      "household_count_estimated_range": [
+        200,
+        300
+      ],
+      "generation": "Hydropower formerly about 11 kW, impaired during campaign to about 3–4 kW",
+      "measurement": "Separate generation and demand meters; near identical values due failed electronic load controller",
+      "paper_reported_rows": 24856,
+      "paper_reported_duration_days": 17.8,
+      "paper_reported_availability_percent": 97.19,
+      "nominal_interval_seconds": 60,
+      "connection_date": null,
+      "limitations": [
+        "Supply constrained; observed demand cannot represent unconstrained electricity needs",
+        "Authors judge data unsuitable for informative load profiles",
+        "Estimated household count is not exact customer registry"
+      ]
+    },
+    {
+      "id": "haiti_beaumont",
+      "country": "Haiti",
+      "location": "Beaumont",
+      "latitude": null,
+      "longitude": null,
+      "type": "Orphanage with approximately 35 children, medical station and canteen",
+      "generation": "PV plus battery; inverter nominal continuous 3 kVA",
+      "measurement": "Aggregate consumer load at inverter output; not PV generation",
+      "paper_reported_rows": 44928,
+      "paper_reported_duration_days": 31.3,
+      "paper_reported_availability_percent": 99.76,
+      "nominal_interval_seconds": 60,
+      "connection_date": null,
+      "household_count_exact": null,
+      "limitations": [
+        "Institutional campus, not typical rural village household sample",
+        "Construction activities altered first twelve days"
+      ]
+    }
+  ],
+  "field_audit": {
+    "evidence_level": "Paper description only; raw header and Symbols_Units_Explanations not inspected",
+    "paper_fields": [
+      "phase voltage",
+      "current",
+      "active power",
+      "frequency",
+      "selected reactive/apparent power and power factor",
+      "DRC distortion/harmonics"
+    ],
+    "active_power_unit_in_paper_plots": "kW",
+    "raw_active_power_unit": null,
+    "raw_timestamp_field": null,
+    "timezone": null,
+    "raw_start": null,
+    "raw_end": null,
+    "raw_null_duplicate_stats": null,
+    "preconnection_covariates": "Not established by paper/landing metadata; cannot infer unavailable raw files contain none",
+    "customer_connection_dates": "Not established",
+    "matched_lamwo_features": "Not established",
+    "required_documentation": "Symbols_Units_Explanations",
+    "archive_readme": "Read archive packaging README; it describes metadata layout, not measurement units. Symbols_Units_Explanations not acquired."
+  },
+  "suitability": {
+    "held_out_site_cold_start_validation": false,
+    "operational_loadshape_validation": "Potential only after authorized raw access, unit/timezone audit and coverage checks. Rwanda must be treated as supply-limited delivered load.",
+    "existing_model_metered_accuracy_claim_allowed": false,
+    "reason": "Three heterogeneous operating sites do not provide an established preconnection feature/label dataset matched to the Lamwo household payment-derived model.",
+    "recommended_split": "If raw data is obtained, separate site-level exploratory transfer from chronological within-site operational baselines; never random-split adjacent rows and call it cold-start validation.",
+    "no_metrics_calculated": true
+  },
+  "evidence_files": [
+    {
+      "path": "Data/raw/metered/kit/landing-page.html",
+      "source_url": "https://www.radar-service.eu/radar/en/dataset/PxzzPHZdpMnlkMDH",
+      "bytes": 45088,
+      "sha256": "dd15517356fd6c43ee1ae6cfc9434290fd4b68f04c141f5e48e41214806e15f0",
+      "kind": "source_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/repository-download-handler.js.txt",
+      "source_url": "https://www.radar-service.eu/radar/assets/dataset-0574237b4b79ddf7102f4b047b831b3b.js",
+      "bytes": 23744,
+      "sha256": "142cb83dd4191cc97fb2db22d7f6a4934bdaa63d8f3a12f39c330f288873380c",
+      "kind": "source_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/repository-terms-handler.js.txt",
+      "source_url": "https://www.radar-service.eu/radar/assets/radarUtilities-f736f622515faed1f512e41964298b25.js",
+      "bytes": 112284,
+      "sha256": "da5fbc29b99bbb881e8ddb96ec27950624c6bf5a084bd107e7cec663063051ba",
+      "kind": "source_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/paper.pdf",
+      "source_url": "https://publikationen.bibliothek.kit.edu/1000149157/149088889",
+      "bytes": 2456174,
+      "sha256": "a8e34f3c1396ec07162a317b474f1aaf1456ba7dd33ed8328cb2f35ff30f4522",
+      "kind": "source_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/paper-selected-pages.txt",
+      "source_url": "https://publikationen.bibliothek.kit.edu/1000149157/149088889",
+      "bytes": 14610,
+      "sha256": "c2f487acae5622b4fb4206b320b1ca4469e170095aefda3cd4df7700e1ca92a4",
+      "kind": "derived_text"
+    },
+    {
+      "path": "Data/raw/metered/kit/landing-metadata.json",
+      "source_url": "https://www.radar-service.eu/radar/en/dataset/PxzzPHZdpMnlkMDH",
+      "bytes": 6735,
+      "sha256": "9d063c7dc08e06fc159b329937f3524a9512f5cdfbaefd3b47523fa3d65790af",
+      "kind": "extracted_metadata"
+    },
+    {
+      "path": "Data/raw/metered/kit/RADAR_Terms_for_Data_Users.pdf",
+      "source_url": "https://radar.products.fiz-karlsruhe.de/sites/default/files/radar/docs/terms/RADAR_Terms_for_Data_Users.pdf",
+      "bytes": 138186,
+      "sha256": "8647c87aa007f81f691aabccebc7ebdc355c4815f337304a65ab1361ba8ef50e",
+      "kind": "source_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/kit-landing-page.html",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 44183,
+      "sha256": "056a3f34f8841a4c1d90738387e0a40b2742ef58b8ca916b33291c0e39507981",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/readme.txt",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 1689,
+      "sha256": "a3a63108e9355a6988bcef27e584740f234e56fc5c2c6a17b0da1617664077c0",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/dataset.desc_md.xml",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 7021,
+      "sha256": "0b067330e8e3a3d6670d07b4d2128dfd4f0ac5591bca08ec5d1faf5cbdca3ff1",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/dataset.tech_md.xml",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 600,
+      "sha256": "e33485a17ab20af23e9caa4b65a1d272a108c4498099cdbebbb04d35fa0c0b64",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/archive-member-index.json",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 1591,
+      "sha256": "c3749d3899cd0ba8f9aab1ceacc86a0d01981113973c6d02397cf8163a0933be",
+      "kind": "partial_archive_index"
+    },
+    {
+      "path": "Data/raw/metered/kit/archive-prefix.bin",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 1048576,
+      "sha256": "45ba65b3d96e70bd559862e30747fc4b5562e0053c5b260411174e32b8bebbd9",
+      "kind": "incomplete_archive_fragment_not_data"
+    },
+    {
+      "path": "Data/raw/metered/kit/range-response-headers.txt",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 652,
+      "sha256": "8d72278cbf8c383690da7eaf94b731755bda55624d121b0a86d5b796db876701",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/latest-range-headers.txt",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 513,
+      "sha256": "f8ff9cd98c0d5a8f0f7d9999a9dac97dc20bae84d55443469262cd63b04dcf29",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/latest-range-response.bin",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 17,
+      "sha256": "3850dfdbf4489250268b5f0740240a9f4445e7c5c29e1d03aa0c5446808d7507",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/full-download-headers.txt",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 612,
+      "sha256": "a143c79ca31fc28debe813187b023bb06e7532c9e31dcfc31736af9d680ed7f4",
+      "kind": "acquisition_evidence"
+    },
+    {
+      "path": "Data/raw/metered/kit/acquisition-attempt.log",
+      "source_url": "https://radar.kit.edu/radar-backend/archives/PxzzPHZdpMnlkMDH/versions/1/content",
+      "bytes": 11931,
+      "sha256": "1fff157542f964b1adb158b797edfe3f889f4ef8f2da3d2649327fcef770f19d",
+      "kind": "acquisition_evidence"
+    }
+  ],
+  "acquisition_recipe": {
+    "script": "scripts/acquire_kit_data.py",
+    "command": "python scripts/acquire_kit_data.py --terms-reviewed-and-accepted --max-time-seconds 14400",
+    "resume_supported": true,
+    "automatic_retries": 0,
+    "on_429": "Stop and manually retry after a substantial pause (at least five minutes); honor Retry-After if supplied. Do not change identity or hosts to evade source limits.",
+    "verification": "Full expected byte count and published MD5 required before extraction or use. Then SHA-256 logged locally.",
+    "warning": "The terms flag is an assertion that the public terms have been reviewed/accepted; it does not bypass or accept any terms automatically."
+  }
+}

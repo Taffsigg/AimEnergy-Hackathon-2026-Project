@@ -1,0 +1,6 @@
+# Private/local source data are retained on disk but never committed or served.
+raw/survey/*.dta
+processed/households.csv
+splits/*.csv
+raw/metered/
+processed/metered/

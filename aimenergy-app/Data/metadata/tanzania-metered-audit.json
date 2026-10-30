@@ -1,0 +1,1550 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-30T14:19:24.572463+00:00",
+  "status": "measured_current_acquired_audited_not_kwh_validated",
+  "dataset_id": "bbtn9wxhzm",
+  "version": 1,
+  "title": "Data for: Comparison of load profiles in a mini-grid: assessment of performance metrics using measured and interview-based data",
+  "doi": "10.17632/bbtn9wxhzm.1",
+  "authors": [
+    "Elias Hartvigsson",
+    "Erik Ahlgren"
+  ],
+  "source_url": "https://data.mendeley.com/datasets/bbtn9wxhzm/1",
+  "files_api_url": "https://data.mendeley.com/public-api/datasets/bbtn9wxhzm/files?version=1&folder_id=root",
+  "paper_url": "https://research.chalmers.se/publication/500718/file/500718_Fulltext.pdf",
+  "license": {
+    "id": "2173ba9b-1e99-4d08-993d-2a7ff6a30523",
+    "short_name": "CC BY NC 3.0",
+    "full_name": "Attribution-NonCommercial 3.0 Unported",
+    "description": "You are free to adapt, copy or redistribute the material, providing you attribute appropriately and do not use the material for commercial purposes.",
+    "url": "https://creativecommons.org/licenses/by-nc/3.0",
+    "category": "Creative",
+    "customer_id": null,
+    "interpretation": "Attribution and NonCommercial conditions apply. License scope for public/commercial deployment is unresolved; this audit is not legal advice.",
+    "raw_public_redistribution": false,
+    "commercial_training_permission_established": false,
+    "attribution": "Hartvigsson, Elias; Ahlgren, Erik (2018), Data for: Comparison of load profiles in a mini-grid: assessment of performance metrics using measured and interview-based data, Mendeley Data, V1, doi:10.17632/bbtn9wxhzm.1; CC BY-NC 3.0. Numeric originals unchanged; descriptive statistics derived locally."
+  },
+  "archives": [
+    {
+      "name": "Supplementary Data.zip",
+      "local_path": "Data/raw/metered/tanzania/Supplementary Data.zip",
+      "download_url": "https://data.mendeley.com/public-files/datasets/bbtn9wxhzm/files/fbb333a0-359a-4949-a82b-c8dc57278238/file_downloaded",
+      "bytes": 222660,
+      "sha256": "443142ecb729b04da680b0d70a69e9ee171b41d16a125edd12f79def75495299",
+      "publisher_hash_verified": true
+    }
+  ],
+  "readme": {
+    "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/README.txt",
+    "sha256": "58a87405a26cfc39c45070234dc4b23e25ec58479ecabc24da9428d73fc310d2",
+    "text": "Metadata for measured load profiles concering the publication \"Comparision of load profiles in a mini-grid: assessment of performance metrics using measured and interview-based data.\nType: Measurement start day: mesurement start time\nHousehold: : 8:20\nWorkshop1a: Friday : 11:00\nWorkshop1b: Monday : 12:39\nMill1: Friday : 10:00\nMill2a: Thursday : 8:25\nMill2b: Saturday : 8:45\nMinigrid1a: Thursday : 11:25\nMinigrid1b: Monday : 11:40\nHospital: Wednesday : 9:15"
+  },
+  "provenance": {
+    "country": "Tanzania",
+    "site_count": 1,
+    "metered_household_count": 1,
+    "metered_SME_count": 3,
+    "metered_institution_count": 1,
+    "site_total_series_count": 2,
+    "measurement_type": "single-phase TRMS clamp current",
+    "meter": "Amprobe TRMS-16 Pro",
+    "paper_method_pages": [
+      188,
+      189
+    ],
+    "interview_individual_records_in_archive": false,
+    "source_metadata_snapshot": "Data/raw/metered/tanzania/dataset-metadata.json",
+    "source_metadata_url": "https://data.mendeley.com/public-api/datasets/bbtn9wxhzm/snapshot/1",
+    "download_tls": "ssl.create_default_context; certificate and hostname verification enabled"
+  },
+  "electrical_interpretation": {
+    "units": "A per measured phase; not kW or kWh",
+    "concurrent_voltage_measured_in_archive": false,
+    "concurrent_power_factor_measured_in_archive": false,
+    "paper_assumptions": {
+      "nominal_voltage_V": 230,
+      "power_factor": 0.85,
+      "three_phase_balanced": true
+    },
+    "energy_conversion_allowed": false,
+    "reason": "Paper assumptions converted interview appliance ratings to current; they are not concurrent measured voltage/PF for these current series. Phase scope differs by customer. No verified kWh target is supplied."
+  },
+  "row_count": 40809,
+  "series_count": 9,
+  "series": [
+    {
+      "name": "Hospital",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Hospital.txt",
+      "sha256": "85a2418dd0a3931f468e7378fa1e48c60a9bcea9d47e53ee0535e295b73645d4",
+      "bytes": 66507,
+      "rows": 2910,
+      "numeric_columns": 4,
+      "class": "institution",
+      "entity_id": "Hospital",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Wednesday",
+      "start_clock_local_unspecified_timezone": "09:15",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        2909.0
+      ],
+      "record_count_hours": 48.5,
+      "index_differences": {
+        "1.0": 2909
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          2909.0
+        ],
+        [
+          0.01,
+          24.45
+        ],
+        [
+          0.0,
+          22.18
+        ],
+        [
+          0.03,
+          42.32
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 5.165667,
+      "peak_reported_average_current_A": 24.45,
+      "reported_current_load_factor": 0.211275,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 1,
+      "hourly_mean1_shape_complete_days": [
+        0.789378,
+        0.795527,
+        0.702849,
+        0.723926,
+        0.761803,
+        0.709759,
+        0.608428,
+        0.862214,
+        0.889599,
+        2.0714,
+        2.22151,
+        1.099709,
+        1.076635,
+        1.233401,
+        1.319739,
+        1.246491,
+        1.412164,
+        1.327378,
+        0.849948,
+        0.624593,
+        0.630868,
+        0.6767,
+        0.651661,
+        0.714323
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": null
+    },
+    {
+      "name": "Household",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Household.txt",
+      "sha256": "8c4638bdceec41a42ab421645927d9d5c2477e08638606cf862fbe614ae85f7f",
+      "bytes": 91141,
+      "rows": 4011,
+      "numeric_columns": 4,
+      "class": "household",
+      "entity_id": "Household",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": null,
+      "start_clock_local_unspecified_timezone": "08:20",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        4010.0
+      ],
+      "record_count_hours": 66.85,
+      "index_differences": {
+        "1.0": 4010
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          4010.0
+        ],
+        [
+          0.03,
+          3.19
+        ],
+        [
+          0.01,
+          1.66
+        ],
+        [
+          0.05,
+          5.54
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 0.979334,
+      "peak_reported_average_current_A": 3.19,
+      "reported_current_load_factor": 0.307001,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 2,
+      "hourly_mean1_shape_complete_days": [
+        1.010962,
+        1.010115,
+        1.007744,
+        1.006982,
+        0.998853,
+        0.99699,
+        1.085309,
+        0.930688,
+        0.921543,
+        0.801471,
+        0.773527,
+        0.77412,
+        0.761079,
+        0.836188,
+        0.982172,
+        0.993603,
+        0.499173,
+        0.839491,
+        1.203349,
+        1.37753,
+        1.463732,
+        1.465086,
+        1.133321,
+        1.12697
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": {
+        "status": "retrospective_single_site_current_shape_diagnostic_not_model_validation",
+        "protocol": "Predict second complete civil day's 24 hourly normalized current shares using first complete day's shares; compare fixed uniform 1/24 baseline. No tuning or absolute energy prediction.",
+        "train_elapsed_minute_indices_inclusive": [
+          940,
+          2379
+        ],
+        "test_elapsed_minute_indices_inclusive": [
+          2380,
+          3819
+        ],
+        "train_hourly_shares": [
+          0.04237378,
+          0.0423879,
+          0.04238084,
+          0.04235259,
+          0.04166755,
+          0.04150512,
+          0.04949257,
+          0.03631433,
+          0.03632139,
+          0.03756436,
+          0.03507843,
+          0.03508549,
+          0.03467588,
+          0.04112375,
+          0.05334153,
+          0.05452799,
+          0.01333362,
+          0.03573522,
+          0.0407212,
+          0.05009993,
+          0.05567915,
+          0.05352515,
+          0.04236672,
+          0.04234553
+        ],
+        "test_hourly_shares": [
+          0.04187348,
+          0.04178888,
+          0.04159851,
+          0.04156326,
+          0.04157031,
+          0.04157736,
+          0.04095691,
+          0.04123893,
+          0.04047042,
+          0.02923177,
+          0.02938688,
+          0.02942918,
+          0.02875233,
+          0.02856901,
+          0.02852671,
+          0.02829404,
+          0.02825173,
+          0.03422359,
+          0.05954228,
+          0.06468216,
+          0.06628969,
+          0.06855294,
+          0.05206864,
+          0.051561
+        ],
+        "previous_day_shape": {
+          "mae_share": 0.00850192,
+          "rmse_share": 0.011284,
+          "total_variation_distance": 0.10202303
+        },
+        "flat_shape": {
+          "mae_share": 0.00941881,
+          "rmse_share": 0.01252842,
+          "total_variation_distance": 0.11302574
+        },
+        "limitations": [
+          "One training day and one test day from same entity/site.",
+          "Test total is used only to define evaluation shape, never as predictive input.",
+          "Not a cold-start forecast, independent-site test, survey prediction, or kWh validation.",
+          "Only current share; column-average midpoint caveat applies; full-day diagnostic assumes one-minute sampling and correct README clock."
+        ]
+      }
+    },
+    {
+      "name": "Mill1",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Mill1.txt",
+      "sha256": "d8bef0425ca5f13d1108e1cb42e170899e599847cc9d75777f3c85653080f8e9",
+      "bytes": 104837,
+      "rows": 4584,
+      "numeric_columns": 4,
+      "class": "SME",
+      "entity_id": "Mill1",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Friday",
+      "start_clock_local_unspecified_timezone": "10:00",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        4583.0
+      ],
+      "record_count_hours": 76.4,
+      "index_differences": {
+        "1.0": 4583
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          4583.0
+        ],
+        [
+          0.0,
+          43.06
+        ],
+        [
+          0.0,
+          16.87
+        ],
+        [
+          0.01,
+          86.0
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 0.966283,
+      "peak_reported_average_current_A": 43.06,
+      "reported_current_load_factor": 0.02244,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 2,
+      "hourly_mean1_shape_complete_days": [
+        0.234275,
+        0.212605,
+        0.203059,
+        0.197149,
+        0.182904,
+        0.193966,
+        0.302163,
+        0.502797,
+        1.719936,
+        0.617207,
+        0.741164,
+        1.377616,
+        1.857834,
+        5.510311,
+        2.696132,
+        3.595499,
+        0.388236,
+        0.498706,
+        0.547803,
+        0.521739,
+        0.613267,
+        0.535529,
+        0.428847,
+        0.321257
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": {
+        "status": "retrospective_single_site_current_shape_diagnostic_not_model_validation",
+        "protocol": "Predict second complete civil day's 24 hourly normalized current shares using first complete day's shares; compare fixed uniform 1/24 baseline. No tuning or absolute energy prediction.",
+        "train_elapsed_minute_indices_inclusive": [
+          840,
+          2279
+        ],
+        "test_elapsed_minute_indices_inclusive": [
+          2280,
+          3719
+        ],
+        "train_hourly_shares": [
+          0.00462012,
+          0.00441713,
+          0.00430345,
+          0.00429533,
+          0.00388934,
+          0.00376755,
+          0.00578124,
+          0.00751886,
+          0.0729313,
+          0.01066119,
+          0.01440438,
+          0.05519784,
+          0.08580105,
+          0.28660165,
+          0.13559928,
+          0.18456117,
+          0.00994665,
+          0.01613388,
+          0.01738431,
+          0.01649115,
+          0.01624755,
+          0.01705953,
+          0.01294283,
+          0.00944323
+        ],
+        "test_hourly_shares": [
+          0.02773913,
+          0.02438886,
+          0.02299764,
+          0.02191874,
+          0.02066949,
+          0.023168,
+          0.03639874,
+          0.06791403,
+          0.06723262,
+          0.07836234,
+          0.08849834,
+          0.06510321,
+          0.04806791,
+          0.03026603,
+          0.03100423,
+          0.02830698,
+          0.03796031,
+          0.03702337,
+          0.04185003,
+          0.04008972,
+          0.05809034,
+          0.04068595,
+          0.0350927,
+          0.02717129
+        ],
+        "previous_day_shape": {
+          "mae_share": 0.04671806,
+          "rmse_share": 0.07217401,
+          "total_variation_distance": 0.56061668
+        },
+        "flat_shape": {
+          "mae_share": 0.01514879,
+          "rmse_share": 0.01881755,
+          "total_variation_distance": 0.18178549
+        },
+        "limitations": [
+          "One training day and one test day from same entity/site.",
+          "Test total is used only to define evaluation shape, never as predictive input.",
+          "Not a cold-start forecast, independent-site test, survey prediction, or kWh validation.",
+          "Only current share; column-average midpoint caveat applies; full-day diagnostic assumes one-minute sampling and correct README clock."
+        ]
+      }
+    },
+    {
+      "name": "Mill2a",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Mill2a.txt",
+      "sha256": "2406c1ce87e8c8698720ea506a2b81f9cdebe842a6d166f675c42fc817b64790",
+      "bytes": 71472,
+      "rows": 3107,
+      "numeric_columns": 4,
+      "class": "SME",
+      "entity_id": "Mill2",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Thursday",
+      "start_clock_local_unspecified_timezone": "08:25",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        3106.0
+      ],
+      "record_count_hours": 51.7833,
+      "index_differences": {
+        "1.0": 3106
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          3106.0
+        ],
+        [
+          0.0,
+          28.02
+        ],
+        [
+          0.0,
+          15.85
+        ],
+        [
+          0.0,
+          41.8
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 2.542568,
+      "peak_reported_average_current_A": 28.02,
+      "reported_current_load_factor": 0.090741,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 1,
+      "hourly_mean1_shape_complete_days": [
+        0.009457,
+        0.009682,
+        0.010207,
+        0.010958,
+        0.010658,
+        0.010958,
+        0.011258,
+        0.012009,
+        0.011934,
+        0.750176,
+        3.963811,
+        5.172123,
+        3.813175,
+        1.626144,
+        1.638528,
+        0.011784,
+        0.929558,
+        3.965162,
+        2.021159,
+        0.002402,
+        0.002402,
+        0.002552,
+        0.001951,
+        0.001951
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": null
+    },
+    {
+      "name": "Mill2b",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Mill2b.txt",
+      "sha256": "6e64a7e5e237ae9250f3a1423ba2c7554eb15d2cf8482a3b7e9d22fec755b0ab",
+      "bytes": 126297,
+      "rows": 5448,
+      "numeric_columns": 4,
+      "class": "SME",
+      "entity_id": "Mill2",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Saturday",
+      "start_clock_local_unspecified_timezone": "08:45",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        5447.0
+      ],
+      "record_count_hours": 90.8,
+      "index_differences": {
+        "1.0": 5447
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          5447.0
+        ],
+        [
+          0.0,
+          22.18
+        ],
+        [
+          0.0,
+          14.89
+        ],
+        [
+          0.0,
+          37.49
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 2.73649,
+      "peak_reported_average_current_A": 22.18,
+      "reported_current_load_factor": 0.123376,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 3,
+      "hourly_mean1_shape_complete_days": [
+        0.002558,
+        0.003115,
+        0.002647,
+        0.002492,
+        0.002647,
+        0.002647,
+        0.002558,
+        0.002558,
+        0.37736,
+        2.806259,
+        2.746458,
+        3.460175,
+        1.663079,
+        2.351367,
+        1.899346,
+        2.602673,
+        1.763592,
+        2.880009,
+        1.420405,
+        0.001847,
+        0.001713,
+        0.001335,
+        0.001402,
+        0.001758
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": {
+        "status": "retrospective_single_site_current_shape_diagnostic_not_model_validation",
+        "protocol": "Predict second complete civil day's 24 hourly normalized current shares using first complete day's shares; compare fixed uniform 1/24 baseline. No tuning or absolute energy prediction.",
+        "train_elapsed_minute_indices_inclusive": [
+          915,
+          2354
+        ],
+        "test_elapsed_minute_indices_inclusive": [
+          2355,
+          3794
+        ],
+        "train_hourly_shares": [
+          0.00013044,
+          0.00015312,
+          0.0001191,
+          0.0001276,
+          0.00013327,
+          0.00013611,
+          0.00014462,
+          0.00014462,
+          0.00756263,
+          0.14484978,
+          0.06010407,
+          0.14763154,
+          0.00011343,
+          0.15412514,
+          0.11713715,
+          0.10082092,
+          0.11628646,
+          0.11610498,
+          0.03377806,
+          8.507e-05,
+          8.223e-05,
+          7.089e-05,
+          6.522e-05,
+          9.358e-05
+        ],
+        "test_hourly_shares": [
+          0.00010668,
+          0.00015239,
+          0.00012801,
+          0.00011887,
+          0.00013106,
+          0.00015544,
+          0.00012496,
+          0.00012801,
+          0.00011887,
+          0.07582795,
+          0.1313449,
+          0.11629147,
+          0.04392895,
+          0.02517845,
+          0.13415199,
+          0.10381349,
+          0.06250267,
+          0.1471542,
+          0.15823321,
+          0.00010668,
+          9.753e-05,
+          5.486e-05,
+          7.924e-05,
+          7.01e-05
+        ],
+        "previous_day_shape": {
+          "mae_share": 0.02422061,
+          "rmse_share": 0.04521625,
+          "total_variation_distance": 0.29064734
+        },
+        "flat_shape": {
+          "mae_share": 0.04985407,
+          "rmse_share": 0.0565667,
+          "total_variation_distance": 0.59824885
+        },
+        "limitations": [
+          "One training day and one test day from same entity/site.",
+          "Test total is used only to define evaluation shape, never as predictive input.",
+          "Not a cold-start forecast, independent-site test, survey prediction, or kWh validation.",
+          "Only current share; column-average midpoint caveat applies; full-day diagnostic assumes one-minute sampling and correct README clock."
+        ]
+      }
+    },
+    {
+      "name": "Minigrid1a",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Minigrid1a.txt",
+      "sha256": "24a9fe303d104524c14a00c2af278819d924b99881b758fb22b4bb755363f3d2",
+      "bytes": 145013,
+      "rows": 5448,
+      "numeric_columns": 4,
+      "class": "site_total",
+      "entity_id": "Minigrid1",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Thursday",
+      "start_clock_local_unspecified_timezone": "11:25",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        5447.0
+      ],
+      "record_count_hours": 90.8,
+      "index_differences": {
+        "1.0": 5447
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          5447.0
+        ],
+        [
+          0.01,
+          131.4
+        ],
+        [
+          0.0,
+          124.1
+        ],
+        [
+          0.02,
+          152.3
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 95.177465,
+      "peak_reported_average_current_A": 131.4,
+      "reported_current_load_factor": 0.724334,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 3,
+      "hourly_mean1_shape_complete_days": [
+        0.959144,
+        0.953084,
+        0.950052,
+        0.952368,
+        0.986583,
+        1.092131,
+        1.07162,
+        0.9378,
+        0.888643,
+        0.956889,
+        0.984051,
+        0.996683,
+        0.917081,
+        0.938986,
+        0.943259,
+        0.924765,
+        0.80385,
+        0.953072,
+        1.054376,
+        1.297912,
+        1.274573,
+        1.130502,
+        1.041564,
+        0.991014
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": {
+        "status": "retrospective_single_site_current_shape_diagnostic_not_model_validation",
+        "protocol": "Predict second complete civil day's 24 hourly normalized current shares using first complete day's shares; compare fixed uniform 1/24 baseline. No tuning or absolute energy prediction.",
+        "train_elapsed_minute_indices_inclusive": [
+          755,
+          2194
+        ],
+        "test_elapsed_minute_indices_inclusive": [
+          2195,
+          3634
+        ],
+        "train_hourly_shares": [
+          0.03914045,
+          0.03904121,
+          0.03888868,
+          0.0393426,
+          0.04254596,
+          0.04679581,
+          0.04421605,
+          0.03819576,
+          0.03708723,
+          0.03840885,
+          0.04193039,
+          0.04003334,
+          0.03695295,
+          0.04015047,
+          0.03751305,
+          0.03986111,
+          0.03931195,
+          0.04004976,
+          0.0432761,
+          0.05343458,
+          0.05298285,
+          0.04672356,
+          0.04312722,
+          0.04099007
+        ],
+        "test_hourly_shares": [
+          0.03998568,
+          0.03976796,
+          0.03962511,
+          0.0396531,
+          0.0405149,
+          0.04420455,
+          0.04557704,
+          0.04148102,
+          0.03813631,
+          0.04159879,
+          0.04191101,
+          0.0432457,
+          0.04076788,
+          0.04023684,
+          0.04333366,
+          0.03682336,
+          0.02241966,
+          0.039869,
+          0.04371786,
+          0.05373272,
+          0.05183065,
+          0.04657224,
+          0.04323625,
+          0.04175872
+        ],
+        "previous_day_shape": {
+          "mae_share": 0.00217133,
+          "rmse_share": 0.00404274,
+          "total_variation_distance": 0.02605601
+        },
+        "flat_shape": {
+          "mae_share": 0.00339892,
+          "rmse_share": 0.00553464,
+          "total_variation_distance": 0.04078705
+        },
+        "limitations": [
+          "One training day and one test day from same entity/site.",
+          "Test total is used only to define evaluation shape, never as predictive input.",
+          "Not a cold-start forecast, independent-site test, survey prediction, or kWh validation.",
+          "Only current share; column-average midpoint caveat applies; full-day diagnostic assumes one-minute sampling and correct README clock."
+        ]
+      }
+    },
+    {
+      "name": "Minigrid1b",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Minigrid1b.txt",
+      "sha256": "b1fda75164b99bc0ac0ac43cc3c9ba4160526bc6f5acc6a81f6437286f9e6cfe",
+      "bytes": 143969,
+      "rows": 5448,
+      "numeric_columns": 4,
+      "class": "site_total",
+      "entity_id": "Minigrid1",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Monday",
+      "start_clock_local_unspecified_timezone": "11:40",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        5447.0
+      ],
+      "record_count_hours": 90.8,
+      "index_differences": {
+        "1.0": 5447
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          5447.0
+        ],
+        [
+          0.01,
+          127.15
+        ],
+        [
+          0.0,
+          120.2
+        ],
+        [
+          0.02,
+          161.5
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 92.289427,
+      "peak_reported_average_current_A": 127.15,
+      "reported_current_load_factor": 0.725831,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 3,
+      "hourly_mean1_shape_complete_days": [
+        0.993209,
+        0.973036,
+        0.969382,
+        0.968666,
+        0.971213,
+        1.002641,
+        1.076125,
+        1.02627,
+        0.997847,
+        0.998301,
+        1.037049,
+        1.023993,
+        0.917868,
+        0.911793,
+        0.920244,
+        0.916019,
+        0.848031,
+        0.780466,
+        0.950418,
+        1.164664,
+        1.272563,
+        1.196663,
+        1.076381,
+        1.007162
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": {
+        "status": "retrospective_single_site_current_shape_diagnostic_not_model_validation",
+        "protocol": "Predict second complete civil day's 24 hourly normalized current shares using first complete day's shares; compare fixed uniform 1/24 baseline. No tuning or absolute energy prediction.",
+        "train_elapsed_minute_indices_inclusive": [
+          740,
+          2179
+        ],
+        "test_elapsed_minute_indices_inclusive": [
+          2180,
+          3619
+        ],
+        "train_hourly_shares": [
+          0.04281177,
+          0.04058678,
+          0.04056724,
+          0.040681,
+          0.04109888,
+          0.04408685,
+          0.04680364,
+          0.04274589,
+          0.03994943,
+          0.0397966,
+          0.0409207,
+          0.04582846,
+          0.0390723,
+          0.03817449,
+          0.04048987,
+          0.04062317,
+          0.03173034,
+          0.02163114,
+          0.04041288,
+          0.04917073,
+          0.05434692,
+          0.05040254,
+          0.04569402,
+          0.04237435
+        ],
+        "test_hourly_shares": [
+          0.03971926,
+          0.03985992,
+          0.03980027,
+          0.03975498,
+          0.03973289,
+          0.0401604,
+          0.04384492,
+          0.04164842,
+          0.04062695,
+          0.04136452,
+          0.04390347,
+          0.0411561,
+          0.03832072,
+          0.03987907,
+          0.03850115,
+          0.03849526,
+          0.03765385,
+          0.03893603,
+          0.0399251,
+          0.04862088,
+          0.05156784,
+          0.04936545,
+          0.04487634,
+          0.0422862
+        ],
+        "previous_day_shape": {
+          "mae_share": 0.00251343,
+          "rmse_share": 0.00422759,
+          "total_variation_distance": 0.03016121
+        },
+        "flat_shape": {
+          "mae_share": 0.0027332,
+          "rmse_share": 0.003587,
+          "total_variation_distance": 0.03279843
+        },
+        "limitations": [
+          "One training day and one test day from same entity/site.",
+          "Test total is used only to define evaluation shape, never as predictive input.",
+          "Not a cold-start forecast, independent-site test, survey prediction, or kWh validation.",
+          "Only current share; column-average midpoint caveat applies; full-day diagnostic assumes one-minute sampling and correct README clock."
+        ]
+      }
+    },
+    {
+      "name": "Workshop1a",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Workshop1a.txt",
+      "sha256": "13c7c446a18e3f47c579141d76e6a28916ff8f07edbfa61d89f5b160d1ef1579",
+      "bytes": 124922,
+      "rows": 5448,
+      "numeric_columns": 4,
+      "class": "SME",
+      "entity_id": "Workshop1",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Friday",
+      "start_clock_local_unspecified_timezone": "11:00",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        5447.0
+      ],
+      "record_count_hours": 90.8,
+      "index_differences": {
+        "1.0": 5447
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          5447.0
+        ],
+        [
+          0.0,
+          38.66
+        ],
+        [
+          0.0,
+          10.5
+        ],
+        [
+          0.01,
+          77.3
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 1.349128,
+      "peak_reported_average_current_A": 38.66,
+      "reported_current_load_factor": 0.034897,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 3,
+      "hourly_mean1_shape_complete_days": [
+        0.015923,
+        0.016751,
+        0.017188,
+        0.017798,
+        0.017362,
+        0.822609,
+        0.011211,
+        3.460697,
+        2.554768,
+        0.906715,
+        6.362402,
+        3.41005,
+        2.720799,
+        1.367423,
+        1.29082,
+        0.658453,
+        0.234956,
+        0.013087,
+        0.01505,
+        0.015355,
+        0.016708,
+        0.01758,
+        0.017842,
+        0.018453
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": {
+        "status": "retrospective_single_site_current_shape_diagnostic_not_model_validation",
+        "protocol": "Predict second complete civil day's 24 hourly normalized current shares using first complete day's shares; compare fixed uniform 1/24 baseline. No tuning or absolute energy prediction.",
+        "train_elapsed_minute_indices_inclusive": [
+          780,
+          2219
+        ],
+        "test_elapsed_minute_indices_inclusive": [
+          2220,
+          3659
+        ],
+        "train_hourly_shares": [
+          0.00046651,
+          0.00048503,
+          0.00052946,
+          0.00054427,
+          0.00052946,
+          0.00049243,
+          0.00043319,
+          0.0002999,
+          0.07830041,
+          0.02197802,
+          0.26014854,
+          0.20649566,
+          0.20705844,
+          0.09520971,
+          0.10471402,
+          0.00036284,
+          0.01920855,
+          0.00027028,
+          0.00037765,
+          0.00039246,
+          0.00040357,
+          0.00041838,
+          0.0004443,
+          0.00043689
+        ],
+        "test_hourly_shares": [
+          0.00117609,
+          0.00133084,
+          0.00134116,
+          0.00140306,
+          0.00137211,
+          0.00142369,
+          0.00098008,
+          0.18040668,
+          0.35845086,
+          0.00089755,
+          0.00122768,
+          0.2077354,
+          0.04735327,
+          0.03273463,
+          0.01237994,
+          0.14177095,
+          0.00067058,
+          0.00081501,
+          0.00095945,
+          0.00082533,
+          0.0009904,
+          0.00113483,
+          0.00122768,
+          0.00139274
+        ],
+        "previous_day_shape": {
+          "mae_share": 0.0510878,
+          "rmse_share": 0.09930818,
+          "total_variation_distance": 0.61305365
+        },
+        "flat_shape": {
+          "mae_share": 0.06061532,
+          "rmse_share": 0.08806002,
+          "total_variation_distance": 0.72738383
+        },
+        "limitations": [
+          "One training day and one test day from same entity/site.",
+          "Test total is used only to define evaluation shape, never as predictive input.",
+          "Not a cold-start forecast, independent-site test, survey prediction, or kWh validation.",
+          "Only current share; column-average midpoint caveat applies; full-day diagnostic assumes one-minute sampling and correct README clock."
+        ]
+      }
+    },
+    {
+      "name": "Workshop1b",
+      "local_path": "Data/raw/metered/tanzania/extracted/Supplementary Data/Workshop1b.txt",
+      "sha256": "a0c2c43ef8a9dff255a4dc918cfd4e2599656f57a49e1ae1a93a57be7fc46f37",
+      "bytes": 100583,
+      "rows": 4405,
+      "numeric_columns": 4,
+      "class": "SME",
+      "entity_id": "Workshop1",
+      "site_id": "tanzania_hartvigsson_single_site",
+      "start_weekday": "Monday",
+      "start_clock_local_unspecified_timezone": "12:39",
+      "absolute_dates": null,
+      "sampling_seconds": 60,
+      "sampling_evidence": "paper methods p188; index increments one; original text has no header",
+      "elapsed_minutes": [
+        0.0,
+        4404.0
+      ],
+      "record_count_hours": 73.4167,
+      "index_differences": {
+        "1.0": 4404
+      },
+      "columns": [
+        {
+          "position": 0,
+          "name": "elapsed_minute",
+          "status": "inferred from index + paper"
+        },
+        {
+          "position": 1,
+          "name": "reported_average_current_A",
+          "status": "inferred by ordering + paper; exact midpoint of bounds"
+        },
+        {
+          "position": 2,
+          "name": "minimum_current_A",
+          "status": "inferred by ordering + paper"
+        },
+        {
+          "position": 3,
+          "name": "maximum_current_A",
+          "status": "inferred by ordering + paper"
+        }
+      ],
+      "column_ranges": [
+        [
+          0.0,
+          4404.0
+        ],
+        [
+          0.0,
+          40.27
+        ],
+        [
+          0.0,
+          10.46
+        ],
+        [
+          0.01,
+          80.1
+        ]
+      ],
+      "negative_value_count": 0,
+      "mean_current_A_reported_column": 0.896795,
+      "peak_reported_average_current_A": 40.27,
+      "reported_current_load_factor": 0.02227,
+      "max_difference_average_vs_midpoint_A": 0.005,
+      "all_reported_averages_between_min_max": true,
+      "complete_midnight_to_midnight_days": 2,
+      "hourly_mean1_shape_complete_days": [
+        0.040403,
+        0.03981,
+        0.04455,
+        0.044076,
+        0.045023,
+        0.046919,
+        0.172274,
+        0.517888,
+        0.536016,
+        0.126303,
+        0.5545,
+        0.016469,
+        1.605205,
+        6.720346,
+        1.347861,
+        2.952711,
+        0.526656,
+        0.014099,
+        8.56228,
+        0.014336,
+        0.01481,
+        0.01564,
+        0.020498,
+        0.021327
+      ],
+      "shape_status": "descriptive only; full civil days pooled, mean normalized to 1; not held-out validation",
+      "chronological_shape_diagnostic": {
+        "status": "retrospective_single_site_current_shape_diagnostic_not_model_validation",
+        "protocol": "Predict second complete civil day's 24 hourly normalized current shares using first complete day's shares; compare fixed uniform 1/24 baseline. No tuning or absolute energy prediction.",
+        "train_elapsed_minute_indices_inclusive": [
+          681,
+          2120
+        ],
+        "test_elapsed_minute_indices_inclusive": [
+          2121,
+          3560
+        ],
+        "train_hourly_shares": [
+          0.00128675,
+          0.00127678,
+          0.00133164,
+          0.00127678,
+          0.00130171,
+          0.0013466,
+          0.00656841,
+          0.02110172,
+          0.02186479,
+          0.00481285,
+          0.02309169,
+          0.00039899,
+          0.06713548,
+          0.28243685,
+          0.05647241,
+          0.12408668,
+          0.0218997,
+          0.00032418,
+          0.3601207,
+          0.00029924,
+          0.00031919,
+          0.00033914,
+          0.00043889,
+          0.00046882
+        ],
+        "test_hourly_shares": [
+          0.04036965,
+          0.03891051,
+          0.05301556,
+          0.05642023,
+          0.05787938,
+          0.06128405,
+          0.06663424,
+          0.06809339,
+          0.06809339,
+          0.04912451,
+          0.02431907,
+          0.0286965,
+          0.04231518,
+          0.04377432,
+          0.02577821,
+          0.01994163,
+          0.02626459,
+          0.02626459,
+          0.02918288,
+          0.02966926,
+          0.02966926,
+          0.0311284,
+          0.04134241,
+          0.04182879
+        ],
+        "previous_day_shape": {
+          "mae_share": 0.06077166,
+          "rmse_share": 0.09394148,
+          "total_variation_distance": 0.7292599
+        },
+        "flat_shape": {
+          "mae_share": 0.01251081,
+          "rmse_share": 0.01487025,
+          "total_variation_distance": 0.1501297
+        },
+        "limitations": [
+          "One training day and one test day from same entity/site.",
+          "Test total is used only to define evaluation shape, never as predictive input.",
+          "Not a cold-start forecast, independent-site test, survey prediction, or kWh validation.",
+          "Only current share; column-average midpoint caveat applies; full-day diagnostic assumes one-minute sampling and correct README clock."
+        ]
+      }
+    }
+  ],
+  "quality_issues": [
+    "No original column headers or units per column; ordering is inferred and recorded explicitly.",
+    "All purported averages equal (min+max)/2 within rounding; actual time-mean semantics require confirmation.",
+    "No absolute dates or timezone; README omits Household weekday. Do not fabricate calendar dates.",
+    "Repeated a/b files are the same entity/site, not independent sites.",
+    "Some 5448-row spans imply 90.8h at one minute, exceeding the paper's stated 88h device duration. Retain original ranges and flag discrepancy.",
+    "Do not identify all small current values as missing or outages; operating status is not labeled.",
+    "Paper discusses a possible household fault spike; retain it and conduct sensitivity analysis before normal-load metrics.",
+    "Site-total meter scope includes hospital, whereas paper comparison subtracts hospital; do not assume these raw files equal plotted totals.",
+    "Short observations at one established hydro mini-grid do not establish seasonal, multi-site or new-site prediction accuracy."
+  ],
+  "validation_design": {
+    "current_model_kwh_validation": "not_supported",
+    "allowed_now": [
+      "descriptive current-A ranges",
+      "normalized hourly current shape",
+      "current load-factor diagnostics with average-column caveat"
+    ],
+    "temporal_holdout": "Freeze hypotheses/shape recipe first; split whole days chronologically within entity, keep partial days out, fit scaling only on training days. Report tiny effective sample and same-site status.",
+    "site_holdout": "Impossible with one site; do not claim unseen-site validation.",
+    "entity_holdout": "Keep both a/b records of an entity together; never mix aggregate site target with component-meter training and claim independence.",
+    "interview_baseline": "Paper Tables 1-3 supply aggregate appliance/usage summaries and household socioeconomic descriptors; archive contains no matched individual appliance inventory. A table-based historical baseline could be frozen before examining meter curves, but is not a matched survey-to-kWh validation sample.",
+    "leakage_controls": [
+      "Do not use current/energy targets or meter-derived shape parameters as input to held-out prediction.",
+      "Do not tune appliance runtimes from held-out measured curves.",
+      "Keep authors' reported measured-energy results out of predictive features."
+    ]
+  }
+}

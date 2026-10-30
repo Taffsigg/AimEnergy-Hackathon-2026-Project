@@ -1,0 +1,73 @@
+{
+  "review_date": "2026-10-30",
+  "source_files_before_report": 285,
+  "project_initially_empty": true,
+  "processed_tables": [
+    {
+      "file": "village_data.csv",
+      "rows": 411,
+      "columns": 27,
+      "unique_village_ids": 411
+    },
+    {
+      "file": "existing_mg_trainingdata.csv",
+      "rows": 25,
+      "columns": 38
+    },
+    {
+      "file": "existing_mg_villages.csv",
+      "rows": 25,
+      "columns": 11
+    },
+    {
+      "file": "candidate_mg_testdata.csv",
+      "rows": 39,
+      "columns": 19
+    }
+  ],
+  "household": {
+    "rows": 28625,
+    "columns": 255,
+    "unique_hhid": 445,
+    "repeated_hhid_rows": 28180,
+    "rows_per_household_min": 64,
+    "rows_per_household_max": 71,
+    "households_with_conflicting_hhsize": 421,
+    "households_with_conflicting_kwh_m": 0,
+    "kwh_formula": "elec_cost_ugx * 30 / elec_days / 250",
+    "formula_comparable_rows": 28561,
+    "formula_matching_rows": 28561,
+    "target_provenance": "survey payments converted using assumed tariff; not meter readings"
+  },
+  "village_zero_counts": {
+    "mean_ndvi": 366,
+    "mean_wind_speed": 366,
+    "mean_pvout_solar_radiation": 32,
+    "building_count": 21,
+    "total_population": 18
+  },
+  "lfs_notebook_count": 16,
+  "lfs_pointer_files": [
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predicting_minigrid_villages/predict_electrification_strategy_for_village.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predicting_minigrid_villages/predict_minigrid_village.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predicting_minigrid_villages/train_electrification_strategy_for_village_predictor.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predicting_minigrid_villages/train_minigrid_village_predictor.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predict_future_building_count/historic_building_counts_simple_regression.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predict_future_building_count/image_regression_data_preprocesser.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predict_future_building_count/image_regression_model_trainer.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/predict_future_building_count/image_regression_tester.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/rank_candidate_minigrid_village_mgperf/compare_performance_of_ml_algorithms.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/rank_candidate_minigrid_village_mgperf/rank_candidate_mgs.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/rank_candidate_minigrid_village_mgperf/train_random_forest_regressor.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/rank_minigrid_villages_PUE/predict_PUE_and_rank_candidate_mg_villages.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/rank_minigrid_villages_PUE/rank_candidate_minigrids_lamwo.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/rank_minigrid_villages_PUE/train_PUE_predictor.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/reposition_minigrids/move_minigrids.ipynb",
+    "lamwo-electrification-project-main/lamwo-electrification-project-main/notebooks/village_feature_extraction.ipynb"
+  ],
+  "validation": {
+    "model_training_executed": false,
+    "app_build_executed": false,
+    "metered_site_validation_found": false
+  }
+}

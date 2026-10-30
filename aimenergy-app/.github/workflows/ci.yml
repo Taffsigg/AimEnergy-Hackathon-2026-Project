@@ -1,0 +1,32 @@
+name: Verify AimEnergy
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Find app package
+        id: app
+        shell: bash
+        run: |
+          if [ -f server.mjs ]; then
+            echo 'directory=.' >> "$GITHUB_OUTPUT"
+          else
+            echo 'directory=AimEnergy Project/aimenergy-app' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Check runtime and test committed artifacts
+        working-directory: ${{ steps.app.outputs.directory }}
+        run: |
+          node --check server.mjs
+          node --test tests/*.test.mjs
+      - name: Build private container image
+        working-directory: ${{ steps.app.outputs.directory }}
+        run: docker build -t aimenergy:ci .

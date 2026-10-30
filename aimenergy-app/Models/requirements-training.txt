@@ -1,0 +1,6 @@
+# Exact versions used to generate the checked-in artifacts (Python 3.11.15).
+# Install in an isolated virtual environment; browser/server runtime needs none.
+numpy==2.4.6
+pandas==3.0.5
+scipy==1.17.1
+scikit-learn==1.9.0

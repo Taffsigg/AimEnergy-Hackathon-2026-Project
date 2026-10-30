@@ -1,0 +1,14 @@
+# Allowlist the minimal public runtime; raw inputs and training sources stay out.
+*
+!Dockerfile
+!package.json
+!server.mjs
+!dist/
+!dist/**
+dist/**/.DS_Store
+dist/**/.env*
+dist/**/Data/**
+dist/**/Models/**
+dist/**/*.csv
+dist/**/*.xlsx
+dist/**/*.parquet

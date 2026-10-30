@@ -1,0 +1,43 @@
+# Verification record — ML extension
+
+30 October 2026.
+
+## Passed
+
+- 25 JavaScript tests: scenario engine, all411 village integrations, aggregate evidence, exported ML parity, inference/interval contracts, AI UI event regressions and API validation/security behavior.
+- 4 Python private-data audits: household independence, split isolation, leakage exclusions and source/provenance consistency.
+- 64-tree model selected on training-only CV; frozen training/calibration/test split 267/89/89 verified. Three Python/JavaScript synthetic parity fixtures match.
+- RAMP previously executed 7 categories × 30 seeded days, regenerated identically; normalized shares conserve scenario energy.
+- Live local /api/health reports modelReady and planningReady true with RAMP shapes.
+- Browser UI shows real metrics, split counts, importance, input flags and geographic groups. Numeric and categorical edits update prediction; applying it changes the planner.
+- Desktop 1366 × 900 and mobile 390 × 844 layout inspected. No horizontal overflow observed at the mobile breakpoint. Temporary viewport override reset.
+- HTML planning report actually downloaded and inspected: includes model identity, household profile labels/values and limitations. CSV downloaded with 25 rows (header + 24 months), 10 columns.
+- Browser error log empty after tested flows. A browser-discovered numeric-input update defect was fixed and covered by a regression test.
+
+## Limits
+
+No operator-metered site validation, current Lamwo household evaluation, causal feature effect, calibrated village-total interval or validated demand-growth forecast was established. Test household MAE 44.14 vs 49.09 baseline; signed bias −28.96; nominal 90% interval covered 77/89 = 86.5%, mean width 154.48 kWh. Rural test n = 18.
+
+Docker is not installed locally, so image build is unverified. The Node 22 container/CI baseline is configured, while local Node 24 execution was tested. Hosting was not provisioned or published; the runnable local API/app and deployment configuration are delivered. Broader browser/device coverage and production hardening remain part of the roadmap.
+
+Screenshot: screenshots/ai-model-lab.png. Example exported report: examples/Orii-Gangodye-AI-report.html. Raw Data and household split membership are excluded from deployment and portable release archives.
+
+## Field assessment release
+
+38 JavaScript tests pass, including eight assessment/provenance tests and five offline snapshot tests; four private-data Python audits also pass. Browser checks verified the passport, sensitivity-ranked questions, valid response saving, before/after comparison, read-only application and demonstration provenance. Manual locations remain user-entered, and every active engine input has a passport entry.
+
+A complete offline pack was prepared. The owned Node server was stopped and independently confirmed unreachable. The browser then reloaded from its snapshot, recovered the draft, accepted a second demonstration answer, recomputed and applied the scenario, and downloaded an assessment HTML report. The server was restored afterward. This is a server-unavailability test, not a claim that every device/network configuration was tested.
+
+The demonstration starts at 1,569.57 kWh/month in Orii Gangodye. A hypothetical mill adds 495 kWh at three equivalent hours per operating day; changing to six hours makes the revision +990 kWh/month. Both answers are explicitly marked Demonstration response. No actual field visit or measured accuracy improvement is claimed.
+
+Desktop 1366×900 and mobile 390×844 were inspected; no page-level horizontal overflow appeared on mobile. The browser error log was empty. The final snapshot was refreshed after source edits and the viewport override reset. Screenshot: screenshots/field-assessment.png. Example export: examples/Orii-Gangodye-demonstration-assessment.html.
+
+## Metered evidence release — 30 October 2026
+
+38 JavaScript regressions pass. Three additional Python tests verify midnight alignment, exclusion of partial days, minute-index gaps, normalization, zero-current rejection, metric units, exact reproduction, all later-day inclusion and retention of the unfavorable RMSE result. The four existing private household-data audits also pass: 45 automated checks total. The current benchmark received an independent review with no material issues.
+
+Browser checks show the new navigation, source count, complete result ledger, correct rounded metrics and caveats. At desktop1366×900 and mobile390×844, no page-level horizontal overflow was observed; charts/tables can scroll inside their panels. Screenshot: screenshots/metered-evidence.png. The JSON resource is checked through the local server; a browser download-event check timed out, so successful download interaction is not claimed.
+
+Tanzania source SHA-256 matches the publisher; no kWh conversion, forest retraining or current-derived planner input was made. KIT archive access succeeded, but throttling/slow throughput prevented complete retrieval; its partial archive is explicitly excluded from validation and release ZIPs. No measured kWh/cold-start validation or growth accuracy is established.
+
+The final 23-asset offline snapshot reached Ready, was reloaded, and displayed the Metered evidence view with all four result rows. Temporary viewport overrides were reset. Portable and private ZIP integrity/exclusion checks passed; partial files and request headers/cookies are excluded.
