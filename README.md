@@ -56,7 +56,7 @@ Automatic imagery coverage is currently **one pilot village**, not all 411 villa
 
 Imports stay in the visitor's browser. They do not upload automatically, retrain the model or change demand assumptions. The app does not control a drone, process raw flight photographs, detect roofs automatically or verify a survey's positional accuracy. Building counts do not establish occupied households, customers or electricity use.
 
-The **field-v6** offline pack includes **35 static assets**, covering the new imagery, artwork and workspace. Prepare or refresh it while online, wait for Ready and reload. Imported records are stored separately from the app snapshot.
+The **field-v7** offline pack includes **38 static assets**, covering the new imagery, artwork and workspace. Prepare or refresh it while online, wait for Ready and reload. Imported records are stored separately from the app snapshot.
 
 The satellite crop is a **noncommercial demonstration asset under CC BY-NC-SA 4.0**. It is attributed to [EOxCloudless](https://cloudless.eox.at) by [EOX IT Services GmbH](https://eox.at): **Contains modified Copernicus Sentinel data 2024**. Commercial deployment needs suitable permission or replacement imagery.
 
@@ -120,7 +120,7 @@ From `aimenergy-app`:
 npm test
 ```
 
-Recorded verification includes **44 JavaScript tests** covering planning invariants, village integration, model parity, API handling, field provenance, routing, offline snapshots and bounded remote-evidence imports. Seven additional Python checks cover private household-data audits and the metered diagnostic when their local data is available. Browser checks exercised GeoJSON/image/CSV imports, year selection, restoration, evidence export, desktop/mobile layouts and offline-pack preparation. Synthetic QA imports were removed afterward. See the [verification record](aimenergy-app/docs/VERIFICATION.md) for the exact scope and remaining limits.
+Recorded verification includes **48 JavaScript tests** covering planning invariants, village integration, model parity, API handling, field provenance, routing, offline snapshots and bounded remote-evidence imports. Seven additional Python checks cover private household-data audits and the metered diagnostic when their local data is available. Browser checks exercised GeoJSON/image/CSV imports, year selection, restoration, evidence export, desktop/mobile layouts and offline-pack preparation. Synthetic QA imports were removed afterward. See the [verification record](aimenergy-app/docs/VERIFICATION.md) for the exact scope and remaining limits.
 
 Normal inference uses the prepared JSON model. Retraining needs the separately documented Python environment and local source data. RAMP uses a separate pinned environment. See [model artifacts](aimenergy-app/Models/README.md), the [data guide](aimenergy-app/Data/README.md) and the [complete guide](aimenergy-app/READ.md) before reproducing research outputs.
 
@@ -145,3 +145,9 @@ Public runtime assets are under `aimenergy-app/dist/`. Raw household data, split
 The Tanzania research exhibit uses **CC BY-NC 3.0** data; commercial use/training clearance is not established. It is separate from the household model and planner inputs. Other data and dependencies retain their own terms. Read the [third-party notices](aimenergy-app/docs/THIRD_PARTY_NOTICES.md) for source attribution and the [data guide](aimenergy-app/Data/README.md) for publication boundaries.
 
 The EOX satellite crop has its own **CC BY-NC-SA 4.0** terms. AI-generated drone artwork is labelled as illustration and is never used as measurement or training evidence. Keep `AimEnergy-ML-Local.zip` private; the portable demo package and private local-data archive have different sharing scopes.
+
+## Community USSD and offline access
+
+Choose **Community USSD** for the browser-only basic-phone simulator: consent, village codes, household/business categories, owned or intended appliances, business hours, interest and explicit confirmation. Completed simulations enter a local review inbox and the village evidence passport, including JSON export. Review preserves the simulation label and never changes demand assumptions automatically. No phone numbers are collected.
+
+The 38-asset **field-v7** pack supports this preview offline after preparation. Responses stay on the device until exported; no automatic synchronization is implemented. Live USSD requires mobile coverage, an online backend, a provider and service code. See the [community guide](aimenergy-app/docs/USSD_OFFLINE.md).

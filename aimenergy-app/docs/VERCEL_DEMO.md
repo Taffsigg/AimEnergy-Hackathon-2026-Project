@@ -96,3 +96,7 @@ The Tanzania exhibit remains noncommercial research under CC BY-NC 3.0. Public d
 - **A judge cannot access the URL:** check the deployment's access/protection settings and intended sharing audience before submitting the link.
 
 For future source changes, push the intended branch and inspect the corresponding Vercel deployment. Preserve actual commit history; publishing does not change when the project was developed.
+
+## Community preview
+
+The /planner.html#community route serves the browser-only USSD simulator and local inbox without a telecom key. The static deployment has no live USSD callback backend or cross-device synchronization. Prepare its offline pack on the deployed domain; localhost records do not transfer automatically.

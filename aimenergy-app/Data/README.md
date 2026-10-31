@@ -32,3 +32,7 @@ The repository-root `dataversefiles` folder contains the user-supplied Harvard D
 ## Remote evidence
 
 raw/satellite retains acquired source documentation and the real pilot crop locally; metadata/satellite-evidence-audit.json records provenance and hashes. dist/data/satellite-evidence.json is the public manifest. No annual Google village-count series was acquired. metadata/drone-illustration.json records the AI-artwork prompt and hash; artwork is not measurement. Empty templates/drone_survey.geojson and templates/building_history.csv contain no fabricated observations. Imports made through the browser stay in its local storage until explicitly exported. See docs/REMOTE_EVIDENCE.md.
+
+## Community simulation responses
+
+Completed, consented simulations stay in browser storage under aimenergy.community.v1, rather than repository data. Exports retain ussd_simulator / demonstration provenance and distinct owned/intended appliances. No real participant identities, phone numbers or meter readings are acquired. Reviewed simulations never become model labels. See [the community guide](../docs/USSD_OFFLINE.md).

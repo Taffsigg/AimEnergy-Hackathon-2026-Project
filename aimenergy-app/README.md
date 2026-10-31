@@ -73,7 +73,7 @@ Data/templates/site_month.csv and its dictionary provide an empty operator aggre
 
 ## Landing page
 
-The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, actual product screenshots, scoped evidence results and labelled AI drone artwork. Open prototype launches planner.html; direct links can open the AI, satellite/drone, field and evidence workspaces. Offline snapshot field-v6 includes both pages and the remote-evidence assets. See [landing-page documentation](docs/LANDING_PAGE.md).
+The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, actual product screenshots, scoped evidence results and labelled AI drone artwork. Open prototype launches planner.html; direct links can open the AI, satellite/drone, field and evidence workspaces. Offline snapshot field-v7 includes both pages and the remote-evidence assets. See [landing-page documentation](docs/LANDING_PAGE.md).
 
 ## Satellite and drone evidence
 
@@ -88,10 +88,16 @@ Open **Satellite & drone**, or `/planner.html#remote`. Choose **Open the Orii Ga
 
 ![Satellite and drone evidence workspace](docs/screenshots/satellite-drone-evidence.jpg)
 
-The EOX crop is included under **CC BY-NC-SA 4.0** for noncommercial demonstration, with visible EOxCloudless/EOX attribution and **Contains modified Copernicus Sentinel data 2024**. Commercial use needs suitable permission or replacement imagery. The **35-asset field-v6** offline pack includes the new workspace; refresh it while connected and reload after Ready. User imports are stored separately from the static pack.
+The EOX crop is included under **CC BY-NC-SA 4.0** for noncommercial demonstration, with visible EOxCloudless/EOX attribution and **Contains modified Copernicus Sentinel data 2024**. Commercial use needs suitable permission or replacement imagery. The **38-asset field-v7** offline pack includes the new workspace; refresh it while connected and reload after Ready. User imports are stored separately from the static pack.
 
-The recorded JavaScript suite now has **44 passing tests**, including remote-evidence validation. Browser QA exercised survey/image/history imports, year selection, restoration, export and phone layouts; synthetic test imports were removed. Read [remote-evidence documentation](docs/REMOTE_EVIDENCE.md), [third-party notices](docs/THIRD_PARTY_NOTICES.md) and the [verification record](docs/VERIFICATION.md) for details.
+The recorded JavaScript suite now has **48 passing tests**, including remote-evidence validation. Browser QA exercised survey/image/history imports, year selection, restoration, export and phone layouts; synthetic test imports were removed. Read [remote-evidence documentation](docs/REMOTE_EVIDENCE.md), [third-party notices](docs/THIRD_PARTY_NOTICES.md) and the [verification record](docs/VERIFICATION.md) for details.
 
 ## DRC geographic benchmark
 
 Metered evidence now includes a separate CC0 DRC benchmark: 1,202 survey respondents, three areas held out in turn, separate household/SME connection and conditional kWh-purchase tasks. Household uptake Brier error is 0.2214 versus 0.2885 for training prevalence. Household purchase MAE is almost unchanged (23.87 versus 23.88); SME purchase MAE is worse (84.61 versus 61.66). All area results, both baselines, attrition sensitivity and provenance are downloadable. Purchases are consumption proxies rather than direct meter readings; the Uganda model and village inputs are unchanged. See [benchmark methods and results](docs/DRC_BENCHMARK.md). Reproduce with `npm run benchmark:drc`; two Python checks cover weighting, area separation and held-out-target isolation.
+
+## Community USSD and offline access
+
+Choose **Community USSD** for consented, village-scoped household/business simulation responses. Owned and intended appliances remain distinct; business opening hours and interest never become measured demand. The local review inbox links to passport details and JSON exports. Reviewed responses retain demonstration provenance. No phone numbers or live telecom sessions are collected.
+
+The 38-asset **field-v7** pack supports this browser preview and field assessment after offline preparation. No automatic synchronization or live USSD integration is implemented. See [the community guide](docs/USSD_OFFLINE.md).
