@@ -1,39 +1,33 @@
-# AimEnergy: three-minute pitch
+# AimEnergy: three-minute customer and impact pitch
 
 ## Spoken script
 
-A mini-grid can be technically excellent and still serve the wrong demand. Before a developer builds, they need more than a confident number. They need to know what supports it—and which uncertainty to investigate next.
+Before a mini-grid developer builds, they must answer two expensive questions: who will connect, and how much electricity will they buy? A village can look promising on a map while its actual demand is very different. The developer needs a reviewable decision and a focused field assessment.
 
-AimEnergy connects open geographic evidence, inspectable machine learning and a practical field workflow.
+Our first customer is a mini-grid developer or feasibility consultancy assessing a portfolio of villages. AimEnergy helps its planning team turn geographic context, model evidence and local observations into an assessment they can explain and revise.
 
 [Show Orii Gangodye.]
 
-Our Uganda pilot starts with 411 real villages. Population, buildings and public facilities describe the settlement. They do not tell us how much electricity people will buy. We keep that distinction visible.
+The prototype covers 411 real Lamwo village records. That is coverage, not villages already served. In this demonstration, explicit assumptions imply about 74 household connections and one school. Adding a hypothetical mill raises monthly scenario energy from about 1,570 to 2,065 kilowatt-hours. One enterprise can materially change the plan; its existence, operating hours and intention to connect need checking.
 
-[Open AI model lab.]
+[Open Field assessment.]
 
-We trained a 64-tree household random forest. Auditing 28,625 survey rows revealed only 445 independent households. We split households, not repeated rows, into training, calibration and untouched testing.
-
-On 89 test households, mean absolute error is 44.14 kilowatt-hours per month versus 49.09 for a median baseline: about ten percent lower on this sample. The target comes from payments, not meters. We also show the underprediction and the interval coverage shortfall.
-
-[Apply a profile, then open Field assessment.]
-
-The estimate becomes a labelled household assumption. Businesses and services remain explicit. RAMP supplies reproducible timing shapes, and the planner explores 24 months. A hypothetical mill at our default three hours adds 495 kilowatt-hours a month.
-
-Our distinguishing workflow turns uncertainty into action: inspect each input's evidence, see the field questions with the largest declared energy sensitivity, record an answer, and compare the revision while preserving the original. Prepare the device once and the assessment works without the app server.
+AimEnergy shows the evidence behind each input and prioritizes questions by their declared effect on the scenario. A field team can record responses offline, preserve the baseline and compare the revision. This is our proposed differentiation: a traceable estimate-to-field-to-revision workflow. AI and satellite planning already exist; we are not claiming to invent them.
 
 [Open Metered evidence.]
 
-We acquired 40,809 real current records from a Tanzania mini-grid and reproduced four later-day timing comparisons. We show the result where the simple reference loses on RMSE. Current is not energy, and this does not establish unseen-village accuracy.
+We also test our assumptions. A separate DRC benchmark holds out each of three areas in turn. Household connection predictions improve over a simple baseline, while purchase predictions show little or negative improvement. We show those results because a planning tool should make its limits visible. The Uganda model and village scenarios are not direct-meter validated.
 
-[Show export and pilot protocol.]
+[Show the unit-economics example.]
 
-The next step is concrete: an operator-approved aggregate template, frozen site splits and baselines, followed by a monitored private pilot. Our five-to-six-month deployment path depends on passing those gates.
+Our commercial hypothesis is lower assessment cost while preserving quality. As an illustrative example only: if today's assessment costs $1,000, and AimEnergy reduces the operator's work to $600 plus a $150 service fee, the customer saves $250 per village. If delivery costs us $50, contribution is $100 before fixed costs. These are assumptions to test, not achieved savings or a validated price.
 
-Today AimEnergy delivers a working prototype, trained model, prediction API, reproducible evidence and offline assessment. We help a developer see what they know, what they are assuming, and what to verify before committing to a village's energy future.
+Our next step is a 5–10-village shadow pilot with one operator: record the existing cost and time, compare the assisted workflow, verify evidence quality, and evaluate direct-meter outcomes where data allows. A limited deployment in five to six months depends on those gates and operational readiness.
+
+AimEnergy makes village demand assumptions inspectable, fieldwork more focused and decisions easier to revise. Our aim is to help developers plan electricity around the people and businesses who will use it.
 
 ## Rehearsal and claims
 
-Rehearse at a natural pace and shorten to the portal's three-minute limit. The supplied schedule separately mentions a 3–5 minute prototype video; verify final requirements. Reset site defaults before the mill example: 1,569.57 → 2,064.57 kWh/month. Existing saved demonstration answers may instead show six mill hours and +990 kWh/month.
+Rehearse and shorten to the actual submission time limit. Use the baseline village defaults before the mill example. The mill is hypothetical; 1,569.57 → 2,064.57 kWh/month is arithmetic, not measured impact. Keep all dollar figures visibly labelled illustrative. Do not claim customer savings, engineering sizing accuracy, first-in-market status, a signed operator partnership, decades without maintenance or universal geographic transfer.
 
-Do not call household testing metered-site validation, current-shape errors kWh accuracy, scenario envelopes calibrated confidence intervals, geographic clusters demand labels, or sensitivity causal effects. No partnership, measured savings, prize outcome or unconditional production date is promised.
+Detailed customer, sustainability, feasibility, scale and economics assumptions: [MENTOR_RESPONSE.md](MENTOR_RESPONSE.md). Technical evaluation: [DRC_BENCHMARK.md](DRC_BENCHMARK.md) and [MODEL_CARD.md](MODEL_CARD.md).

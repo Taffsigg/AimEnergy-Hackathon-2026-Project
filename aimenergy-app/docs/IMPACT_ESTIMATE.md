@@ -1,24 +1,45 @@
-# AimEnergy: one-page impact estimate
+# AimEnergy: impact and unit-economics case
 
-**Purpose.** Help mini-grid developers inspect preconstruction assumptions through real geography, household ML and reproducible appliance timing scenarios.
+**Problem:** Mini-grid developers commit funds before connection uptake and electricity purchases are known. Fragmented evidence and uncertain assumptions make village assessments costly to compare and revise.
 
-**Implemented.** 411 real Lamwo villages; four learned geographic context groups; a 64-tree household forest; RAMP profiles; 24-month scenarios; explanations and exports; browser inference and a private deployment API. No live satellite-image pipeline or cold-start metered-site validation is claimed. A separate real-current diagnostic and operator pilot protocol strengthen the evidence package.
+**Customer:** The development/planning lead at a mini-grid developer or feasibility consultancy assessing a portfolio. **Proposed value:** reduce assessment time and cost while preserving evidence quality. Residents, enterprises and public services are downstream potential beneficiaries; none is counted as newly served by this prototype.
 
-| Test evidence | Result |
+**Solution:** Geographic context, inspectable model evidence, explicit household/business scenarios and an offline evidence passport that turns sensitive assumptions into field questions, retains the baseline and explains revisions. This is a proposed workflow differentiation, not a first-in-market claim. Similar AI/satellite planning products exist.
+
+## What we can demonstrate today
+
+| Evidence or demonstration | What it supports |
 |---|---|
-| Independent household split | 267 train / 89 calibration / 89 untouched test |
-| Training-only selection | Five-fold CV MAE 29.38 forest versus 33.30 median |
-| Final held-out MAE | 44.14 versus 49.09 kWh/household/month; about 10.1% lower on this sample |
-| Signed bias | −28.96 kWh/month; systematic underprediction remains |
-| Interval assessment | 90% nominal; 77/89 = 86.5% observed coverage; mean width 154.48 kWh |
-| Rural evaluation | 18 test households; descriptive only |
-| Target | 2019/2020 survey payments converted using assumed 250 UGX/kWh |
-| Metered research | 40,809 Tanzania current records, four later-day shape comparisons at one site; no kWh/cold-start validation |
+| 411 Lamwo village records | Geographic coverage, not deployments |
+| Orii Gangodye defaults | About 74 assumed household connections and one school; 1,569.57 kWh/month |
+| Hypothetical mill | +495 kWh/month to 2,064.57, about +31.5%; scenario arithmetic, not measured income or energy savings |
+| Uganda household proxy | Held-out MAE 44.14 versus 49.09 kWh/month; payments-derived target, systematic underprediction remains |
+| DRC geographic benchmark | Household uptake Brier 0.2214 versus 0.2885; household purchase MAE 23.87 versus 23.88; SME purchase MAE 84.61 versus 61.66 |
+| Field workflow | Traceable questions, offline responses, baseline/revision comparison and exports; operator time/cost improvement remains unmeasured |
 
-**Decision demonstration.** At the explicit Orii Gangodye defaults—60% household uptake, 4.5 people per household, 20 kWh/connected household/month and one school at 3 kWh/day—base energy is 1,569.57 kWh/month. A hypothetical 7.5 kW mill × 3 equivalent full-power hours/day × 22 days/month adds 495 kWh, raising total energy to 2,064.57 kWh/month. This is scenario arithmetic, not measured impact or evidence that the mill exists.
+DRC outcomes are prepaid kWh purchases, not direct meter readings. Three areas share one operator. Neither household benchmark establishes Ugandan village accuracy, engineering sizing or monetary savings.
 
-**Judging alignment.** Impact: location-specific, inspectable decisions, with future metered error and user assessment-time measurements specified. Innovation: household ML, geographic clustering, RAMP and sensitivity questions linked without confusing their evidence. Sustainability: lightweight inference, reproducible preparation and model/source hashes. Feasibility: runnable UI/API, tests and container configuration. Scalability: manual locations and a planned country-transfer test; universal validity remains unproven.
+## Illustrative economics: all figures are assumptions, not measured impact
 
-**Deployment path.** Through March–April 2027, conditional on operator access: agree aggregate data sharing; evaluate measured demand on untouched sites and later periods; test transfer; run a monitored private pilot; pass security, performance and operational readiness gates. Agree acceptance thresholds before final evaluation.
+Unit: one completed village assessment. Currency: USD.
 
-**Claims not established.** Avoided oversizing, reduced outages, capital savings, tariff affordability, bankability and present-village accuracy need independent data and field evaluation. Village low/high values are fixed scenario envelopes, not transferred household conformal intervals. No guaranteed production date or hackathon outcome is asserted.
+| Item | Assumption |
+|---|---:|
+| Customer's current assessment cost | $1,000 |
+| Assisted operator work, excluding AimEnergy fee | $600 |
+| Proposed AimEnergy service fee | $150 |
+| Assisted total / customer saving | $750 / $250 (25%) |
+| AimEnergy direct delivery cost | $50 |
+| Contribution before fixed costs | $100 (66.7%) |
+
+At an assumed $2,000 monthly fixed cost, 20 paid assessments cover it at this contribution, before acquisition costs, tax and omitted expenses. Across 100 assessments, assumed customer savings total $25,000; these are not deployed grids. If assisted operator work costs $850 plus the fee, customer savings are zero. Replace assumptions with observed pilot costs and test willingness to pay before presenting a commercial forecast.
+
+## Pilot and scale
+
+Run a 5–10-village shadow pilot with one operator. Measure cost/staff hours per assessment, turnaround time, dated evidence completeness, verified priority questions, adoption/repeat use and independently evaluated connection/kWh errors. Agree targets before evaluation; a proposed target such as 25% lower assessment cost is a gate to test, not a promise. Compare equivalent tasks and inputs, including analyst review, travel and support costs.
+
+A five-to-six-month rollout is conditional on partner access, useful results and operational readiness. Use existing software/data and operator field teams; drones are optional. A five-year supported service horizon is a proposed maintenance commitment requiring recurring revenue, named ownership, dependency/security reviews, versioned data/models and recovery procedures. It is not a decades-long unattended-life claim.
+
+Scale through developer portfolios and country-specific data connectors. Each geography needs local validation and permissions; software reuse does not prove accuracy transfer. Commercial deployment also needs clearance or replacement of the current noncommercial satellite/Tanzania assets.
+
+Full assumptions and sources: [MENTOR_RESPONSE.md](MENTOR_RESPONSE.md). Implementation gates: [DEPLOYMENT_ROADMAP.md](DEPLOYMENT_ROADMAP.md). Benchmark scope: [DRC_BENCHMARK.md](DRC_BENCHMARK.md).

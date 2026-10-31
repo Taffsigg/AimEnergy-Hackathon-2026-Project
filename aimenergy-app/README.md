@@ -49,7 +49,8 @@ It is technically runnable now. An evidence-backed operator deployment is planne
 
 ## Hackathon kit
 
-- docs/PITCH.md: three-minute AI story and demo flow.
+- docs/PITCH.md: three-minute customer, impact and demo story.
+- [Customer and economics case](docs/MENTOR_RESPONSE.md): mentor questions, buyer, illustrative costs, maintenance and scale.
 - docs/IMPACT_ESTIMATE.md: one-page result and evidence limits.
 - docs/MODEL_CARD.md: training, evaluation and appropriate use.
 - docs/ARCHITECTURE.md: data, model and serving boundaries.

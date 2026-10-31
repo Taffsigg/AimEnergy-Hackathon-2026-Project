@@ -128,7 +128,8 @@ Normal inference uses the prepared JSON model. Retraining needs the separately d
 
 | Document | Purpose |
 |---|---|
-| [Pitch](aimenergy-app/docs/PITCH.md) | Three-minute spoken story and demo notes |
+| [Pitch](aimenergy-app/docs/PITCH.md) | Three-minute customer, impact and demo story |
+| [Customer and economics case](aimenergy-app/docs/MENTOR_RESPONSE.md) | Problem, buyer, value proposition, illustrative costs, sustainability and scale |
 | [Impact estimate](aimenergy-app/docs/IMPACT_ESTIMATE.md) | One-page evidence and impact scope |
 | [Demo checklist](aimenergy-app/docs/DEMO_CHECKLIST.md) | Rehearsal, exports and submission checks |
 | [Pilot protocol](aimenergy-app/docs/PILOT_PROTOCOL.md) | Proposed operator-data and untouched-site evaluation |
