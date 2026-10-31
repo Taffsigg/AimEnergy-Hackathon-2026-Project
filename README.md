@@ -1,3 +1,5 @@
+<img src="aimenergy-app/dist/images/aimenergy-logo.png" width="96" height="96" alt="AimEnergy logo">
+
 # AimEnergy
 
 AimEnergy is a browser-based tool for planning rural mini-grids. It brings together village data, household models, demand scenarios and field assessments. A system feasibility workspace lets you explore how solar panels, batteries and a generator could serve an assumed load.

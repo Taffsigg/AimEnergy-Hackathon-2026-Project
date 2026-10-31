@@ -1,0 +1,27 @@
+{
+  "project": "AimEnergy",
+  "kind": "generated brand symbol",
+  "generator": "Built-in image_gen",
+  "prompt": "Use case: logo-brand. Create a single polished brand symbol for AimEnergy, a mini-grid demand planning project for rural energy access. Symbol only, NO lettering or words. Design a strong compact geometric capital A with a subtle lightning-shaped negative space inside and one small warm solar accent, conveying reliable renewable electricity. Flat vector-like silhouette, precise simple edges, no gradients, no texture, no shadows, no 3D. Rich forest green #245346 and fresh lime #C7E894 with a restrained warm gold #E5B95C accent. Recognizable at 32 pixels. Center one symbol on a square transparent canvas, with even 8 percent clear padding. Fully transparent background with genuine alpha. No mockup, no multiple variants, no watermark. This is a finished practical logo mark to pair with the existing AimEnergy wordmark in an app and presentation.",
+  "source_sha256": "26580a2c3ed7d5fbc10c404f17178d47e812fb0fa8e7ef58dbb90f2fd42e3230",
+  "public_asset": "dist/images/aimenergy-logo.png",
+  "public_asset_sha256": "495f5baaeb35a7c1dd39073762614bf5273f01b1ebc13059ab182bf4dbbfc2e6",
+  "derivatives": [
+    {
+      "path": "dist/images/aimenergy-logo.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "dist/icons/aimenergy-192.png",
+      "width": 192,
+      "height": 192
+    },
+    {
+      "path": "dist/icons/aimenergy-32.png",
+      "width": 32,
+      "height": 32
+    }
+  ],
+  "processing": "Proportional resizing only, PNG alpha preserved."
+}

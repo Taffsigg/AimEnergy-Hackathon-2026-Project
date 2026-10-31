@@ -1,3 +1,5 @@
+<img src="dist/images/aimenergy-logo.png" width="96" height="96" alt="AimEnergy logo">
+
 # AimEnergy
 
 A browser-based mini-grid planning prototype with village data, demand scenarios, field assessments and hourly system feasibility calculations.

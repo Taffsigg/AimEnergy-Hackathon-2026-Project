@@ -28,3 +28,7 @@ The drone illustration is AI-generated conceptual artwork produced with built-in
 ## PVGIS solar resource
 
 European Commission Joint Research Centre, PVGIS 5.3 / PVGIS-SARAH3 solar and ERA5 meteorological data: https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en. The acquired pilot is a 2023 1 kWp c-Si reference at 10 degrees south-facing with 14% system losses. Derived hourly values and provenance retain attribution. Consult the source terms for reuse; software licensing is not asserted to be the numeric data license. No SAM code was copied; the financial scenario is an original simplified calculation, not a SAM validation.
+
+## AimEnergy logo
+
+The AimEnergy brand symbol is generated artwork produced with built-in image_gen. Proportional PNG sizes are supplied for the site, browser tab and app manifest. The prompt and image hashes are recorded in Data/metadata/logo-artwork.json.
