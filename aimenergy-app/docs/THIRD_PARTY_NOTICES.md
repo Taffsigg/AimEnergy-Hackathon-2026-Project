@@ -24,3 +24,7 @@ The Orii Gangodye 2024 crop is EOxCloudless (https://cloudless.eox.at) by EOX IT
 Google Open Buildings Temporal 2016–2023 is cited for potential building-history inputs under its source terms, but no village annual raster aggregation was acquired. The empty state is not a zero-growth finding.
 
 The drone illustration is AI-generated conceptual artwork produced with built-in image_gen. It is not an actual flight, site photo, orthomosaic or measured source. Prompt and artifact hash: Data/metadata/drone-illustration.json.
+
+## PVGIS solar resource
+
+European Commission Joint Research Centre, PVGIS 5.3 / PVGIS-SARAH3 solar and ERA5 meteorological data: https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en. The acquired pilot is a 2023 1 kWp c-Si reference at 10 degrees south-facing with 14% system losses. Derived hourly values and provenance retain attribution. Consult the source terms for reuse; software licensing is not asserted to be the numeric data license. No SAM code was copied; the financial scenario is an original simplified calculation, not a SAM validation.

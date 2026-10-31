@@ -100,3 +100,7 @@ For future source changes, push the intended branch and inspect the correspondin
 ## Community preview
 
 The /planner.html#community route serves the browser-only USSD simulator and local inbox without a telecom key. The static deployment has no live USSD callback backend or cross-device synchronization. Prepare its offline pack on the deployed domain; localhost records do not transfer automatically.
+
+## System feasibility
+
+The static /planner.html#system workspace uses a cached PVGIS pilot series and browser calculations, so no API key or backend is needed for that example. Other sites use downloaded matching PVGIS files. This release has no automatic live PVGIS proxy, cloud account/version store or native PDF generation. Local versions do not transfer automatically to the deployed domain.

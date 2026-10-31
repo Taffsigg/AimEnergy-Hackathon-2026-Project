@@ -73,7 +73,7 @@ Data/templates/site_month.csv and its dictionary provide an empty operator aggre
 
 ## Landing page
 
-The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, actual product screenshots, scoped evidence results and labelled AI drone artwork. Open prototype launches planner.html; direct links can open the AI, satellite/drone, field and evidence workspaces. Offline snapshot field-v7 includes both pages and the remote-evidence assets. See [landing-page documentation](docs/LANDING_PAGE.md).
+The root page introduces AimEnergy with real Lamwo geography, a live grain-mill scenario, actual product screenshots, scoped evidence results and labelled AI drone artwork. Open prototype launches planner.html; direct links can open the AI, satellite/drone, field and evidence workspaces. Offline snapshot field-v8 includes both pages and the remote-evidence assets. See [landing-page documentation](docs/LANDING_PAGE.md).
 
 ## Satellite and drone evidence
 
@@ -88,9 +88,9 @@ Open **Satellite & drone**, or `/planner.html#remote`. Choose **Open the Orii Ga
 
 ![Satellite and drone evidence workspace](docs/screenshots/satellite-drone-evidence.jpg)
 
-The EOX crop is included under **CC BY-NC-SA 4.0** for noncommercial demonstration, with visible EOxCloudless/EOX attribution and **Contains modified Copernicus Sentinel data 2024**. Commercial use needs suitable permission or replacement imagery. The **38-asset field-v7** offline pack includes the new workspace; refresh it while connected and reload after Ready. User imports are stored separately from the static pack.
+The EOX crop is included under **CC BY-NC-SA 4.0** for noncommercial demonstration, with visible EOxCloudless/EOX attribution and **Contains modified Copernicus Sentinel data 2024**. Commercial use needs suitable permission or replacement imagery. The **42-asset field-v8** offline pack includes the new workspace; refresh it while connected and reload after Ready. User imports are stored separately from the static pack.
 
-The recorded JavaScript suite now has **48 passing tests**, including remote-evidence validation. Browser QA exercised survey/image/history imports, year selection, restoration, export and phone layouts; synthetic test imports were removed. Read [remote-evidence documentation](docs/REMOTE_EVIDENCE.md), [third-party notices](docs/THIRD_PARTY_NOTICES.md) and the [verification record](docs/VERIFICATION.md) for details.
+The recorded JavaScript suite now has **55 passing tests**, including remote-evidence validation. Browser QA exercised survey/image/history imports, year selection, restoration, export and phone layouts; synthetic test imports were removed. Read [remote-evidence documentation](docs/REMOTE_EVIDENCE.md), [third-party notices](docs/THIRD_PARTY_NOTICES.md) and the [verification record](docs/VERIFICATION.md) for details.
 
 ## DRC geographic benchmark
 
@@ -100,4 +100,8 @@ Metered evidence now includes a separate CC0 DRC benchmark: 1,202 survey respond
 
 Choose **Community USSD** for consented, village-scoped household/business simulation responses. Owned and intended appliances remain distinct; business opening hours and interest never become measured demand. The local review inbox links to passport details and JSON exports. Reviewed responses retain demonstration provenance. No phone numbers or live telecom sessions are collected.
 
-The 38-asset **field-v7** pack supports this browser preview and field assessment after offline preparation. No automatic synchronization or live USSD integration is implemented. See [the community guide](docs/USSD_OFFLINE.md).
+The 42-asset **field-v8** pack supports this browser preview and field assessment after offline preparation. No automatic synchronization or live USSD integration is implemented. See [the community guide](docs/USSD_OFFLINE.md).
+
+## Hourly system feasibility
+
+System feasibility adds an 8,760-hour PV/battery/generator scenario, real cached PVGIS solar for Orii Gangodye, location-checked resource import, illustrative LCOE/NPV, local versions and JSON/print-ready report exports. Costs are assumptions; no optimized or certified engineering design is claimed. See [methods and limitations](docs/SYSTEM_FEASIBILITY.md) and [About AimEnergy](docs/ABOUT_AIMENERGY.md).

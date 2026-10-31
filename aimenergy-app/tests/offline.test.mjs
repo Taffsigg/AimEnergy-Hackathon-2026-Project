@@ -54,6 +54,7 @@ test('offline fallback permits only exact known same-origin static GET paths', (
   assert.ok(w.CORE.includes('https://example.test/kit/community-core.js'));
   assert.ok(w.CORE.includes('https://example.test/kit/community-lab.js'));
   assert.ok(w.CORE.includes('https://example.test/kit/community-lab.css'));
+  for(const asset of ['system-core.js','system-lab.js','system-lab.css','data/solar-resource.json']) assert.ok(w.CORE.includes('https://example.test/kit/'+asset));
   assert.equal(key('Data/raw/metered/tanzania/source.txt'), null);
   assert.ok(w.CORE.includes('https://example.test/kit/field-lab.css'));
 });

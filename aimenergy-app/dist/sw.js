@@ -1,5 +1,5 @@
 /* Offline field kit: only an explicit PREPARE message writes a complete snapshot. */
-const VERSION = 'field-v7';
+const VERSION = 'field-v8';
 const ROOT = new URL('./', self.location.href);
 const PREFIX = `aimenergy-${encodeURIComponent(ROOT.pathname)}-${VERSION}-`;
 const META = `${PREFIX}metadata`;
@@ -7,7 +7,7 @@ const POINTER = new URL('__offline_active__', ROOT).href;
 const COMPLETE = new URL('__offline_complete__', ROOT).href;
 const CORE = [
   'index.html', 'planner.html', 'landing.css', 'landing.js', 'images/field-assessment.jpg', 'app.js', 'engine.js', 'styles.css', 'ai-lab.js', 'ai-lab.css',
-  'remote-core.js', 'remote-lab.js', 'remote-lab.css', 'data/satellite-evidence.json', 'images/satellite-orii-gangodye-2024.jpg', 'images/drone-survey-concept.png', 'metered-lab.js', 'data/metered-evidence.json', 'drc-lab.js', 'data/drc-benchmark.json', 'community-core.js', 'community-lab.js', 'community-lab.css', 'ml-model.js', 'field-core.js', 'field-lab.js', 'field-lab.css', 'offline.js',
+  'remote-core.js', 'remote-lab.js', 'remote-lab.css', 'data/satellite-evidence.json', 'images/satellite-orii-gangodye-2024.jpg', 'images/drone-survey-concept.png', 'metered-lab.js', 'data/metered-evidence.json', 'drc-lab.js', 'data/drc-benchmark.json', 'community-core.js', 'community-lab.js', 'community-lab.css', 'system-core.js', 'system-lab.js', 'system-lab.css', 'data/solar-resource.json', 'ml-model.js', 'field-core.js', 'field-lab.js', 'field-lab.css', 'offline.js',
   'manifest.webmanifest', 'icons/offline-icon.svg',
   'data/boundaries.geojson', 'data/catalog.json', 'data/ml-evaluation.json',
   'data/ml-model.json', 'data/ramp-profiles.json', 'data/site-clusters.json',

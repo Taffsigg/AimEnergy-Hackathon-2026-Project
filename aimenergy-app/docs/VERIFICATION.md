@@ -81,3 +81,13 @@ Browser QA completed business and household flows, rejected an invalid village c
 Desktop 1366x900 and mobile 390x844 had no page-level horizontal overflow. The active mobile navigation was visible. Browser error logs were empty; viewport overrides were reset. Screenshot: screenshots/community-ussd.jpg. One reviewed household simulation remains for demonstration; the screenshot also shows an unsubmitted business preview. These are not real survey records.
 
 No live provider, service code, cellular traffic, SMS, identity verification, shared backend or automatic synchronization was implemented or tested. Server unavailability verifies this prepared browser snapshot, not universal device/network coverage.
+
+## System feasibility release — version 3.6.0, 31 October 2026
+
+55 JavaScript tests pass. New checks cover strict inputs, location/time/coverage/power validation, hourly energy balance, battery bounds and loss identity, monthly demand preservation, discounted costs/NPV/replacement timing, zero-service LCOE, first-12-month engine integration and cross-village saved-resource isolation. Actual source and derived 8,760-hour PVGIS profiles match exactly. A bounded independent review found no critical accounting or cross-site issue after initial SOC/parser fixes; a replacement-horizon wording issue was corrected.
+
+Browser QA changed equipment to zero generation and observed unmet demand, then restored a saved version. Versions survived reload. A real matching PVGIS JSON import succeeded, and actual full-scenario JSON and print-ready report downloads were inspected. The downloaded hourly ledger conserves energy and its storage-loss identity holds. No native PDF export was claimed.
+
+Desktop 1366x900 and mobile 390x844 had no page-level horizontal overflow; mobile navigation exposed the active view. Browser error logs were empty and viewport overrides reset. Screenshot: screenshots/system-feasibility.jpg. The 42-asset field-v8 pack reached Ready. No additional server-unavailability test was performed for this release; the preceding v7 test is recorded separately. Unrelated Python suites were not rerun.
+
+There is no optimized equipment sizing, engineering-standard compliance, cable/network/protection design, single-line diagram, ageing, grid exchange, IRR, bankability or validated demand-growth claim. Costs and collected revenue are illustrative assumptions; historical modeled solar is not measured generation. No public deployment, commit or push was performed.

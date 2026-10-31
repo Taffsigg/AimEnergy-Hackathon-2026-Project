@@ -36,3 +36,7 @@ raw/satellite retains acquired source documentation and the real pilot crop loca
 ## Community simulation responses
 
 Completed, consented simulations stay in browser storage under aimenergy.community.v1, rather than repository data. Exports retain ussd_simulator / demonstration provenance and distinct owned/intended appliances. No real participant identities, phone numbers or meter readings are acquired. Reviewed simulations never become model labels. See [the community guide](../docs/USSD_OFFLINE.md).
+
+## PVGIS solar resource
+
+The acquired 2023 Orii Gangodye PVGIS 5.3 JSON stays in Git-ignored raw/solar. Public dist/data/solar-resource.json contains the derived 8,760-hour pilot profile; metadata/solar-resource-audit.json records source URL, inputs, row count and SHA-256. Reproduce with scripts/acquire_solar_resource.py. This is modeled PV output, not measured generation or demand; no automatic resource substitution occurs for other villages.

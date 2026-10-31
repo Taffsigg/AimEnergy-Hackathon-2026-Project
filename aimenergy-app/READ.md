@@ -1,7 +1,7 @@
 # AimEnergy — complete project guide
 
 - **Project:** AimEnergy
-- **Version:** 3.5.0
+- **Version:** 3.6.0
 - **Documentation date:** 30 October 2026
 - **Challenge:** Global Energy Hackathon, Brief 03 — Predict mini-grid demand before building
 - **Working directory:** `C:\Users\Dell\Downloads\AimEnergy\AimEnergy Project\aimenergy-app`
@@ -363,7 +363,7 @@ Applying an assessment uses its baseline plus its answers, replacing later plann
 4. Before recording/travel, verify the map, model and evidence screens still load when the app server is unavailable.
 5. After an app/model update, choose **Refresh offline pack**, wait for Ready and reload again.
 
-The current allowlist contains **38 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
+The current allowlist contains **42 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
 
 Field records live in browser local storage, independently of cached application assets. No automatic upload or sync is implemented. Use anonymous aggregate notes and export backups. Clearing browser site data can remove assessments and cached assets. Private browsing, quota limits or device policies can prevent persistence. Readiness on one device is not proof of readiness on another.
 
@@ -608,3 +608,7 @@ A separate retrospective geographic benchmark now appears in Metered evidence. S
 ## Community access addition (3.5.0)
 
 Community USSD previews basic-phone participation, with consented simulation responses, owned/intended appliances, a local review inbox, reversible review/removal, JSON export and village-passport handoff. Responses remain demonstration evidence and never automatically change a forecast. See [USSD_OFFLINE.md](docs/USSD_OFFLINE.md). Offline field-v7 includes 38 assets. Actual USSD still needs mobile coverage and an online provider integration; automatic synchronization is not implemented.
+
+## System feasibility addition (3.6.0)
+
+The new System feasibility workspace connects the first twelve demand-scenario months to 8,760 hourly PV/battery/generator calculations. It includes cached pilot PVGIS solar, local resource import, illustrative LCOE/NPV and cashflows, saved local versions and JSON/print-ready HTML reports. Use Print / Save as PDF for a PDF. Detailed engineering, ageing, grid exchange and IRR are not implemented. See [SYSTEM_FEASIBILITY.md](docs/SYSTEM_FEASIBILITY.md). Offline field-v8 includes 42 assets.

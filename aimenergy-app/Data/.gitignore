@@ -5,3 +5,4 @@ splits/*.csv
 raw/metered/
 processed/metered/
 raw/satellite/
+raw/solar/

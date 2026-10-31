@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "acquired_at_utc": "2026-10-31T01:15:09.627813+00:00",
+  "attribution": "European Commission, Joint Research Centre, PVGIS; SARAH3 solar resource and ERA5 meteorology",
+  "terms_url": "https://joint-research-centre.ec.europa.eu/photovoltaic-geographical-information-system-pvgis_en",
+  "coverage": "One acquired pilot example; no imagery, no automatic per-village live fetching",
+  "resources": [
+    {
+      "siteId": "5502954",
+      "siteName": "Orii Gangodye",
+      "latitude": 3.487226,
+      "longitude": 32.969193,
+      "year": 2023,
+      "source": "European Commission JRC PVGIS 5.3 / SARAH3",
+      "timezone": "UTC+3, cyclic year-wrap approximation; source minute samples assigned to hour slots",
+      "meta": {
+        "location": {
+          "latitude": 3.487226,
+          "longitude": 32.969193,
+          "elevation": 1023.0
+        },
+        "meteo_data": {
+          "radiation_db": "PVGIS-SARAH3",
+          "meteo_db": "ERA5",
+          "year_min": 2023,
+          "year_max": 2023,
+          "use_horizon": true,
+          "horizon_db": null,
+          "horizon_data": "DEM-calculated"
+        },
+        "mounting_system": {
+          "fixed": {
+            "slope": {
+              "value": 10,
+              "optimal": false
+            },
+            "azimuth": {
+              "value": 0,
+              "optimal": false
+            },
+            "type": "free-standing"
+          }
+        },
+        "pv_module": {
+          "technology": "c-Si",
+          "peak_power": 1.0,
+          "system_loss": 14.0
+        }
+      },
+      "source_url": "https://re.jrc.ec.europa.eu/api/v5_3/seriescalc?lat=3.487226&lon=32.969193&startyear=2023&endyear=2023&pvcalculation=1&peakpower=1&loss=14&angle=10&aspect=0&outputformat=json",
+      "source_sha256": "9be06de0105264b4a96cfd5f486a182214ee5cda6d6187c0b115adffa2d35854",
+      "annual_kwh_per_kwp": 1593.6735199999973,
+      "interpretation": "Modeled AC PV power samples integrated as representative one-hour values, not measured generation. 14% system losses are already included; fixed 10-degree south-facing free-standing c-Si reference."
+    }
+  ],
+  "source_bytes": 828545,
+  "source_rows": 8760,
+  "local_source": "Data/raw/solar/pvgis-orii-2023.json"
+}
