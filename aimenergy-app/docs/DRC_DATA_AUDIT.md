@@ -1,6 +1,6 @@
 # DRC electricity-purchase replication data: suitability audit
 
-AimEnergy can use this release for a separate, observed-kWh-purchase benchmark and uptake research. It does **not** establish direct-meter validation of the current Uganda household model. No model has been trained or evaluated on these files in this audit.
+AimEnergy can use this release for a separate, observed-kWh-purchase benchmark and uptake research. It does **not** establish direct-meter validation of the current Uganda household model. This inventory is descriptive; the subsequent [separate benchmark](DRC_BENCHMARK.md) records fitting, evaluation and mixed results.
 
 ## Source and integrity
 
@@ -48,7 +48,7 @@ There is no released key linking the client-average file to survey respondents o
 3. **Geographic evaluation:** freeze features, baselines, metrics and missing-data rules before fitting. Evaluate each of the three analysis areas held out in turn; report every area's error and sample size, including failures. This is geographic transfer within one operator, not independent-operator validation. The source outcomes have already been inspected descriptively; do not call the exercise preregistered or a permanently untouched test set.
 4. **Separate time forecasting:** area-month purchase forecasting can use calendar-held-out evaluation against persistence/seasonal baselines, but answers a different question from predicting a new village before construction. Never use future connected-client counts as if known before commissioning.
 
-The existing Uganda forest requires different inputs and has a different target. These files cannot simply be appended to its training table or scored by inventing roof, room or power-availability fields. A separate benchmark is the next research step. No claimed accuracy improvement, confidence coverage, equipment-sizing result or Ugandan village validation follows from acquiring the release.
+The existing Uganda forest requires different inputs and has a different target. These files cannot simply be appended to its training table or scored by inventing roof, room or power-availability fields. The subsequent [separate benchmark](DRC_BENCHMARK.md) reports limited uptake improvement and mixed or unfavorable purchase results. No confidence coverage, equipment-sizing result or Ugandan village validation follows from acquiring the release.
 
 ## Reproduce this audit
 

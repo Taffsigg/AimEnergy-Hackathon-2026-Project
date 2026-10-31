@@ -1,0 +1,1194 @@
+{
+  "protocol": {
+    "id": "drc-geographic-purchase-v1",
+    "status": "retrospective_fixed_design_not_preregistered",
+    "dataset": "https://doi.org/10.7910/DVN/KPDREF",
+    "license": "CC0-1.0",
+    "features": {
+      "household": [
+        "male",
+        "age",
+        "education",
+        "hhsize",
+        "depratio",
+        "solar",
+        "appliances",
+        "energy_exp",
+        "income",
+        "parcel_own",
+        "good_qual"
+      ],
+      "SME": [
+        "male",
+        "age",
+        "education",
+        "employment",
+        "solar",
+        "generator",
+        "appliances",
+        "energy_exp",
+        "sales",
+        "parcel_own",
+        "good_qual"
+      ]
+    },
+    "forest_parameters": {
+      "n_estimators": 64,
+      "max_depth": 4,
+      "min_samples_leaf": 12,
+      "random_state": 20261031,
+      "n_jobs": 1
+    },
+    "split": "Three folds: hold out each complete analysis area, train on the other two. Separate household and SME models.",
+    "uptake": "Author-coded follow-up connection status, including attritors coded unconnected; sensitivity excludes attritors from training and evaluation.",
+    "purchase": "Monthly prepaid kWh purchases averaged over connection-to-follow-up, conditional on observed connection; windows vary and exact dates are unreleased.",
+    "baselines": "Training-weighted connection prevalence; training-weighted purchase median and mean. All are recomputed within each fold/subgroup/sensitivity.",
+    "preprocessing": "Unweighted training-only median imputation, then sample-weighted forest fit; raw kWh squared-error regression, no log transform.",
+    "metrics": "Held-out sampling-weighted Brier/log loss or MAE/RMSE/bias. Bias is prediction minus observation. Log loss clips probabilities at 1e-6.",
+    "aggregation": "Pooled out-of-fold sampling-weighted metrics and separately named equal-area averages of fold metrics. Pooled RMSE uses pooled squared errors.",
+    "excluded": "Area, ID, enumerator, target/log-target, connection, attrition and follow-up/conflict fields are never predictors. Distance is omitted because planned alignment availability is uncertain.",
+    "selection": "One fixed model per task; no hyperparameter search, favorable-fold selection or switch after viewing results.",
+    "scope": "Three analysis areas, one operator, DRC. Not direct-meter, independent-operator, Uganda transfer, village-total, growth, interval or equipment-size validation."
+  },
+  "dataset": {
+    "doi": "10.7910/DVN/KPDREF",
+    "url": "https://doi.org/10.7910/DVN/KPDREF",
+    "license": "CC0 1.0",
+    "areas": [
+      "Goma",
+      "Lubero",
+      "Mutwanga"
+    ],
+    "survey_rows": 1202,
+    "observed_purchase_rows": 512,
+    "survey_sha256": "23e1a35d6459f2da43aed14f8b91a7a3495bbf697bcb43938da03e3f73e48986"
+  },
+  "provenance": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "sklearn": "1.9.0",
+    "script_sha256": "155d007606d99dbe4139aab35162dba2a298b7f5ce48a8cf5d6dab7c55d2eddb",
+    "protocol_sha256": "b1c2ebb921dd1e7e9f33f0ec05379fb8cd135afe52af3e3f3accc2730ba099a3"
+  },
+  "experiments": [
+    {
+      "population": "household",
+      "task": "uptake",
+      "sensitivity": "author_coded_primary",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "hhsize",
+        "depratio",
+        "solar",
+        "appliances",
+        "energy_exp",
+        "income",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 612,
+            "connected": 175,
+            "weight_sum": 623.7353835105896,
+            "weight_effective_sample_size": 547.3169419278789
+          },
+          "test": {
+            "rows": 299,
+            "connected": 220,
+            "weight_sum": 299.0000064969063,
+            "weight_effective_sample_size": 207.56788214479158
+          },
+          "train_membership_sha256": "f4768ef7fa14488b7bd7bc990e654a0075e3a2340056e2bd37b74d673d10e831",
+          "test_membership_sha256": "acc58ea23f113dbd1994789d04eebf61507f3f7134ba6b98a315ba8bd7acb4ee",
+          "metrics": {
+            "forest": {
+              "brier": 0.2352217240104547,
+              "log_loss": 0.6547735288541753
+            },
+            "prevalence": {
+              "brier": 0.3607025804573249,
+              "log_loss": 0.9388349824001758
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 611,
+            "connected": 365,
+            "weight_sum": 622.7353946566582,
+            "weight_effective_sample_size": 471.940839452705
+          },
+          "test": {
+            "rows": 300,
+            "connected": 30,
+            "weight_sum": 299.9999953508377,
+            "weight_effective_sample_size": 281.40904818024393
+          },
+          "train_membership_sha256": "b760970083d0ba6a981b7bf13765ca2388269512974f4224f7c0fb15dec3f03f",
+          "test_membership_sha256": "dc9c20a8230e9d022d9aea73a9af10d36a467c51fdbb9fe46cbe648321a76222",
+          "metrics": {
+            "forest": {
+              "brier": 0.20142925915243987,
+              "log_loss": 0.5877909997099656
+            },
+            "prevalence": {
+              "brier": 0.2609134267070823,
+              "log_loss": 0.7149792068484062
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 599,
+            "connected": 250,
+            "weight_sum": 599.000001847744,
+            "weight_effective_sample_size": 478.0657726443931
+          },
+          "test": {
+            "rows": 312,
+            "connected": 145,
+            "weight_sum": 323.7353881597519,
+            "weight_effective_sample_size": 268.03935838996085
+          },
+          "train_membership_sha256": "d796e7158ac6531a9af0e223a25da2119b32aa3fa57bac7bda3b3392d02cd475",
+          "test_membership_sha256": "9372cd3c3ba5d1a49c596f918f5c40cf22a0f455b97d5e219ce35aaacd25ff16",
+          "metrics": {
+            "forest": {
+              "brier": 0.22715015635045357,
+              "log_loss": 0.6533738389208862
+            },
+            "prevalence": {
+              "brier": 0.24745500744955112,
+              "log_loss": 0.6885362582494217
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "brier": 0.22140325391832746,
+          "log_loss": 0.6325050780954589
+        },
+        "prevalence": {
+          "brier": 0.28852696717948445,
+          "log_loss": 0.7782393361852624
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "brier": 0.2212670465044494,
+          "log_loss": 0.6319794558283424
+        },
+        "prevalence": {
+          "brier": 0.2896903382046528,
+          "log_loss": 0.7807834824993346
+        }
+      },
+      "out_of_fold_rows": 911
+    },
+    {
+      "population": "household",
+      "task": "purchase",
+      "sensitivity": "author_coded_primary",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "hhsize",
+        "depratio",
+        "solar",
+        "appliances",
+        "energy_exp",
+        "income",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 175,
+            "connected": 175,
+            "weight_sum": 164.26223921775818,
+            "weight_effective_sample_size": 148.30263211809293
+          },
+          "test": {
+            "rows": 220,
+            "connected": 220,
+            "weight_sum": 184.05657136440277,
+            "weight_effective_sample_size": 151.4547588139798
+          },
+          "train_membership_sha256": "ac4a96a73c4cd29c3c1cc525e09a5f540378eed307471c88c4f5a2654def6b9a",
+          "test_membership_sha256": "bed77afe007c41db50ee78ac5ba1ffdabceb3fdc7cee9013a3d3525324da1fe5",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 23.36898866746113,
+              "rmse_kwh": 65.91849740348472,
+              "bias_kwh": -20.59028647817134
+            },
+            "median": {
+              "mae_kwh": 29.722926709207293,
+              "rmse_kwh": 68.64444737216186,
+              "bias_kwh": -29.4264760823075
+            },
+            "mean": {
+              "mae_kwh": 24.60659277517722,
+              "rmse_kwh": 66.16654697704209,
+              "bias_kwh": -23.062291266442607
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 365,
+            "connected": 365,
+            "weight_sum": 319.63504242897034,
+            "weight_effective_sample_size": 271.03647807704886
+          },
+          "test": {
+            "rows": 30,
+            "connected": 30,
+            "weight_sum": 28.683768153190613,
+            "weight_effective_sample_size": 28.69966490953123
+          },
+          "train_membership_sha256": "136a3d6ece5e04481303223a47c67d46cb5b943346f4d603ea21239a0a0d7dc8",
+          "test_membership_sha256": "37dbffa73c438c214d659a3a307bdebc5ac23ede86d0493f1d327d4cb3289a8e",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 10.97753529726605,
+              "rmse_kwh": 14.46797150118662,
+              "bias_kwh": -6.4992277383699495
+            },
+            "median": {
+              "mae_kwh": 13.441556824720395,
+              "rmse_kwh": 18.04372216817401,
+              "bias_kwh": -11.632482720763424
+            },
+            "mean": {
+              "mae_kwh": 8.982427931262423,
+              "rmse_kwh": 13.883287992731807,
+              "bias_kwh": -1.5762074913336863
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 250,
+            "connected": 250,
+            "weight_sum": 212.74033951759338,
+            "weight_effective_sample_size": 179.35216122499102
+          },
+          "test": {
+            "rows": 145,
+            "connected": 145,
+            "weight_sum": 135.57847106456757,
+            "weight_effective_sample_size": 119.9278825848343
+          },
+          "train_membership_sha256": "84b91e8dbb4a94109de1a2120abbff2edfb4c1198fc8275bee72caa02b81d45f",
+          "test_membership_sha256": "7dcc36597295f2a9b79bc0fac6fa37e5e75407738cf155e72bb2e390d379f7c9",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 27.283877365527385,
+              "rmse_kwh": 32.085983308148165,
+              "bias_kwh": 24.307978065120746
+            },
+            "median": {
+              "mae_kwh": 18.162959246458996,
+              "rmse_kwh": 20.86379401596851,
+              "bias_kwh": 14.45946745315176
+            },
+            "mean": {
+              "mae_kwh": 27.163881269010112,
+              "rmse_kwh": 28.897844901073416,
+              "bias_kwh": 24.675164400961684
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "mae_kwh": 23.872381086110508,
+          "rmse_kwh": 52.09655659608618,
+          "bias_kwh": -1.9538461684789847
+        },
+        "median": {
+          "mae_kwh": 23.882605453692793,
+          "rmse_kwh": 51.82821499141338,
+          "bias_kwh": -10.879134653723971
+        },
+        "mean": {
+          "mae_kwh": 24.315346207885444,
+          "rmse_kwh": 51.52010880570518,
+          "bias_kwh": -2.711759276576144
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "mae_kwh": 20.54346711008486,
+          "rmse_kwh": 37.49081740427317,
+          "bias_kwh": -0.927178717140181
+        },
+        "median": {
+          "mae_kwh": 20.44248092679556,
+          "rmse_kwh": 35.85065451876813,
+          "bias_kwh": -8.86649711663972
+        },
+        "mean": {
+          "mae_kwh": 20.25096732514992,
+          "rmse_kwh": 36.31589329028244,
+          "bias_kwh": 0.012221881061796816
+        }
+      },
+      "out_of_fold_rows": 395
+    },
+    {
+      "population": "SME",
+      "task": "uptake",
+      "sensitivity": "author_coded_primary",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "employment",
+        "solar",
+        "generator",
+        "appliances",
+        "energy_exp",
+        "sales",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 193,
+            "connected": 66,
+            "weight_sum": 192.37435865402222,
+            "weight_effective_sample_size": 181.8579676638353
+          },
+          "test": {
+            "rows": 98,
+            "connected": 51,
+            "weight_sum": 98.08678132295609,
+            "weight_effective_sample_size": 97.1123267815144
+          },
+          "train_membership_sha256": "ae232cd350466fa36b07e6816e68bc9c5d642c0a40b8390deab8d5a665de6e8d",
+          "test_membership_sha256": "57826956deb4593131959b2ad3548189fc0ed1b2556c456cf6bac86c8945246f",
+          "metrics": {
+            "forest": {
+              "brier": 0.2889025826552531,
+              "log_loss": 0.7767425298580242
+            },
+            "prevalence": {
+              "brier": 0.28306364084493435,
+              "log_loss": 0.7625821676704335
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 141,
+            "connected": 71,
+            "weight_sum": 140.4611400961876,
+            "weight_effective_sample_size": 139.1562709672451
+          },
+          "test": {
+            "rows": 150,
+            "connected": 46,
+            "weight_sum": 149.9999998807907,
+            "weight_effective_sample_size": 139.93263491610134
+          },
+          "train_membership_sha256": "2f1ed7ebc0693b81aa6aaca2038927632732afffec1655b320688b3715c99ff2",
+          "test_membership_sha256": "97352805924211e59d002203f43b300a661eade24fae41055b538348ef5d5828",
+          "metrics": {
+            "forest": {
+              "brier": 0.24799781273487287,
+              "log_loss": 0.689291763017801
+            },
+            "prevalence": {
+              "brier": 0.25131544108942105,
+              "log_loss": 0.6957781036538673
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 248,
+            "connected": 97,
+            "weight_sum": 248.0867812037468,
+            "weight_effective_sample_size": 236.84452742181594
+          },
+          "test": {
+            "rows": 43,
+            "connected": 20,
+            "weight_sum": 42.374358773231506,
+            "weight_effective_sample_size": 42.04408089563729
+          },
+          "train_membership_sha256": "e87327b4be311660b4ef815a4dff022a61b621a1f107067ea3312aab6562e28f",
+          "test_membership_sha256": "6c5ac625f81c0efe216be03941732f2d8fd650e83b756f2c00905d34901ce9d0",
+          "metrics": {
+            "forest": {
+              "brier": 0.2424366520377396,
+              "log_loss": 0.678659715447574
+            },
+            "prevalence": {
+              "brier": 0.2516818398002683,
+              "log_loss": 0.6967375655812134
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "brier": 0.26099978127348555,
+          "log_loss": 0.7172722289967994
+        },
+        "prevalence": {
+          "brier": 0.26209004810739295,
+          "log_loss": 0.718477361128168
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "brier": 0.25977901580928847,
+          "log_loss": 0.7148980027744664
+        },
+        "prevalence": {
+          "brier": 0.2620203072448746,
+          "log_loss": 0.7183659456351714
+        }
+      },
+      "out_of_fold_rows": 291
+    },
+    {
+      "population": "SME",
+      "task": "purchase",
+      "sensitivity": "author_coded_primary",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "employment",
+        "solar",
+        "generator",
+        "appliances",
+        "energy_exp",
+        "sales",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 66,
+            "connected": 66,
+            "weight_sum": 65.58047711849213,
+            "weight_effective_sample_size": 63.006101867139144
+          },
+          "test": {
+            "rows": 51,
+            "connected": 51,
+            "weight_sum": 51.43265825510025,
+            "weight_effective_sample_size": 50.54956656489543
+          },
+          "train_membership_sha256": "00c49e4b6403126a6eadfb12df5a9825d3807fa82d239a383ee430f8fdab30a6",
+          "test_membership_sha256": "ce770d6dd33ab628475406e4b8fdbe961d75a5565e3a181cec9cea28c2720778",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 93.09564598834311,
+              "rmse_kwh": 212.11679778490463,
+              "bias_kwh": -70.35715377735329
+            },
+            "median": {
+              "mae_kwh": 91.26863698913101,
+              "rmse_kwh": 218.7986783300286,
+              "bias_kwh": -77.79141038666609
+            },
+            "mean": {
+              "mae_kwh": 92.0236874269169,
+              "rmse_kwh": 213.97515774389097,
+              "bias_kwh": -62.96038454855888
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 71,
+            "connected": 71,
+            "weight_sum": 70.70921713113785,
+            "weight_effective_sample_size": 70.19690502312038
+          },
+          "test": {
+            "rows": 46,
+            "connected": 46,
+            "weight_sum": 46.30391824245453,
+            "weight_effective_sample_size": 43.43181722035707
+          },
+          "train_membership_sha256": "2ec9fdcc38c8cc2165706cbceb17d4ae09a50847f60619324d5136f78dc04573",
+          "test_membership_sha256": "1abad57d27ed78422896bfd8d724ccd0b6137519af381ffdaba24b4e3cadb2f1",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 67.9626223133208,
+              "rmse_kwh": 98.63561693151553,
+              "bias_kwh": 44.38874585464016
+            },
+            "median": {
+              "mae_kwh": 25.60618792128881,
+              "rmse_kwh": 60.103949572552935,
+              "bias_kwh": -6.823274561298095
+            },
+            "mean": {
+              "mae_kwh": 66.75485006112906,
+              "rmse_kwh": 76.99066819288844,
+              "bias_kwh": 48.59665945624568
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 97,
+            "connected": 97,
+            "weight_sum": 97.73657649755478,
+            "weight_effective_sample_size": 93.93026909727381
+          },
+          "test": {
+            "rows": 20,
+            "connected": 20,
+            "weight_sum": 19.276558876037598,
+            "weight_effective_sample_size": 19.666769144408242
+          },
+          "train_membership_sha256": "6fa5998f54655d42eebf04daac2b82e9efeffd2226565f8ed111d4dd12ce3074",
+          "test_membership_sha256": "ed6923ce45cd900b284018d93e2e08f96b6b439b635ee4899038c15244e92bce",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 101.94775186736618,
+              "rmse_kwh": 172.79718601553242,
+              "bias_kwh": 34.20686802361462
+            },
+            "median": {
+              "mae_kwh": 69.24427789732145,
+              "rmse_kwh": 166.90926467503994,
+              "bias_kwh": -18.89587744666348
+            },
+            "mean": {
+              "mae_kwh": 104.77960083251678,
+              "rmse_kwh": 168.22779271392125,
+              "bias_kwh": 28.265558397364977
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "mae_kwh": 84.608399406075,
+          "rmse_kwh": 168.95426325150706,
+          "bias_kwh": -7.724704399944933
+        },
+        "median": {
+          "mae_kwh": 61.65672618173168,
+          "rmse_kwh": 164.50301202951445,
+          "bias_kwh": -40.00585790818215
+        },
+        "mean": {
+          "mae_kwh": 84.12580433254423,
+          "rmse_kwh": 164.7197615371961,
+          "bias_kwh": -3.787108975001811
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "mae_kwh": 87.6686733896767,
+          "rmse_kwh": 161.1832002439842,
+          "bias_kwh": 2.746153366967164
+        },
+        "median": {
+          "mae_kwh": 62.039700935913764,
+          "rmse_kwh": 148.60396419254047,
+          "bias_kwh": -34.503520798209216
+        },
+        "mean": {
+          "mae_kwh": 87.85271277352092,
+          "rmse_kwh": 153.06453955023355,
+          "bias_kwh": 4.63394443501726
+        }
+      },
+      "out_of_fold_rows": 117
+    },
+    {
+      "population": "household",
+      "task": "uptake",
+      "sensitivity": "exclude_attritors",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "hhsize",
+        "depratio",
+        "solar",
+        "appliances",
+        "energy_exp",
+        "income",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 498,
+            "connected": 175,
+            "weight_sum": 494.82610154151917,
+            "weight_effective_sample_size": 444.34136521988677
+          },
+          "test": {
+            "rows": 270,
+            "connected": 220,
+            "weight_sum": 257.02113634347916,
+            "weight_effective_sample_size": 185.7822495837952
+          },
+          "train_membership_sha256": "9d1f5f816c19e0b7da7efba253c67d09cb614742d7102469faf344ed28ca09fa",
+          "test_membership_sha256": "a8a5de9091238ccc557ac39157d270fd98e1d1561a49c0ef3e51aa3672b7b904",
+          "metrics": {
+            "forest": {
+              "brier": 0.23323676513305672,
+              "log_loss": 0.6565252154520902
+            },
+            "prevalence": {
+              "brier": 0.35086957677057184,
+              "log_loss": 0.9042109796893016
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 504,
+            "connected": 365,
+            "weight_sum": 491.28990918397903,
+            "weight_effective_sample_size": 381.53371009501404
+          },
+          "test": {
+            "rows": 264,
+            "connected": 30,
+            "weight_sum": 260.5573287010193,
+            "weight_effective_sample_size": 247.7707204328442
+          },
+          "train_membership_sha256": "4dd095b4077e0a803c07d80f5ec6c67bf31636e975142932065b48f0dff3712c",
+          "test_membership_sha256": "59fa19ab99dbd2be4a39ed0b16b430f8a2d3d9f482b4c73506dd840ae288858a",
+          "metrics": {
+            "forest": {
+              "brier": 0.29831711661322724,
+              "log_loss": 0.8111765327667285
+            },
+            "prevalence": {
+              "brier": 0.39012641555113564,
+              "log_loss": 0.9831085951581356
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 534,
+            "connected": 250,
+            "weight_sum": 517.5784650444984,
+            "weight_effective_sample_size": 425.50143316425186
+          },
+          "test": {
+            "rows": 234,
+            "connected": 145,
+            "weight_sum": 234.26877284049988,
+            "weight_effective_sample_size": 198.09873354612114
+          },
+          "train_membership_sha256": "a9ef635c0ca9ddc739dda36b8d06f3ac69197249df94255d8f433e5eb97ecba4",
+          "test_membership_sha256": "ae5b964e74fd8afc92652194fa219488c9f075695dcdb446f426265a1ff9cacd",
+          "metrics": {
+            "forest": {
+              "brier": 0.27992067273172777,
+              "log_loss": 0.7772542905115736
+            },
+            "prevalence": {
+              "brier": 0.27192491536928903,
+              "log_loss": 0.7375545210382277
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "brier": 0.27033704677484843,
+          "log_loss": 0.7477386733519507
+        },
+        "prevalence": {
+          "brier": 0.33987583830033574,
+          "log_loss": 0.8796247988865487
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "brier": 0.27049151815933725,
+          "log_loss": 0.7483186795767974
+        },
+        "prevalence": {
+          "brier": 0.33764030256366556,
+          "log_loss": 0.8749580319618883
+        }
+      },
+      "out_of_fold_rows": 768
+    },
+    {
+      "population": "household",
+      "task": "purchase",
+      "sensitivity": "exclude_attritors",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "hhsize",
+        "depratio",
+        "solar",
+        "appliances",
+        "energy_exp",
+        "income",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 175,
+            "connected": 175,
+            "weight_sum": 164.26223921775818,
+            "weight_effective_sample_size": 148.30263211809293
+          },
+          "test": {
+            "rows": 220,
+            "connected": 220,
+            "weight_sum": 184.05657136440277,
+            "weight_effective_sample_size": 151.4547588139798
+          },
+          "train_membership_sha256": "ac4a96a73c4cd29c3c1cc525e09a5f540378eed307471c88c4f5a2654def6b9a",
+          "test_membership_sha256": "bed77afe007c41db50ee78ac5ba1ffdabceb3fdc7cee9013a3d3525324da1fe5",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 23.36898866746113,
+              "rmse_kwh": 65.91849740348472,
+              "bias_kwh": -20.59028647817134
+            },
+            "median": {
+              "mae_kwh": 29.722926709207293,
+              "rmse_kwh": 68.64444737216186,
+              "bias_kwh": -29.4264760823075
+            },
+            "mean": {
+              "mae_kwh": 24.60659277517722,
+              "rmse_kwh": 66.16654697704209,
+              "bias_kwh": -23.062291266442607
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 365,
+            "connected": 365,
+            "weight_sum": 319.63504242897034,
+            "weight_effective_sample_size": 271.03647807704886
+          },
+          "test": {
+            "rows": 30,
+            "connected": 30,
+            "weight_sum": 28.683768153190613,
+            "weight_effective_sample_size": 28.69966490953123
+          },
+          "train_membership_sha256": "136a3d6ece5e04481303223a47c67d46cb5b943346f4d603ea21239a0a0d7dc8",
+          "test_membership_sha256": "37dbffa73c438c214d659a3a307bdebc5ac23ede86d0493f1d327d4cb3289a8e",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 10.97753529726605,
+              "rmse_kwh": 14.46797150118662,
+              "bias_kwh": -6.4992277383699495
+            },
+            "median": {
+              "mae_kwh": 13.441556824720395,
+              "rmse_kwh": 18.04372216817401,
+              "bias_kwh": -11.632482720763424
+            },
+            "mean": {
+              "mae_kwh": 8.982427931262423,
+              "rmse_kwh": 13.883287992731807,
+              "bias_kwh": -1.5762074913336863
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 250,
+            "connected": 250,
+            "weight_sum": 212.74033951759338,
+            "weight_effective_sample_size": 179.35216122499102
+          },
+          "test": {
+            "rows": 145,
+            "connected": 145,
+            "weight_sum": 135.57847106456757,
+            "weight_effective_sample_size": 119.9278825848343
+          },
+          "train_membership_sha256": "84b91e8dbb4a94109de1a2120abbff2edfb4c1198fc8275bee72caa02b81d45f",
+          "test_membership_sha256": "7dcc36597295f2a9b79bc0fac6fa37e5e75407738cf155e72bb2e390d379f7c9",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 27.283877365527385,
+              "rmse_kwh": 32.085983308148165,
+              "bias_kwh": 24.307978065120746
+            },
+            "median": {
+              "mae_kwh": 18.162959246458996,
+              "rmse_kwh": 20.86379401596851,
+              "bias_kwh": 14.45946745315176
+            },
+            "mean": {
+              "mae_kwh": 27.163881269010112,
+              "rmse_kwh": 28.897844901073416,
+              "bias_kwh": 24.675164400961684
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "mae_kwh": 23.872381086110508,
+          "rmse_kwh": 52.09655659608618,
+          "bias_kwh": -1.9538461684789847
+        },
+        "median": {
+          "mae_kwh": 23.882605453692793,
+          "rmse_kwh": 51.82821499141338,
+          "bias_kwh": -10.879134653723971
+        },
+        "mean": {
+          "mae_kwh": 24.315346207885444,
+          "rmse_kwh": 51.52010880570518,
+          "bias_kwh": -2.711759276576144
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "mae_kwh": 20.54346711008486,
+          "rmse_kwh": 37.49081740427317,
+          "bias_kwh": -0.927178717140181
+        },
+        "median": {
+          "mae_kwh": 20.44248092679556,
+          "rmse_kwh": 35.85065451876813,
+          "bias_kwh": -8.86649711663972
+        },
+        "mean": {
+          "mae_kwh": 20.25096732514992,
+          "rmse_kwh": 36.31589329028244,
+          "bias_kwh": 0.012221881061796816
+        }
+      },
+      "out_of_fold_rows": 395
+    },
+    {
+      "population": "SME",
+      "task": "uptake",
+      "sensitivity": "exclude_attritors",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "employment",
+        "solar",
+        "generator",
+        "appliances",
+        "energy_exp",
+        "sales",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 161,
+            "connected": 66,
+            "weight_sum": 161.67003977298737,
+            "weight_effective_sample_size": 150.7045447254034
+          },
+          "test": {
+            "rows": 61,
+            "connected": 51,
+            "weight_sum": 61.947415232658386,
+            "weight_effective_sample_size": 60.40406189039763
+          },
+          "train_membership_sha256": "0304ec6d22de103965025b7ab1d668fdd411b27f33209de36396fc6e2e39413f",
+          "test_membership_sha256": "8f40f659d2bd821358d576e3899ceffabedbd87c4d844fece19a8ca1b7b53a7c",
+          "metrics": {
+            "forest": {
+              "brier": 0.2755565801921039,
+              "log_loss": 0.7452960208315472
+            },
+            "prevalence": {
+              "brier": 0.32122770446020166,
+              "log_loss": 0.8374395059272628
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 95,
+            "connected": 71,
+            "weight_sum": 95.49884903430939,
+            "weight_effective_sample_size": 93.57784565898321
+          },
+          "test": {
+            "rows": 127,
+            "connected": 46,
+            "weight_sum": 128.11860597133636,
+            "weight_effective_sample_size": 117.66214631292063
+          },
+          "train_membership_sha256": "32b27a9d735b2d476e3115adc0583518ba9df42342bccb4214893bfb7ee7c553",
+          "test_membership_sha256": "8a4fe70159d54068739b7934aacbde557aec02e30ae9bebe781ba2d32f25f988",
+          "metrics": {
+            "forest": {
+              "brier": 0.35818270518091183,
+              "log_loss": 0.9364430184430371
+            },
+            "prevalence": {
+              "brier": 0.37443891919404076,
+              "log_loss": 0.9698719621545149
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 188,
+            "connected": 97,
+            "weight_sum": 190.06602120399475,
+            "weight_effective_sample_size": 177.92586619222723
+          },
+          "test": {
+            "rows": 34,
+            "connected": 20,
+            "weight_sum": 33.551433801651,
+            "weight_effective_sample_size": 33.17798557501172
+          },
+          "train_membership_sha256": "5b0c0a5c6f9300b5350da654f25a6d9b5016de38b5ebe944cd9e4a941113d0c7",
+          "test_membership_sha256": "7022b159fb1aee3ec0bac3d21d20c2b7f0d7151d16957942e5b39a0447d3691f",
+          "metrics": {
+            "forest": {
+              "brier": 0.22365275704564594,
+              "log_loss": 0.6379019523528465
+            },
+            "prevalence": {
+              "brier": 0.24808183529726524,
+              "log_loss": 0.6893098703208915
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "brier": 0.3151084848670104,
+          "log_loss": 0.8386977720043706
+        },
+        "prevalence": {
+          "brier": 0.3407395885684716,
+          "log_loss": 0.8910896112546076
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "brier": 0.2857973474728872,
+          "log_loss": 0.7732136638758104
+        },
+        "prevalence": {
+          "brier": 0.31458281965050255,
+          "log_loss": 0.8322071128008898
+        }
+      },
+      "out_of_fold_rows": 222
+    },
+    {
+      "population": "SME",
+      "task": "purchase",
+      "sensitivity": "exclude_attritors",
+      "features": [
+        "male",
+        "age",
+        "education",
+        "employment",
+        "solar",
+        "generator",
+        "appliances",
+        "energy_exp",
+        "sales",
+        "parcel_own",
+        "good_qual"
+      ],
+      "folds": [
+        {
+          "held_out_area": "Goma",
+          "train": {
+            "rows": 66,
+            "connected": 66,
+            "weight_sum": 65.58047711849213,
+            "weight_effective_sample_size": 63.006101867139144
+          },
+          "test": {
+            "rows": 51,
+            "connected": 51,
+            "weight_sum": 51.43265825510025,
+            "weight_effective_sample_size": 50.54956656489543
+          },
+          "train_membership_sha256": "00c49e4b6403126a6eadfb12df5a9825d3807fa82d239a383ee430f8fdab30a6",
+          "test_membership_sha256": "ce770d6dd33ab628475406e4b8fdbe961d75a5565e3a181cec9cea28c2720778",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 93.09564598834311,
+              "rmse_kwh": 212.11679778490463,
+              "bias_kwh": -70.35715377735329
+            },
+            "median": {
+              "mae_kwh": 91.26863698913101,
+              "rmse_kwh": 218.7986783300286,
+              "bias_kwh": -77.79141038666609
+            },
+            "mean": {
+              "mae_kwh": 92.0236874269169,
+              "rmse_kwh": 213.97515774389097,
+              "bias_kwh": -62.96038454855888
+            }
+          }
+        },
+        {
+          "held_out_area": "Lubero",
+          "train": {
+            "rows": 71,
+            "connected": 71,
+            "weight_sum": 70.70921713113785,
+            "weight_effective_sample_size": 70.19690502312038
+          },
+          "test": {
+            "rows": 46,
+            "connected": 46,
+            "weight_sum": 46.30391824245453,
+            "weight_effective_sample_size": 43.43181722035707
+          },
+          "train_membership_sha256": "2ec9fdcc38c8cc2165706cbceb17d4ae09a50847f60619324d5136f78dc04573",
+          "test_membership_sha256": "1abad57d27ed78422896bfd8d724ccd0b6137519af381ffdaba24b4e3cadb2f1",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 67.9626223133208,
+              "rmse_kwh": 98.63561693151553,
+              "bias_kwh": 44.38874585464016
+            },
+            "median": {
+              "mae_kwh": 25.60618792128881,
+              "rmse_kwh": 60.103949572552935,
+              "bias_kwh": -6.823274561298095
+            },
+            "mean": {
+              "mae_kwh": 66.75485006112906,
+              "rmse_kwh": 76.99066819288844,
+              "bias_kwh": 48.59665945624568
+            }
+          }
+        },
+        {
+          "held_out_area": "Mutwanga",
+          "train": {
+            "rows": 97,
+            "connected": 97,
+            "weight_sum": 97.73657649755478,
+            "weight_effective_sample_size": 93.93026909727381
+          },
+          "test": {
+            "rows": 20,
+            "connected": 20,
+            "weight_sum": 19.276558876037598,
+            "weight_effective_sample_size": 19.666769144408242
+          },
+          "train_membership_sha256": "6fa5998f54655d42eebf04daac2b82e9efeffd2226565f8ed111d4dd12ce3074",
+          "test_membership_sha256": "ed6923ce45cd900b284018d93e2e08f96b6b439b635ee4899038c15244e92bce",
+          "metrics": {
+            "forest": {
+              "mae_kwh": 101.94775186736618,
+              "rmse_kwh": 172.79718601553242,
+              "bias_kwh": 34.20686802361462
+            },
+            "median": {
+              "mae_kwh": 69.24427789732145,
+              "rmse_kwh": 166.90926467503994,
+              "bias_kwh": -18.89587744666348
+            },
+            "mean": {
+              "mae_kwh": 104.77960083251678,
+              "rmse_kwh": 168.22779271392125,
+              "bias_kwh": 28.265558397364977
+            }
+          }
+        }
+      ],
+      "pooled_weighted_metrics": {
+        "forest": {
+          "mae_kwh": 84.608399406075,
+          "rmse_kwh": 168.95426325150706,
+          "bias_kwh": -7.724704399944933
+        },
+        "median": {
+          "mae_kwh": 61.65672618173168,
+          "rmse_kwh": 164.50301202951445,
+          "bias_kwh": -40.00585790818215
+        },
+        "mean": {
+          "mae_kwh": 84.12580433254423,
+          "rmse_kwh": 164.7197615371961,
+          "bias_kwh": -3.787108975001811
+        }
+      },
+      "equal_area_mean_fold_metrics": {
+        "forest": {
+          "mae_kwh": 87.6686733896767,
+          "rmse_kwh": 161.1832002439842,
+          "bias_kwh": 2.746153366967164
+        },
+        "median": {
+          "mae_kwh": 62.039700935913764,
+          "rmse_kwh": 148.60396419254047,
+          "bias_kwh": -34.503520798209216
+        },
+        "mean": {
+          "mae_kwh": 87.85271277352092,
+          "rmse_kwh": 153.06453955023355,
+          "bias_kwh": 4.63394443501726
+        }
+      },
+      "out_of_fold_rows": 117
+    }
+  ],
+  "individual_predictions_exported": false,
+  "uganda_model_modified": false
+}

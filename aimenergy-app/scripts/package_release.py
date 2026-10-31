@@ -28,6 +28,8 @@ def include(path: Path, local: bool) -> bool:
             "Data/metadata/tanzania-metered-audit.json", "Data/metadata/kit-metered-audit.json",
             "Data/metadata/metered-benchmark-protocol.json",
             "Data/metadata/satellite-evidence-audit.json", "Data/metadata/drone-illustration.json",
+            "Data/metadata/drc-dataverse-source.json", "Data/metadata/drc-dataverse-audit.json",
+            "Data/metadata/drc-benchmark-protocol.json",
         }
     if rel.parts[:4] == ("Data", "raw", "metered", "kit"):
         # Keep source documentation, not repository session pages/handler scratch.

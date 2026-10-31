@@ -32,3 +32,7 @@ Use `--download` on the acquisition script to refresh the original verified HTTP
 Raw metered records, extracted curves and source PDFs remain local and excluded from Git, public serving and portable source bundles. The noncommercial hackathon evidence exhibit attributes the NC-licensed Tanzania source. It is not used to train the household forest or to set planner/RAMP inputs. Commercial use or training permission has not been established; replace or clear the NC research exhibit before a commercial release. The pilot's future operator data remains subject to its own agreed terms.
 
 The KIT audit is separately recorded in `Data/metadata/kit-metered-audit.json`. Dataset access status must be taken from that audit; source-paper descriptions are never counted as acquired meter rows. The Rwanda recordings are supply constrained, so delivered power is not a label of unconstrained demand.
+
+## DRC purchase benchmark
+
+The same evidence workspace now starts with a separate CC0 DRC geographic benchmark. Its prepaid kWh-purchase targets are consumption proxies, rather than direct meter readings or current-derived energy. See [DRC_BENCHMARK.md](DRC_BENCHMARK.md) for all folds, mixed results and reproduction. The Tanzania source, license, splits and timing diagnostic below remain separate.

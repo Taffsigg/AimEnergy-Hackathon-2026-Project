@@ -1,3 +1,5 @@
+import {renderDrcBenchmark} from './drc-lab.js';
+export {setDrcBenchmark} from './drc-lab.js';
 let evidence = null;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = value => Number(value).toFixed(3);
@@ -12,9 +14,9 @@ function diagnosticChart(runs) {
 }
 
 export function renderMeteredLab() {
-  if (!evidence) return '<div class="info-note">Metered evidence could not load. Refresh the app while online, then refresh the offline pack.</div>';
+  if (!evidence) return renderDrcBenchmark() + '<div class="info-note">Tanzania metered evidence could not load. Refresh the app while online, then refresh the offline pack.</div>';
   const d = evidence.dataset, e = evidence.evaluation;
-  return '<div class="view-heading"><h2>Measured data. Clear boundaries.</h2><p>A reproducible meter-data diagnostic, separate from our household ML evaluation and village scenarios.</p></div>' +
+  return renderDrcBenchmark() + '<div class="view-heading"><h2>Tanzania: measured current, clear boundaries.</h2><p>A reproducible meter-data diagnostic, separate from both household ML benchmarks and village scenarios.</p></div>' +
     '<div class="evidence-grid"><section class="panel evidence-card"><div class="number">' + Number(d.rows).toLocaleString('en-US') + '</div><h3>Minute current records acquired</h3><p>Nine series from one operating Tanzania mini-grid. Original ZIP verified against the publisher’s SHA-256.</p></section><section class="panel evidence-card"><div class="number">' + e.test_days + '</div><h3>Later complete days evaluated</h3><p>First complete day trains each recording. Every later complete day is evaluated: 96 hourly bins, all from the same site.</p></section><section class="panel evidence-card"><div class="number">0</div><h3>Unseen-site kWh tests</h3><p>This diagnostic does not validate the household forest, RAMP, Lamwo energy estimates or demand growth.</p></section></div>' +
     '<div class="meter-verdict"><span class="head-tag">RETROSPECTIVE · ONE SITE</span><h3>A familiar daily rhythm helps—until a larger error matters.</h3><p>Repeating the first day’s shape beats a flat profile on MAE in all four comparisons. On Minigrid1b day 2, it has <strong>worse RMSE</strong>. We retain that result. No machine-learning accuracy claim follows from this simple timing diagnostic.</p></div>' +
     '<div class="meter-grid"><section class="panel"><div class="panel-head"><div><h2>Timing-shape diagnostic</h2><p class="subtext">Mean absolute error · percentage points of daily current share</p></div></div><div class="meter-body"><div class="meter-legend"><span><i style="background:#41694a"></i>Repeat first complete day</span><span><i style="background:#d4ba90"></i>Flat 1/24 baseline</span></div>' + diagnosticChart(e.runs) + '<p class="control-help">Lower is better. This tests the distribution across 24 hours, not the size of the next day’s electricity demand. Current shares are not energy shares.</p></div></section>' +

@@ -27,7 +27,7 @@ The templates folder contains a header-only operator CSV and dictionary, not fab
 
 ## DRC replication package
 
-The repository-root `dataversefiles` folder contains the user-supplied Harvard Dataverse release [10.7910/DVN/KPDREF](https://doi.org/10.7910/DVN/KPDREF), CC0 1.0. It contains electricity-purchase kWh aggregates and client averages, census and linked survey outcomes, not direct meter readings. All eight publisher checksums are verified by `python scripts/audit_drc_data.py`. See [the suitability audit](../docs/DRC_DATA_AUDIT.md), [aggregate inventory](metadata/drc-dataverse-audit.json) and [official source metadata](metadata/drc-dataverse-source.json). Area codes differ between files; missing survey usage is not automatically zero. No new model or validation result has been produced, and raw rows are not copied into the public app.
+The repository-root `dataversefiles` folder contains the user-supplied Harvard Dataverse release [10.7910/DVN/KPDREF](https://doi.org/10.7910/DVN/KPDREF), CC0 1.0. It contains electricity-purchase kWh aggregates and client averages, census and linked survey outcomes, not direct meter readings. All eight publisher checksums are verified by `python scripts/audit_drc_data.py`. See [the suitability audit](../docs/DRC_DATA_AUDIT.md), [aggregate inventory](metadata/drc-dataverse-audit.json) and [official source metadata](metadata/drc-dataverse-source.json). Area codes differ between files; missing survey usage is not automatically zero. The [separate DRC benchmark](../docs/DRC_BENCHMARK.md) now evaluates uptake and conditional purchases with each area held out in turn. Raw rows are not copied into the public app.
 
 ## Remote evidence
 

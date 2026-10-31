@@ -49,6 +49,8 @@ test('offline fallback permits only exact known same-origin static GET paths', (
   assert.ok(w.CORE.includes('https://example.test/kit/field-core.js'));
   assert.ok(w.CORE.includes('https://example.test/kit/metered-lab.js'));
   assert.ok(w.CORE.includes('https://example.test/kit/data/metered-evidence.json'));
+  assert.ok(w.CORE.includes('https://example.test/kit/drc-lab.js'));
+  assert.ok(w.CORE.includes('https://example.test/kit/data/drc-benchmark.json'));
   assert.equal(key('Data/raw/metered/tanzania/source.txt'), null);
   assert.ok(w.CORE.includes('https://example.test/kit/field-lab.css'));
 });

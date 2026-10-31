@@ -1,0 +1,51 @@
+{
+  "id": "drc-geographic-purchase-v1",
+  "status": "retrospective_fixed_design_not_preregistered",
+  "dataset": "https://doi.org/10.7910/DVN/KPDREF",
+  "license": "CC0-1.0",
+  "features": {
+    "household": [
+      "male",
+      "age",
+      "education",
+      "hhsize",
+      "depratio",
+      "solar",
+      "appliances",
+      "energy_exp",
+      "income",
+      "parcel_own",
+      "good_qual"
+    ],
+    "SME": [
+      "male",
+      "age",
+      "education",
+      "employment",
+      "solar",
+      "generator",
+      "appliances",
+      "energy_exp",
+      "sales",
+      "parcel_own",
+      "good_qual"
+    ]
+  },
+  "forest_parameters": {
+    "n_estimators": 64,
+    "max_depth": 4,
+    "min_samples_leaf": 12,
+    "random_state": 20261031,
+    "n_jobs": 1
+  },
+  "split": "Three folds: hold out each complete analysis area, train on the other two. Separate household and SME models.",
+  "uptake": "Author-coded follow-up connection status, including attritors coded unconnected; sensitivity excludes attritors from training and evaluation.",
+  "purchase": "Monthly prepaid kWh purchases averaged over connection-to-follow-up, conditional on observed connection; windows vary and exact dates are unreleased.",
+  "baselines": "Training-weighted connection prevalence; training-weighted purchase median and mean. All are recomputed within each fold/subgroup/sensitivity.",
+  "preprocessing": "Unweighted training-only median imputation, then sample-weighted forest fit; raw kWh squared-error regression, no log transform.",
+  "metrics": "Held-out sampling-weighted Brier/log loss or MAE/RMSE/bias. Bias is prediction minus observation. Log loss clips probabilities at 1e-6.",
+  "aggregation": "Pooled out-of-fold sampling-weighted metrics and separately named equal-area averages of fold metrics. Pooled RMSE uses pooled squared errors.",
+  "excluded": "Area, ID, enumerator, target/log-target, connection, attrition and follow-up/conflict fields are never predictors. Distance is omitted because planned alignment availability is uncertain.",
+  "selection": "One fixed model per task; no hyperparameter search, favorable-fold selection or switch after viewing results.",
+  "scope": "Three analysis areas, one operator, DRC. Not direct-meter, independent-operator, Uganda transfer, village-total, growth, interval or equipment-size validation."
+}

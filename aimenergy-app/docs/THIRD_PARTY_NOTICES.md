@@ -13,6 +13,10 @@ Input hashes and field-level provenance are in dist/data/catalog.json. No blanke
 
 Hartvigsson, Elias; Ahlgren, Erik (2018), Data for: Comparison of load profiles in a mini-grid: assessment of performance metrics using measured and interview-based data, Mendeley Data V1, DOI 10.17632/bbtn9wxhzm.1. https://data.mendeley.com/datasets/bbtn9wxhzm/1 — CC BY-NC 3.0, https://creativecommons.org/licenses/by-nc/3.0/. Numeric originals remain unchanged locally; aggregate timing diagnostics are derived for this noncommercial research demonstration. Raw records and curves are not publicly served. This source is not used to train the household model or set planner inputs. Commercial deployment/training clearance is not established; replace or clear the research exhibit before commercial use.
 
+## DRC purchase and uptake benchmark
+
+Lunanga, Elie; Stoop, Nik; Verpoorten, Marijke; Desbureaux, Sébastien (2026), Replication Data for: From demand deficit to development strategy: Navigating mini-grid viability in a fragile context, Harvard Dataverse V1, DOI 10.7910/DVN/KPDREF, https://doi.org/10.7910/DVN/KPDREF. Official metadata specifies CC0 1.0. AimEnergy publishes aggregate evaluation derived from the linked survey; individual survey and conflict-exposure records are not served. These kWh outcomes represent prepaid purchases used as consumption proxies, not direct-meter readings. Dataset-level CC0 does not change the separate Tanzania or satellite asset terms.
+
 ## Satellite imagery and drone artwork
 
 The Orii Gangodye 2024 crop is EOxCloudless (https://cloudless.eox.at) by EOX IT Services GmbH (https://eox.at). Contains modified Copernicus Sentinel data 2024. Source announcement: https://www.eox.at/2025/03/sentinel-2-cloudless-2024/. Included under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/) for noncommercial demonstration; commercial deployment needs an appropriate license or replacement imagery. Spatial extent, annual-mosaic date kind and source hash are recorded in dist/data/satellite-evidence.json and Data/metadata/satellite-evidence-audit.json.

@@ -1,6 +1,6 @@
 {
   "name": "aimenergy",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "private": true,
   "type": "module",
   "description": "Explainable mini-grid demand planning for the Global Energy Hackathon",
@@ -11,7 +11,9 @@
     "train": "python scripts/train_model.py",
     "test:ml-data": "python -m unittest discover -s tests -p test_ml_data.py",
     "benchmark:metered": "python scripts/build_metered_benchmark.py",
-    "test:metered": "python -m unittest discover -s tests -p test_metered_benchmark.py"
+    "test:metered": "python -m unittest discover -s tests -p test_metered_benchmark.py",
+    "benchmark:drc": "python scripts/build_drc_benchmark.py",
+    "test:drc": "python -m unittest discover -s tests -p test_drc_benchmark.py"
   },
   "engines": {
     "node": ">=20"

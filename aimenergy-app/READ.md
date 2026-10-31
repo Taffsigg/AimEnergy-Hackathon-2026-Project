@@ -1,7 +1,7 @@
 # AimEnergy — complete project guide
 
 - **Project:** AimEnergy
-- **Version:** 3.3.0
+- **Version:** 3.4.0
 - **Documentation date:** 30 October 2026
 - **Challenge:** Global Energy Hackathon, Brief 03 — Predict mini-grid demand before building
 - **Working directory:** `C:\Users\Dell\Downloads\AimEnergy\AimEnergy Project\aimenergy-app`
@@ -363,7 +363,7 @@ Applying an assessment uses its baseline plus its answers, replacing later plann
 4. Before recording/travel, verify the map, model and evidence screens still load when the app server is unavailable.
 5. After an app/model update, choose **Refresh offline pack**, wait for Ready and reload again.
 
-The current allowlist contains **33 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
+The current allowlist contains **35 required static assets**, including the metered view and summary. Preparation commits a complete snapshot only after all assets succeed; failure preserves the previous complete pack. APIs, raw Data, remote fonts and unknown routes are excluded.
 
 Field records live in browser local storage, independently of cached application assets. No automatic upload or sync is implemented. Use anonymous aggregate notes and export backups. Clearing browser site data can remove assessments and cached assets. Private browsing, quota limits or device policies can prevent persistence. Readiness on one device is not proof of readiness on another.
 
@@ -600,3 +600,7 @@ Do not place raw household files, credentials, customer identifiers or private o
 | [Impact estimate](docs/IMPACT_ESTIMATE.md) | One-page evidence and impact scope |
 | [Demo checklist](docs/DEMO_CHECKLIST.md) | Rehearsal and submission checks |
 | [Third-party notices](docs/THIRD_PARTY_NOTICES.md) | Attribution, dependencies and source rights |
+
+## DRC benchmark addition (3.4.0)
+
+A separate retrospective geographic benchmark now appears in Metered evidence. See [DRC_BENCHMARK.md](docs/DRC_BENCHMARK.md) for the fixed protocol, all-area results and limitations. Household uptake improves over its prevalence baseline, while purchase models show little or negative improvement. The target is prepaid kWh purchases, not direct-meter consumption; the Uganda model and planner remain unchanged. Run `npm run benchmark:drc` to reproduce from repository-root dataversefiles. Public output is aggregate-only. Offline field-v6 includes 35 assets.

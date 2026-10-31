@@ -56,7 +56,7 @@ Automatic imagery coverage is currently **one pilot village**, not all 411 villa
 
 Imports stay in the visitor's browser. They do not upload automatically, retrain the model or change demand assumptions. The app does not control a drone, process raw flight photographs, detect roofs automatically or verify a survey's positional accuracy. Building counts do not establish occupied households, customers or electricity use.
 
-The **field-v5** offline pack includes **33 static assets**, covering the new imagery, artwork and workspace. Prepare or refresh it while online, wait for Ready and reload. Imported records are stored separately from the app snapshot.
+The **field-v6** offline pack includes **35 static assets**, covering the new imagery, artwork and workspace. Prepare or refresh it while online, wait for Ready and reload. Imported records are stored separately from the app snapshot.
 
 The satellite crop is a **noncommercial demonstration asset under CC BY-NC-SA 4.0**. It is attributed to [EOxCloudless](https://cloudless.eox.at) by [EOX IT Services GmbH](https://eox.at): **Contains modified Copernicus Sentinel data 2024**. Commercial deployment needs suitable permission or replacement imagery.
 
@@ -80,7 +80,7 @@ The survey contains **445 unique households**, despite 28,625 source rows. No La
 
 Average-day peaks do not establish equipment sizes, motor starting requirements, reliability or investment returns. See the [model card](aimenergy-app/docs/MODEL_CARD.md), [methods](aimenergy-app/docs/METHODOLOGY.md) and [metered evidence](aimenergy-app/docs/METERED_EVIDENCE.md).
 
-A newly acquired **CC0 DRC replication package** adds 175 area-month records, 13,479 client averages and 1,202 survey respondents. Its kWh figures represent prepaid electricity purchases used as a consumption proxy, rather than direct meter readings. All eight publisher file checksums were verified. See the [DRC suitability audit](aimenergy-app/docs/DRC_DATA_AUDIT.md) for missingness, differing area codes and the proposed separate benchmark; no new AimEnergy accuracy result has been established.
+A **CC0 DRC benchmark** now evaluates 1,202 survey respondents with each of three analysis areas held out in turn. Household uptake Brier error is **0.2214 versus 0.2885** for training prevalence. Household purchase MAE is almost unchanged (**23.87 versus 23.88**); SME purchase MAE is worse (**84.61 versus 61.66**). All folds, both purchase baselines and attrition sensitivity are published. These are prepaid kWh-purchase outcomes, rather than direct meter readings; the Uganda model and village assumptions remain unchanged. See the [DRC benchmark](aimenergy-app/docs/DRC_BENCHMARK.md) and [source audit](aimenergy-app/docs/DRC_DATA_AUDIT.md).
 
 ## Repository layout
 
@@ -120,7 +120,7 @@ From `aimenergy-app`:
 npm test
 ```
 
-Recorded verification includes **42 JavaScript tests** covering planning invariants, village integration, model parity, API handling, field provenance, routing, offline snapshots and bounded remote-evidence imports. Seven additional Python checks cover private household-data audits and the metered diagnostic when their local data is available. Browser checks exercised GeoJSON/image/CSV imports, year selection, restoration, evidence export, desktop/mobile layouts and offline-pack preparation. Synthetic QA imports were removed afterward. See the [verification record](aimenergy-app/docs/VERIFICATION.md) for the exact scope and remaining limits.
+Recorded verification includes **44 JavaScript tests** covering planning invariants, village integration, model parity, API handling, field provenance, routing, offline snapshots and bounded remote-evidence imports. Seven additional Python checks cover private household-data audits and the metered diagnostic when their local data is available. Browser checks exercised GeoJSON/image/CSV imports, year selection, restoration, evidence export, desktop/mobile layouts and offline-pack preparation. Synthetic QA imports were removed afterward. See the [verification record](aimenergy-app/docs/VERIFICATION.md) for the exact scope and remaining limits.
 
 Normal inference uses the prepared JSON model. Retraining needs the separately documented Python environment and local source data. RAMP uses a separate pinned environment. See [model artifacts](aimenergy-app/Models/README.md), the [data guide](aimenergy-app/Data/README.md) and the [complete guide](aimenergy-app/READ.md) before reproducing research outputs.
 
