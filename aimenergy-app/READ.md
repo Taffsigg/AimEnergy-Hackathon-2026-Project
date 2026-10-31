@@ -2,15 +2,14 @@
 
 - **Project:** AimEnergy
 - **Version:** 3.6.0
-- **Documentation date:** 30 October 2026
+- **Documentation date:** 31 October 2026
 - **Challenge:** Global Energy Hackathon, Brief 03 — Predict mini-grid demand before building
-- **Working directory:** `C:\Users\Dell\Downloads\AimEnergy\AimEnergy Project\aimenergy-app`
 
 AimEnergy helps mini-grid developers examine how much electricity a settlement might use before construction. It combines real geographic inputs, a trained household survey-proxy model, reproducible appliance timing simulation and editable demand scenarios. Its field workflow preserves source evidence, identifies sensitive assumptions and records scenario revisions.
 
 This is a working research and planning prototype. The household model has held-out survey evaluation; the village scenarios do not yet have independent unseen-site kWh validation. Those are separate evidence levels throughout this guide.
 
-`READ.md` is the comprehensive handoff guide. The existing `README.md` remains the shorter introduction. Specialist documents are indexed at the end.
+`READ.md` is the detailed setup and methods guide. The existing `README.md` remains the shorter introduction. Specialist documents are indexed at the end.
 
 ## Contents
 
@@ -28,7 +27,7 @@ This is a working research and planning prototype. The household model has held-
 12. [Reproduction and verification](#reproduction-and-verification)
 13. [Deployment and five-to-six-month roadmap](#deployment-and-five-to-six-month-roadmap)
 14. [Brief 03 readiness and outstanding work](#brief-03-readiness-and-outstanding-work)
-15. [Demo, pitch and submission materials](#demo-pitch-and-submission-materials)
+15. [Worked example](#worked-example)
 16. [Packaging, licensing and data handling](#packaging-licensing-and-data-handling)
 17. [Troubleshooting](#troubleshooting)
 18. [Documentation index](#documentation-index)
@@ -494,33 +493,11 @@ The prototype addresses substantial parts of Brief 03 but does **not yet fully s
 
 The pilot protocol requires target definitions, supply-constraint treatment, whole-site splits, frozen baselines and acceptance thresholds before final evaluation. Proposed metrics include kWh MAE, signed bias, WAPE with explicit zero handling, growth-horizon errors and separate interval coverage/width. Acceptance thresholds have not yet been agreed with an operator. No partnership or outreach submission is implied by the draft materials.
 
-## Demo, pitch and submission materials
+## Worked example
 
-### Reproducible planning example
+At the default Orii Gangodye settings, month-one demand is 1,569.57 kWh. The scenario assumes a population of about 555, 4.5 people per household, 60% uptake, 20 kWh per connected household per month and one school at 3 kWh/day.
 
-1. Use **Demo story → Start the demo journey** and reset to the intended village defaults.
-2. Show **Orii Gangodye**, with source population approximately 554.84 people, 4.5 people/household, 60% uptake, 20 kWh/connected household/month and one school at 3 kWh/day.
-3. The month-1 base is **1,569.57 kWh**.
-4. Add one hypothetical mill: **7.5 kW × 3 hours × 22 days = 495 kWh/month**.
-5. The revised total is **2,064.57 kWh/month**. At six mill hours, the increment is 990 kWh; an old saved assessment may restore that alternative.
-6. Show the field passport, record the example as **Demonstration response**, apply it and export the comparison.
-7. Show the household test result and separate metered evidence, then the operator pilot plan.
-
-This is scenario arithmetic. It is not evidence that a mill exists, a field visit occurred or prediction accuracy improved.
-
-### Submission assets
-
-- `docs/PITCH.md`: spoken three-minute pitch and demonstration notes.
-- `docs/IMPACT_ESTIMATE.md`: one-page evidence/impact estimate.
-- `docs/DEMO_CHECKLIST.md`: reset, export, offline and claim checks.
-- `docs/PILOT_PROTOCOL.md`: proposed evaluation design and unsent operator outreach draft.
-- `docs/OPERATOR_DATA_SHARING.md`: aggregation, safeguards and validation proposal.
-- `docs/screenshots/`: actual application screenshots.
-- `docs/examples/`: exported example reports with scenario/demo scope.
-
-The supplied handbook calls for build-file links and a disclosure statement covering prior work, sprint work, AI tools, open-source code and datasets. Preserve genuine development records and use the organizers' current portal instructions for final requirements. Creating a new repository or importing files does not itself establish development dates or eligibility.
-
-The supplied schedule specifies submission on **1 November 2026 at 12:00 PM ET**. The handbook notes that U.S. daylight saving ends during the sprint; confirm the portal's exact timezone and requirements. Pitch/demo videos still need to be recorded; their source scripts are not finished videos. No hackathon outcome is guaranteed.
+A hypothetical 7.5 kW grain mill operating three equivalent full-power hours on 22 days adds 495 kWh/month. The total becomes 2,064.57 kWh/month. At six hours, the mill adds 990 kWh instead. Use these values to check the calculations after resetting village defaults. They are scenario inputs, not evidence of an operating mill or an actual field visit.
 
 ## Packaging, licensing and data handling
 
@@ -591,24 +568,23 @@ Do not place raw household files, credentials, customer identifiers or private o
 | [Metered evidence](docs/METERED_EVIDENCE.md) | Current-data experiment, results and limits |
 | [Field assessment](docs/FIELD_ASSESSMENT.md) | Passport, questions, revisions and history |
 | [Offline](docs/OFFLINE.md) | Snapshot policy, preparation and recovery |
-| [Pilot protocol](docs/PILOT_PROTOCOL.md) | Proposed operator evaluation and draft outreach |
+| [Pilot protocol](docs/PILOT_PROTOCOL.md) | Proposed operator evaluation |
 | [Operator data sharing](docs/OPERATOR_DATA_SHARING.md) | Sharing terms, aggregation and validation design |
 | [Operator template dictionary](Data/templates/README.md) | Proposed aggregate CSV field definitions |
 | [Deployment roadmap](docs/DEPLOYMENT_ROADMAP.md) | Conditional five-to-six-month gates |
 | [Verification](docs/VERIFICATION.md) | Recorded tests, browser checks and remaining limits |
-| [Pitch](docs/PITCH.md) | Spoken three-minute story |
-| [Impact estimate](docs/IMPACT_ESTIMATE.md) | One-page evidence and impact scope |
-| [Demo checklist](docs/DEMO_CHECKLIST.md) | Rehearsal and submission checks |
 | [Third-party notices](docs/THIRD_PARTY_NOTICES.md) | Attribution, dependencies and source rights |
 
-## DRC benchmark addition (3.4.0)
+## Other workspaces
 
-A separate retrospective geographic benchmark now appears in Metered evidence. See [DRC_BENCHMARK.md](docs/DRC_BENCHMARK.md) for the fixed protocol, all-area results and limitations. Household uptake improves over its prevalence baseline, while purchase models show little or negative improvement. The target is prepaid kWh purchases, not direct-meter consumption; the Uganda model and planner remain unchanged. Run `npm run benchmark:drc` to reproduce from repository-root dataversefiles. Public output is aggregate-only. Offline field-v6 includes 35 assets.
+### DRC benchmark
 
-## Community access addition (3.5.0)
+The separate [DRC benchmark](docs/DRC_BENCHMARK.md) evaluates connection uptake and conditional kWh purchases with each of three areas held out in turn. Household uptake improves over its baseline; purchase prediction shows little or negative improvement. The target is prepaid purchases rather than direct meter readings. Run npm run benchmark:drc to reproduce it.
 
-Community USSD previews basic-phone participation, with consented simulation responses, owned/intended appliances, a local review inbox, reversible review/removal, JSON export and village-passport handoff. Responses remain demonstration evidence and never automatically change a forecast. See [USSD_OFFLINE.md](docs/USSD_OFFLINE.md). Offline field-v7 includes 38 assets. Actual USSD still needs mobile coverage and an online provider integration; automatic synchronization is not implemented.
+### Community access
 
-## System feasibility addition (3.6.0)
+[Community USSD](docs/USSD_OFFLINE.md) is a browser simulator with consented responses, distinct owned/intended appliances, a review inbox and passport exports. Responses retain demonstration provenance and do not change forecasts automatically. Live telecom delivery and synchronization are not implemented.
 
-The new System feasibility workspace connects the first twelve demand-scenario months to 8,760 hourly PV/battery/generator calculations. It includes cached pilot PVGIS solar, local resource import, illustrative LCOE/NPV and cashflows, saved local versions and JSON/print-ready HTML reports. Use Print / Save as PDF for a PDF. Detailed engineering, ageing, grid exchange and IRR are not implemented. See [SYSTEM_FEASIBILITY.md](docs/SYSTEM_FEASIBILITY.md). Offline field-v8 includes 42 assets.
+### System feasibility
+
+[System feasibility](docs/SYSTEM_FEASIBILITY.md) calculates hourly PV, battery and generator flows using the first twelve demand-scenario months. It includes a cached pilot solar series, matching resource imports, illustrative LCOE/NPV, local versions and report exports. Use Print / Save as PDF for a PDF. The current field-v8 offline pack contains 42 assets.

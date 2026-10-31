@@ -31,7 +31,3 @@ For growth, report declared horizon errors (for example months 3, 6, 12 and 24 w
 ## Mutual value and delivery
 
 The operator contributes approved aggregates and measurement definitions; AimEnergy returns a private site-level error ledger, baseline comparison, data-quality findings and a prioritized list of inputs worth verifying. Start with a small private analysis, then decide whether a monitored workflow pilot is justified. A data-sharing agreement defines purpose, access, storage, retention, deletion and publication review. No automatic data upload is built into the app.
-
-## Draft outreach — not sent
-
-We are building AimEnergy for preconstruction mini-grid demand planning. We would like to evaluate it with an operator using approved site/month customer-kWh aggregates and dated preconnection settlement features. We do not need customer names, payment-account details or household coordinates. We will freeze held-out sites and baselines before fitting, return the full results including failures, and publish no operator data without permission. Could we review your data definitions and agree a small private feasibility analysis? Attached: aggregate template, measurement dictionary and evaluation protocol.

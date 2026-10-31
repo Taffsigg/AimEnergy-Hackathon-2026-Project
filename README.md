@@ -1,157 +1,82 @@
 # AimEnergy
 
-### Better decisions before the first connection.
+AimEnergy is a browser-based tool for planning rural mini-grids. It brings together village data, household models, demand scenarios and field assessments. A system feasibility workspace lets you explore how solar panels, batteries and a generator could serve an assumed load.
 
-AimEnergy is an AI-assisted planning prototype for estimating rural mini-grid demand before construction. It connects real village geography, dated satellite imagery, an inspectable household model, editable appliance scenarios and a field-assessment workflow so developers can see what supports an estimate and what to investigate next. Completed drone-survey outputs can be imported locally as additional context.
+The geographic dataset covers **411 villages in Lamwo, Uganda**. This is a research prototype; village estimates and equipment scenarios still need field validation.
 
-Built for **Global Energy Hackathon — Brief 03: Predict mini-grid demand before building**. The geographic pilot covers **Lamwo, Uganda**.
+![AimEnergy](aimenergy-app/docs/screenshots/landing-page.jpg)
 
-![AimEnergy landing page](aimenergy-app/docs/screenshots/landing-page.jpg)
+## Run locally
 
-## What you can do
-
-- **Explore 411 real villages** with population estimates, building counts, mapped facilities and geographic boundaries.
-- **Build a demand scenario** from household connections, productive-use businesses and public services.
-- **Compare 24 months** of editable uptake, appliance and business-growth assumptions, with low/base/high envelopes.
-- **Inspect a trained household model**, its benchmark, feature inputs and evaluation limits before using its output as an assumption.
-- **Take questions into the field:** inspect an evidence passport, answer sensitivity-ranked questions, preserve the baseline and compare a revision.
-- **Prepare for offline assessment**, save scenarios locally and export reports with their assumptions and evidence methods.
-- **Inspect satellite and drone evidence:** a dated pilot mosaic, local survey/image imports and a building-history CSV view; concept artwork stays distinct from measurements. See the [remote-evidence guide](aimenergy-app/docs/REMOTE_EVIDENCE.md).
-- **Review real metered-current evidence** separately from household ML results and village planning scenarios.
-
-## Run the prototype
-
-Requires **Node.js 20 or newer**. No npm dependency installation, Python server, database or API key is needed to run the prepared browser demo.
-
-From the repository root:
+Install Node.js 20 or newer, then run:
 
 ```sh
 cd aimenergy-app
 npm start
 ```
 
-Open **http://127.0.0.1:4173/** for the landing page, then select **Open prototype**. The planner is also available at **http://127.0.0.1:4173/planner.html**.
+Open [localhost:4173](http://127.0.0.1:4173/). The planner is at [planner.html](http://127.0.0.1:4173/planner.html). No dependency installation, database or API key is needed for the prepared app. Windows users can run **aimenergy-app/Start AimEnergy.cmd**.
 
-On Windows, you can double-click `aimenergy-app/Start AimEnergy.cmd`. Keep the server terminal open while using the local app.
+## Features
 
-For a first demonstration, open **Demo story**, reset to the intended village defaults, compare a baseline with one hypothetical grain mill, then inspect **AI model lab**, **Satellite & drone**, **Field assessment** and **Metered evidence**.
+- Browse village boundaries, population estimates, buildings, schools and clinics.
+- Build household, business and public-service demand scenarios over 24 months.
+- Review household model inputs, baseline comparisons and evaluation results.
+- Record field answers, keep the original assumptions and compare revisions.
+- Prepare the app for offline use and export assessments and reports.
+- View a dated satellite example and import completed drone-survey outputs.
+- Try a USSD simulator with a local review inbox and village-passport exports.
+- Run hourly solar, battery and generator scenarios with editable costs, LCOE and NPV.
 
-## Satellite and drone evidence
+## System feasibility
 
-Open **Satellite & drone** in the planner. If another village is selected, choose **Open the Orii Gangodye example** to see the acquired satellite layer.
+The system workspace calculates 8,760 hourly steps, including unmet demand, battery flows, generator fuel and curtailed solar output. Equipment sizes and costs are user assumptions. Versions are saved in the browser; the complete scenario and a print-ready report can be downloaded.
 
-![Satellite and drone evidence workspace](aimenergy-app/docs/screenshots/satellite-drone-evidence.jpg)
+A 2023 PVGIS resource is included for Orii Gangodye. Other locations need a matching PVGIS file. The model does not optimize equipment sizes or provide cable designs, protection studies or single-line diagrams. See [system methods](aimenergy-app/docs/SYSTEM_FEASIBILITY.md).
 
-| Feature | What is available |
+## Offline and community responses
+
+Prepare the offline pack in Field assessment while connected, wait for Ready, then reload. The current pack contains 42 static assets. Records stay in browser storage until exported; there is no automatic synchronization between devices or domains.
+
+Community USSD is a browser simulator, not a live telecom service. Responses remain labelled as simulations after review and do not automatically change a forecast. A live service would require mobile coverage, a provider and an online backend. See [community access](aimenergy-app/docs/USSD_OFFLINE.md) and [offline operation](aimenergy-app/docs/OFFLINE.md).
+
+## Data and evaluation
+
+| Component | Current evidence |
 |---|---|
-| Real satellite imagery | A 2024 EOxCloudless / Sentinel-2 annual mosaic for Orii Gangodye, nominal 10 m resolution, with the village boundary overlaid |
-| Source provenance | Mosaic year, extent, resolution, attribution, license and source hash; the annual mosaic is not a single dated acquisition or current survey |
-| Drone-survey features | Local WGS84 GeoJSON import: Point, Polygon and MultiPolygon; up to 2,000 features, 50,000 vertices and 1 MB |
-| Processed survey image | Local PNG/JPEG overlay with user-supplied WGS84 extent; up to 2 MB and 20 million pixels |
-| Building-change view | Import a `year,building_count` CSV, identify its source, and inspect dated estimates with a year selector |
-| Evidence handoff | Retain source and observation date, export evidence JSON, and continue to the selected village's field assessment |
-| Drone illustration | AI-generated concept artwork on the landing page and in the workspace; explicitly separate from real survey evidence |
+| Geography | 411 Lamwo records, 39 candidate villages and 25 existing-site records across 24 villages |
+| Household model | 445 independent survey households; held-out MAE 44.14 versus 49.09 kWh/month for a median baseline |
+| DRC benchmark | Three areas held out in turn; improved household uptake error, little change in household purchase error and worse business purchase error |
+| Tanzania diagnostic | 40,809 minute current records from one site, used for a separate timing comparison |
+| Solar example | 8,760 modeled PVGIS hourly samples for one village |
 
-Automatic imagery coverage is currently **one pilot village**, not all 411 villages. Google Open Buildings Temporal village-count histories have **not** been acquired: local raster processing was blocked by insufficient disk space. The building-change view stays empty until dated observations are supplied; it does not invent a growth curve.
+The Uganda household target is derived from payments at an assumed tariff. The DRC target uses prepaid kWh purchases. Neither is direct-meter consumption, and no Lamwo household sample was identified. Village low/base/high values are scenario envelopes, not calibrated confidence intervals. Dispatch and financial results do not establish field reliability, equipment suitability or investment returns.
 
-Imports stay in the visitor's browser. They do not upload automatically, retrain the model or change demand assumptions. The app does not control a drone, process raw flight photographs, detect roofs automatically or verify a survey's positional accuracy. Building counts do not establish occupied households, customers or electricity use.
+Details: [model card](aimenergy-app/docs/MODEL_CARD.md), [DRC benchmark](aimenergy-app/docs/DRC_BENCHMARK.md) and [metered-data notes](aimenergy-app/docs/METERED_EVIDENCE.md).
 
-The **field-v8** offline pack includes **42 static assets**, covering the new imagery, artwork and workspace. Prepare or refresh it while online, wait for Ready and reload. Imported records are stored separately from the app snapshot.
+## Deploy to Vercel
 
-The satellite crop is a **noncommercial demonstration asset under CC BY-NC-SA 4.0**. It is attributed to [EOxCloudless](https://cloudless.eox.at) by [EOX IT Services GmbH](https://eox.at): **Contains modified Copernicus Sentinel data 2024**. Commercial deployment needs suitable permission or replacement imagery.
+Import the repository and set **Root Directory** to **aimenergy-app**. The included configuration publishes **dist** as a static site. Browser calculations and cached examples work without a server API; the separate Node API is not part of that deployment. Follow the [deployment guide](aimenergy-app/docs/VERCEL_DEMO.md).
 
-See the [satellite/drone guide](aimenergy-app/docs/REMOTE_EVIDENCE.md) for source details, supported formats, limits, storage and reproduction. The [artwork provenance](aimenergy-app/Data/metadata/drone-illustration.json) records the built-in image-generation tool, prompt and image hash.
-
-## What the evidence supports
-
-| Component | Current evidence | Scope |
-|---|---|---|
-| Geographic context | 411 villages, 39 candidate villages, 25 existing-site records across 24 villages | Settlement features and reference labels; not measured demand |
-| Household ML | 64-tree random forest; 267 training / 89 calibration / 89 test households | Survey payment-derived electricity-use proxy |
-| Held-out household result | MAE 44.14 versus 49.09 kWh/household/month for a median baseline | About 10.1% lower error on this sample; systematic underprediction remains |
-| Household interval evaluation | 90% nominal; 77/89 = 86.5% observed coverage | Household survey scope; not village-total coverage |
-| Geographic clustering | Four groups describing village context | Unsupervised descriptions, not electricity-demand labels |
-| RAMP simulation | Seven categories × 30 seeded simulation days | Synthetic timing shapes scaled to scenario energy |
-| Satellite context | Acquired 2024 mosaic for one pilot village, with boundary overlay | Landscape context; not roof-level enumeration, measured demand or current survey evidence |
-| Drone/history imports | Browser-local survey features, processed images and dated counts | User-provided observations; no automatic validation or demand-model change |
-| Tanzania metered research | 40,809 minute current records; four later-day comparisons at one site | Retrospective current-shape diagnostic, not measured kWh or unseen-site validation |
-
-The survey contains **445 unique households**, despite 28,625 source rows. No Lamwo household sample was identified. Village totals and growth remain **uncalibrated planning scenarios**; low/high values are assumption envelopes, not confidence intervals. Independent unseen-site kWh validation is still an outstanding Brief 03 requirement.
-
-Average-day peaks do not establish equipment sizes, motor starting requirements, reliability or investment returns. See the [model card](aimenergy-app/docs/MODEL_CARD.md), [methods](aimenergy-app/docs/METHODOLOGY.md) and [metered evidence](aimenergy-app/docs/METERED_EVIDENCE.md).
-
-A **CC0 DRC benchmark** now evaluates 1,202 survey respondents with each of three analysis areas held out in turn. Household uptake Brier error is **0.2214 versus 0.2885** for training prevalence. Household purchase MAE is almost unchanged (**23.87 versus 23.88**); SME purchase MAE is worse (**84.61 versus 61.66**). All folds, both purchase baselines and attrition sensitivity are published. These are prepaid kWh-purchase outcomes, rather than direct meter readings; the Uganda model and village assumptions remain unchanged. See the [DRC benchmark](aimenergy-app/docs/DRC_BENCHMARK.md) and [source audit](aimenergy-app/docs/DRC_DATA_AUDIT.md).
-
-## Repository layout
-
-```text
-.
-├── README.md                       Repository overview
-├── AIMENERGY_ANALYSIS.md            Initial project analysis
-└── aimenergy-app/                   Application root
-    ├── READ.md                     Complete project guide
-    ├── README.md                   Application introduction
-    ├── package.json
-    ├── server.mjs                  Local static server and optional HTTP API
-    ├── vercel.json                 Static demo deployment configuration
-    ├── dist/                       Browser app, landing page and public assets
-    ├── Data/                       Local data workspace, audits and templates
-    ├── Models/                     Model artifacts and training provenance
-    ├── scripts/                    Preparation, training and packaging
-    ├── tests/                      Runtime and data checks
-    └── docs/                       Methods, pitch, pilot and verification
-```
-
-The [complete project guide](aimenergy-app/READ.md) covers equations, defaults, datasets, model evaluation, reproduction commands, offline operation, API contracts, deployment, troubleshooting and the documentation index.
-
-## Publish a Vercel demo
-
-Import this repository into Vercel and set **Root Directory** to **`aimenergy-app`**. Its `vercel.json` selects the prepared **`dist`** output and skips installation/build work that is unnecessary for the static demo.
-
-The landing page, planner, browser-side ML, acquired satellite example, drone/history import workspace, assessments and exports run in this static deployment. No satellite account or additional API key is needed for the acquired example. The separate Node `/api/*` endpoints are not included. Saved records remain in each visitor's browser; localhost records do not automatically transfer to a deployed domain.
-
-Follow the [Vercel deployment guide](aimenergy-app/docs/VERCEL_DEMO.md) for exact steps and post-deployment checks.
-
-## Verification and reproduction
-
-From `aimenergy-app`:
+## Development
 
 ```sh
+cd aimenergy-app
 npm test
 ```
 
-Recorded verification includes **55 JavaScript tests** covering planning invariants, village integration, model parity, API handling, field provenance, routing, offline snapshots and bounded remote-evidence imports. Seven additional Python checks cover private household-data audits and the metered diagnostic when their local data is available. Browser checks exercised GeoJSON/image/CSV imports, year selection, restoration, evidence export, desktop/mobile layouts and offline-pack preparation. Synthetic QA imports were removed afterward. See the [verification record](aimenergy-app/docs/VERIFICATION.md) for the exact scope and remaining limits.
+The JavaScript suite has 55 tests. Data preparation and retraining use separate Python environments and source files; they are not needed to run the prepared app. See the [project guide](aimenergy-app/READ.md) and [verification record](aimenergy-app/docs/VERIFICATION.md).
 
-Normal inference uses the prepared JSON model. Retraining needs the separately documented Python environment and local source data. RAMP uses a separate pinned environment. See [model artifacts](aimenergy-app/Models/README.md), the [data guide](aimenergy-app/Data/README.md) and the [complete guide](aimenergy-app/READ.md) before reproducing research outputs.
+The application is in **aimenergy-app/**. Browser assets are in **dist/**, local data and audits in **Data/**, model artifacts in **Models/**, and supporting commands in **scripts/**.
 
-## Hackathon and pilot materials
+## Documentation and sources
 
-| Document | Purpose |
-|---|---|
-| [Pitch](aimenergy-app/docs/PITCH.md) | Three-minute customer, impact and demo story |
-| [Customer and economics case](aimenergy-app/docs/MENTOR_RESPONSE.md) | Problem, buyer, value proposition, illustrative costs, sustainability and scale |
-| [Impact estimate](aimenergy-app/docs/IMPACT_ESTIMATE.md) | One-page evidence and impact scope |
-| [Demo checklist](aimenergy-app/docs/DEMO_CHECKLIST.md) | Rehearsal, exports and submission checks |
-| [Pilot protocol](aimenergy-app/docs/PILOT_PROTOCOL.md) | Proposed operator-data and untouched-site evaluation |
-| [Operator data sharing](aimenergy-app/docs/OPERATOR_DATA_SHARING.md) | Aggregate sharing proposal and safeguards |
-| [Deployment roadmap](aimenergy-app/docs/DEPLOYMENT_ROADMAP.md) | Conditional five-to-six-month path to an operator deployment |
+- [Project guide](aimenergy-app/READ.md)
+- [Architecture](aimenergy-app/docs/ARCHITECTURE.md)
+- [Demand calculations](aimenergy-app/docs/METHODOLOGY.md)
+- [Field assessments](aimenergy-app/docs/FIELD_ASSESSMENT.md)
+- [Satellite and drone evidence](aimenergy-app/docs/REMOTE_EVIDENCE.md)
+- [Data workspace](aimenergy-app/Data/README.md)
+- [Third-party notices](aimenergy-app/docs/THIRD_PARTY_NOTICES.md)
 
-The pilot plan depends on an operator agreement, suitable measured customer-kWh data, site-level validation, geographic transfer and operational readiness. Prototype results do not establish an operator partnership, achieved savings or a guaranteed production date.
-
-## Data, attribution and appropriate use
-
-Public runtime assets are under `aimenergy-app/dist/`. Raw household data, split membership, private operator records and credentials should not be placed there. The portable source package and private local-data package serve different purposes; consult their data-handling documentation before sharing.
-
-The Tanzania research exhibit uses **CC BY-NC 3.0** data; commercial use/training clearance is not established. It is separate from the household model and planner inputs. Other data and dependencies retain their own terms. Read the [third-party notices](aimenergy-app/docs/THIRD_PARTY_NOTICES.md) for source attribution and the [data guide](aimenergy-app/Data/README.md) for publication boundaries.
-
-The EOX satellite crop has its own **CC BY-NC-SA 4.0** terms. AI-generated drone artwork is labelled as illustration and is never used as measurement or training evidence. Keep `AimEnergy-ML-Local.zip` private; the portable demo package and private local-data archive have different sharing scopes.
-
-## Community USSD and offline access
-
-Choose **Community USSD** for the browser-only basic-phone simulator: consent, village codes, household/business categories, owned or intended appliances, business hours, interest and explicit confirmation. Completed simulations enter a local review inbox and the village evidence passport, including JSON export. Review preserves the simulation label and never changes demand assumptions automatically. No phone numbers are collected.
-
-The 42-asset **field-v8** pack supports this preview offline after preparation. Responses stay on the device until exported; no automatic synchronization is implemented. Live USSD requires mobile coverage, an online backend, a provider and service code. See the [community guide](aimenergy-app/docs/USSD_OFFLINE.md).
-
-## Hourly system feasibility
-
-Open **System feasibility** to explore 8,760 hourly PV/battery/generator steps using the acquired 2023 PVGIS pilot resource. Inspect served/unmet demand, fuel, curtailment, illustrative LCOE/NPV and cashflows; save local versions and export JSON or a print-ready HTML report. Other sites need their own matching PVGIS file. These are exploratory scenarios, not optimized sizing or certified engineering. See [system methods](aimenergy-app/docs/SYSTEM_FEASIBILITY.md) and [About AimEnergy](aimenergy-app/docs/ABOUT_AIMENERGY.md).
+Datasets retain their own terms. The EOX satellite crop is CC BY-NC-SA 4.0 and the Tanzania exhibit uses CC BY-NC 3.0 data; commercial use needs review or replacement. The drone artwork is illustrative, not survey evidence; its source and generation details are recorded in the third-party notices. Keep raw household files, credentials and operator records outside public assets. The local-data ZIP is private and is not intended for publication.
