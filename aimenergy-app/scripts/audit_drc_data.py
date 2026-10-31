@@ -47,6 +47,19 @@ def audit(source: Path) -> dict:
                       "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
                       "md5": hashlib.md5(path.read_bytes()).hexdigest()})
 
+    metadata = json.loads((ROOT / "Data/metadata/drc-dataverse-source.json").read_text(encoding="utf-8"))
+    version = metadata["response"]["data"]["latestVersion"]
+    published = {f["dataFile"].get("originalFileName", f["dataFile"]["filename"]): f
+                 for f in version["files"]}
+    for item in files:
+        official = published[item["filename"]]
+        checksum = official["dataFile"]["checksum"]
+        item["publisher_checksum_matches"] = (checksum["type"] == "MD5" and
+                                                 checksum["value"].lower() == item["md5"])
+        item["restricted"] = official["restricted"]
+        if not item["publisher_checksum_matches"]:
+            raise ValueError(f"Publisher checksum mismatch: {item['filename']}")
+
     monthly = frames["electricity1"]
     site_months = []
     for code, group in monthly.groupby("area"):
@@ -75,6 +88,9 @@ def audit(source: Path) -> dict:
         "audit_version": 1,
         "dataset_doi": "10.7910/DVN/KPDREF",
         "paper_doi": "10.1016/j.eneco.2026.109141",
+        "license": version["license"],
+        "published_version": f"{version['versionNumber']}.{version['versionMinorNumber']}",
+        "metadata_accessed_utc": metadata["accessed_utc"],
         "source_folder": "repository-root/dataversefiles (override with --source)",
         "measurement": "Administrative prepaid electricity purchases in kWh, used as a consumption proxy; not direct meter readings.",
         "method_reference": "Authors' June 2025 working paper; final article methods not independently inspected.",

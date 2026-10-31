@@ -2,6 +2,17 @@
   "audit_version": 1,
   "dataset_doi": "10.7910/DVN/KPDREF",
   "paper_doi": "10.1016/j.eneco.2026.109141",
+  "license": {
+    "name": "CC0 1.0",
+    "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+    "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+    "rightsIdentifier": "CC0-1.0",
+    "rightsIdentifierScheme": "SPDX",
+    "schemeUri": "https://spdx.org/licenses/",
+    "languageCode": "en"
+  },
+  "published_version": "1.0",
+  "metadata_accessed_utc": "2026-10-31T00:24:23.6759377Z",
   "source_folder": "repository-root/dataversefiles (override with --source)",
   "measurement": "Administrative prepaid electricity purchases in kWh, used as a consumption proxy; not direct meter readings.",
   "method_reference": "Authors' June 2025 working paper; final article methods not independently inspected.",
@@ -27,7 +38,9 @@
       "value_labels": {},
       "missing": {
         "yrmth": 1
-      }
+      },
+      "publisher_checksum_matches": true,
+      "restricted": false
     },
     {
       "filename": "census.dta",
@@ -62,7 +75,9 @@
           "1": "small business"
         }
       },
-      "missing": {}
+      "missing": {},
+      "publisher_checksum_matches": true,
+      "restricted": false
     },
     {
       "filename": "electricity1.dta",
@@ -108,7 +123,9 @@
         "kwh_month_av_sme": 5,
         "kwh_month_tot_hh": 3,
         "kwh_month_tot_sme": 3
-      }
+      },
+      "publisher_checksum_matches": true,
+      "restricted": false
     },
     {
       "filename": "electricity2.dta",
@@ -137,7 +154,9 @@
           "2": "SME"
         }
       },
-      "missing": {}
+      "missing": {},
+      "publisher_checksum_matches": true,
+      "restricted": false
     },
     {
       "filename": "electricity3.dta",
@@ -156,7 +175,9 @@
         "kwh_smenorm": "total SME consumption normalised at Dec.2024"
       },
       "value_labels": {},
-      "missing": {}
+      "missing": {},
+      "publisher_checksum_matches": true,
+      "restricted": false
     },
     {
       "filename": "survey.dta",
@@ -367,19 +388,25 @@
         "violence7_19": 257,
         "violence8_19": 257,
         "conflict19": 257
-      }
+      },
+      "publisher_checksum_matches": true,
+      "restricted": false
     },
     {
       "filename": "readme.rtf",
       "bytes": 2206,
       "sha256": "b066151f39ba67ce7eb21f174917a59a360c10cb452b392f7f405cfde2d49c51",
-      "md5": "d5c79b6315c2dfabbe7e6fe88ce98edb"
+      "md5": "d5c79b6315c2dfabbe7e6fe88ce98edb",
+      "publisher_checksum_matches": true,
+      "restricted": false
     },
     {
       "filename": "replication.do",
       "bytes": 23844,
       "sha256": "c4faca88066d5df706793b29d9dff074b028c7ced08728720cf6a09ff7093e2b",
-      "md5": "de94a2aa1a53f8339ea2aa01ffb13758"
+      "md5": "de94a2aa1a53f8339ea2aa01ffb13758",
+      "publisher_checksum_matches": true,
+      "restricted": false
     }
   ],
   "monthly_area_records": [

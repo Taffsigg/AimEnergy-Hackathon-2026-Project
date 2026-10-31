@@ -80,6 +80,8 @@ The survey contains **445 unique households**, despite 28,625 source rows. No La
 
 Average-day peaks do not establish equipment sizes, motor starting requirements, reliability or investment returns. See the [model card](aimenergy-app/docs/MODEL_CARD.md), [methods](aimenergy-app/docs/METHODOLOGY.md) and [metered evidence](aimenergy-app/docs/METERED_EVIDENCE.md).
 
+A newly acquired **CC0 DRC replication package** adds 175 area-month records, 13,479 client averages and 1,202 survey respondents. Its kWh figures represent prepaid electricity purchases used as a consumption proxy, rather than direct meter readings. All eight publisher file checksums were verified. See the [DRC suitability audit](aimenergy-app/docs/DRC_DATA_AUDIT.md) for missingness, differing area codes and the proposed separate benchmark; no new AimEnergy accuracy result has been established.
+
 ## Repository layout
 
 ```text

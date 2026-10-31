@@ -25,6 +25,10 @@ KIT access and suitability are documented separately in metadata/kit-metered-aud
 
 The templates folder contains a header-only operator CSV and dictionary, not fabricated pilot data.
 
+## DRC replication package
+
+The repository-root `dataversefiles` folder contains the user-supplied Harvard Dataverse release [10.7910/DVN/KPDREF](https://doi.org/10.7910/DVN/KPDREF), CC0 1.0. It contains electricity-purchase kWh aggregates and client averages, census and linked survey outcomes, not direct meter readings. All eight publisher checksums are verified by `python scripts/audit_drc_data.py`. See [the suitability audit](../docs/DRC_DATA_AUDIT.md), [aggregate inventory](metadata/drc-dataverse-audit.json) and [official source metadata](metadata/drc-dataverse-source.json). Area codes differ between files; missing survey usage is not automatically zero. No new model or validation result has been produced, and raw rows are not copied into the public app.
+
 ## Remote evidence
 
 raw/satellite retains acquired source documentation and the real pilot crop locally; metadata/satellite-evidence-audit.json records provenance and hashes. dist/data/satellite-evidence.json is the public manifest. No annual Google village-count series was acquired. metadata/drone-illustration.json records the AI-artwork prompt and hash; artwork is not measurement. Empty templates/drone_survey.geojson and templates/building_history.csv contain no fabricated observations. Imports made through the browser stay in its local storage until explicitly exported. See docs/REMOTE_EVIDENCE.md.
