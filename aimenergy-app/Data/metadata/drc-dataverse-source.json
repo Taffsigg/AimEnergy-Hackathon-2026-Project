@@ -1,0 +1,561 @@
+{
+  "source_url": "https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/KPDREF",
+  "accessed_utc": "2026-10-31T00:24:23.6759377Z",
+  "retrieval_method": "PowerShell Invoke-RestMethod, unauthenticated HTTPS GET",
+  "response": {
+    "status": "OK",
+    "data": {
+      "id": 13389103,
+      "identifier": "DVN/KPDREF",
+      "persistentUrl": "https://doi.org/10.7910/DVN/KPDREF",
+      "protocol": "doi",
+      "authority": "10.7910",
+      "separator": "/",
+      "publisher": "Harvard Dataverse",
+      "publicationDate": "2026-01-19",
+      "storageIdentifier": "s3://10.7910/DVN/KPDREF",
+      "effectiveDatasetFileCountLimit": 1000,
+      "datasetFileUploadsAvailable": 992,
+      "datasetType": "dataset",
+      "locks": [],
+      "latestVersion": {
+        "id": 610169,
+        "datasetId": 13389103,
+        "datasetPersistentId": "doi:10.7910/DVN/KPDREF",
+        "datasetType": "dataset",
+        "storageIdentifier": "s3://10.7910/DVN/KPDREF",
+        "versionNumber": 1,
+        "internalVersionNumber": 12,
+        "versionMinorNumber": 0,
+        "versionState": "RELEASED",
+        "latestVersionPublishingState": "RELEASED",
+        "UNF": "UNF:6:GdWwoQLKp7+NhX316GNNCQ==",
+        "lastUpdateTime": "2026-01-19T15:14:03Z",
+        "releaseTime": "2026-01-19T15:14:03Z",
+        "createTime": "2026-01-19T14:53:56Z",
+        "publicationDate": "2026-01-19",
+        "citationDate": "2026-01-19",
+        "effectiveDatasetFileCountLimit": 1000,
+        "datasetFileUploadsAvailable": 992,
+        "license": {
+          "name": "CC0 1.0",
+          "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+          "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+          "rightsIdentifier": "CC0-1.0",
+          "rightsIdentifierScheme": "SPDX",
+          "schemeUri": "https://spdx.org/licenses/",
+          "languageCode": "en"
+        },
+        "fileAccessRequest": true,
+        "metadataBlocks": {
+          "citation": {
+            "displayName": "Citation Metadata",
+            "name": "citation",
+            "fields": [
+              {
+                "typeName": "title",
+                "multiple": false,
+                "typeClass": "primitive",
+                "value": "Replication Data for: \"From demand deficit to development strategy: Navigating mini-grid viability in a fragile context\""
+              },
+              {
+                "typeName": "author",
+                "multiple": true,
+                "typeClass": "compound",
+                "value": [
+                  {
+                    "authorName": {
+                      "typeName": "authorName",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Stoop, Nik"
+                    },
+                    "authorAffiliation": {
+                      "typeName": "authorAffiliation",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "University of Antwerp"
+                    },
+                    "authorIdentifierScheme": {
+                      "typeName": "authorIdentifierScheme",
+                      "multiple": false,
+                      "typeClass": "controlledVocabulary",
+                      "value": "ORCID"
+                    },
+                    "authorIdentifier": {
+                      "typeName": "authorIdentifier",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "https://orcid.org/0000-0003-0787-8038",
+                      "expandedvalue": {
+                        "personName": "Stoop, Nik",
+                        "@id": "https://orcid.org/0000-0003-0787-8038",
+                        "scheme": "ORCID",
+                        "@type": "https://schema.org/Person"
+                      }
+                    }
+                  },
+                  {
+                    "authorName": {
+                      "typeName": "authorName",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Lunanga, Elie"
+                    },
+                    "authorAffiliation": {
+                      "typeName": "authorAffiliation",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "University of Antwerp"
+                    },
+                    "authorIdentifierScheme": {
+                      "typeName": "authorIdentifierScheme",
+                      "multiple": false,
+                      "typeClass": "controlledVocabulary",
+                      "value": "ORCID"
+                    },
+                    "authorIdentifier": {
+                      "typeName": "authorIdentifier",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "https://orcid.org/0000-0002-2676-2922",
+                      "expandedvalue": {
+                        "personName": "Lunanga, Elie",
+                        "@id": "https://orcid.org/0000-0002-2676-2922",
+                        "scheme": "ORCID",
+                        "@type": "https://schema.org/Person"
+                      }
+                    }
+                  },
+                  {
+                    "authorName": {
+                      "typeName": "authorName",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Verpoorten, Marijke"
+                    },
+                    "authorAffiliation": {
+                      "typeName": "authorAffiliation",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "University of Antwerp"
+                    },
+                    "authorIdentifierScheme": {
+                      "typeName": "authorIdentifierScheme",
+                      "multiple": false,
+                      "typeClass": "controlledVocabulary",
+                      "value": "ORCID"
+                    },
+                    "authorIdentifier": {
+                      "typeName": "authorIdentifier",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "https://orcid.org/0000-0003-1619-3030",
+                      "expandedvalue": {
+                        "personName": "Verpoorten, Marijke",
+                        "@id": "https://orcid.org/0000-0003-1619-3030",
+                        "scheme": "ORCID",
+                        "@type": "https://schema.org/Person"
+                      }
+                    }
+                  },
+                  {
+                    "authorName": {
+                      "typeName": "authorName",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Desbureaux, Sébastien"
+                    },
+                    "authorAffiliation": {
+                      "typeName": "authorAffiliation",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "https://ror.org/003vg9w96",
+                      "expandedvalue": {
+                        "scheme": "http://www.grid.ac/ontology/",
+                        "termName": "Institut National de Recherche pour l'Agriculture, l'Alimentation et l'Environnement",
+                        "@type": "https://schema.org/Organization"
+                      }
+                    },
+                    "authorIdentifierScheme": {
+                      "typeName": "authorIdentifierScheme",
+                      "multiple": false,
+                      "typeClass": "controlledVocabulary",
+                      "value": "ORCID"
+                    },
+                    "authorIdentifier": {
+                      "typeName": "authorIdentifier",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "https://orcid.org/0000-0001-5489-4917",
+                      "expandedvalue": {
+                        "personName": "Desbureaux, Sébastien",
+                        "@id": "https://orcid.org/0000-0001-5489-4917",
+                        "scheme": "ORCID",
+                        "@type": "https://schema.org/Person"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "typeName": "datasetContact",
+                "multiple": true,
+                "typeClass": "compound",
+                "value": [
+                  {
+                    "datasetContactName": {
+                      "typeName": "datasetContactName",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Stoop, Nik"
+                    },
+                    "datasetContactAffiliation": {
+                      "typeName": "datasetContactAffiliation",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "University of Antwerp - Institute of Development Policy"
+                    },
+                    "datasetContactEmail": {
+                      "typeName": "datasetContactEmail",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "nik.stoop@uantwerp.be"
+                    }
+                  }
+                ]
+              },
+              {
+                "typeName": "dsDescription",
+                "multiple": true,
+                "typeClass": "compound",
+                "value": [
+                  {
+                    "dsDescriptionValue": {
+                      "typeName": "dsDescriptionValue",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Replication data for \"From demand deficit to development strategy: Navigating mini-grid viability in a fragile context\", published in Energy Economics"
+                    }
+                  }
+                ]
+              },
+              {
+                "typeName": "subject",
+                "multiple": true,
+                "typeClass": "controlledVocabulary",
+                "value": [
+                  "Social Sciences"
+                ]
+              },
+              {
+                "typeName": "keyword",
+                "multiple": true,
+                "typeClass": "compound",
+                "value": [
+                  {
+                    "keywordValue": {
+                      "typeName": "keywordValue",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Energy access; Mini-grid; Electricity Demand; Fragile and conflict-affected settings; Democratic Republic of Congo"
+                    }
+                  }
+                ]
+              },
+              {
+                "typeName": "publication",
+                "multiple": true,
+                "typeClass": "compound",
+                "value": [
+                  {
+                    "publicationCitation": {
+                      "typeName": "publicationCitation",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "Lunanga E., N. Stoop, M. Verpoorten, and S. Desbureaux. 2026. “From demand deficit to development strategy: Navigating mini-grid viability in a fragile context” Energy Economics."
+                    },
+                    "publicationIDType": {
+                      "typeName": "publicationIDType",
+                      "multiple": false,
+                      "typeClass": "controlledVocabulary",
+                      "value": "doi"
+                    },
+                    "publicationIDNumber": {
+                      "typeName": "publicationIDNumber",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "10.1016/j.eneco.2026.109141"
+                    },
+                    "publicationURL": {
+                      "typeName": "publicationURL",
+                      "multiple": false,
+                      "typeClass": "primitive",
+                      "value": "https://doi.org/10.1016/j.eneco.2026.109141"
+                    }
+                  }
+                ]
+              },
+              {
+                "typeName": "depositor",
+                "multiple": false,
+                "typeClass": "primitive",
+                "value": "Stoop, Nik"
+              },
+              {
+                "typeName": "dateOfDeposit",
+                "multiple": false,
+                "typeClass": "primitive",
+                "value": "2026-01-19"
+              }
+            ]
+          }
+        },
+        "files": [
+          {
+            "label": "acled.tab",
+            "restricted": false,
+            "version": 3,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389106,
+              "persistentId": "",
+              "filename": "acled.tab",
+              "contentType": "text/tab-separated-values",
+              "friendlyType": "Tab-Delimited",
+              "filesize": 5892,
+              "storageIdentifier": "s3://dvn-cloud:19bd6be4753-9e80c6686446",
+              "originalFileFormat": "application/x-stata-14",
+              "originalFormatLabel": "Stata 14 Binary",
+              "originalFileSize": 8947,
+              "originalFileName": "acled.dta",
+              "UNF": "UNF:6:5C57S9LeFOQP/nZhsPJYWw==",
+              "rootDataFileId": -1,
+              "md5": "ff4adc17c2f44a47e71f7eae47c5f579",
+              "checksum": {
+                "type": "MD5",
+                "value": "ff4adc17c2f44a47e71f7eae47c5f579"
+              },
+              "tabularData": true,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          },
+          {
+            "label": "census.tab",
+            "restricted": false,
+            "version": 3,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389105,
+              "persistentId": "",
+              "filename": "census.tab",
+              "contentType": "text/tab-separated-values",
+              "friendlyType": "Tab-Delimited",
+              "filesize": 272682,
+              "storageIdentifier": "s3://dvn-cloud:19bd6be45bd-bdf9b364acb7",
+              "originalFileFormat": "application/x-stata-14",
+              "originalFormatLabel": "Stata 14 Binary",
+              "originalFileSize": 249079,
+              "originalFileName": "census.dta",
+              "UNF": "UNF:6:95MgtnJwISAuyTCZxrEG5A==",
+              "rootDataFileId": -1,
+              "md5": "927fb072344d801b6b07bcc75d4c0dc7",
+              "checksum": {
+                "type": "MD5",
+                "value": "927fb072344d801b6b07bcc75d4c0dc7"
+              },
+              "tabularData": true,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          },
+          {
+            "label": "electricity1.tab",
+            "restricted": false,
+            "version": 3,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389111,
+              "persistentId": "",
+              "filename": "electricity1.tab",
+              "contentType": "text/tab-separated-values",
+              "friendlyType": "Tab-Delimited",
+              "filesize": 14618,
+              "storageIdentifier": "s3://dvn-cloud:19bd6be5097-aaa3423553f0",
+              "originalFileFormat": "application/x-stata-14",
+              "originalFormatLabel": "Stata 14 Binary",
+              "originalFileSize": 15495,
+              "originalFileName": "electricity1.dta",
+              "UNF": "UNF:6:o76nI9XKpnPki3PpuS3nYg==",
+              "rootDataFileId": -1,
+              "md5": "17ab0ca97e6d8b86522bedd16159d3c9",
+              "checksum": {
+                "type": "MD5",
+                "value": "17ab0ca97e6d8b86522bedd16159d3c9"
+              },
+              "tabularData": true,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          },
+          {
+            "label": "electricity2.tab",
+            "restricted": false,
+            "version": 3,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389104,
+              "persistentId": "",
+              "filename": "electricity2.tab",
+              "contentType": "text/tab-separated-values",
+              "friendlyType": "Tab-Delimited",
+              "filesize": 203956,
+              "storageIdentifier": "s3://dvn-cloud:19bd6be4aea-2eea536cb93a",
+              "originalFileFormat": "application/x-stata-14",
+              "originalFormatLabel": "Stata 14 Binary",
+              "originalFileSize": 164608,
+              "originalFileName": "electricity2.dta",
+              "UNF": "UNF:6:sqai7Jxu5XY/9dOJ+R5WJQ==",
+              "rootDataFileId": -1,
+              "md5": "b8f01599f89ff604db6e8ce997701d29",
+              "checksum": {
+                "type": "MD5",
+                "value": "b8f01599f89ff604db6e8ce997701d29"
+              },
+              "tabularData": true,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          },
+          {
+            "label": "electricity3.tab",
+            "restricted": false,
+            "version": 3,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389107,
+              "persistentId": "",
+              "filename": "electricity3.tab",
+              "contentType": "text/tab-separated-values",
+              "friendlyType": "Tab-Delimited",
+              "filesize": 670,
+              "storageIdentifier": "s3://dvn-cloud:19bd6be48ee-e37540b2edfa",
+              "originalFileFormat": "application/x-stata-14",
+              "originalFormatLabel": "Stata 14 Binary",
+              "originalFileSize": 2739,
+              "originalFileName": "electricity3.dta",
+              "UNF": "UNF:6:S1nTZWacnfGzZsE2q04bRA==",
+              "rootDataFileId": -1,
+              "md5": "58c890a74ee031243affc11b0e5278c8",
+              "checksum": {
+                "type": "MD5",
+                "value": "58c890a74ee031243affc11b0e5278c8"
+              },
+              "tabularData": true,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          },
+          {
+            "description": "Read me file",
+            "label": "readme.rtf",
+            "restricted": false,
+            "version": 1,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389108,
+              "persistentId": "",
+              "filename": "readme.rtf",
+              "contentType": "text/rtf",
+              "friendlyType": "Rich Text Format",
+              "filesize": 2206,
+              "description": "Read me file",
+              "storageIdentifier": "s3://dvn-cloud:19bd6be1bce-31d68be6e14e",
+              "rootDataFileId": -1,
+              "md5": "d5c79b6315c2dfabbe7e6fe88ce98edb",
+              "checksum": {
+                "type": "MD5",
+                "value": "d5c79b6315c2dfabbe7e6fe88ce98edb"
+              },
+              "tabularData": false,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          },
+          {
+            "description": "Stata do-file that reproduces tables and figures",
+            "label": "replication.do",
+            "restricted": false,
+            "version": 1,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389109,
+              "persistentId": "",
+              "filename": "replication.do",
+              "contentType": "text/x-stata-syntax",
+              "friendlyType": "Stata Syntax",
+              "filesize": 23844,
+              "description": "Stata do-file that reproduces tables and figures",
+              "storageIdentifier": "s3://dvn-cloud:19bd6be19fb-ca0dc92cd6db",
+              "rootDataFileId": -1,
+              "md5": "de94a2aa1a53f8339ea2aa01ffb13758",
+              "checksum": {
+                "type": "MD5",
+                "value": "de94a2aa1a53f8339ea2aa01ffb13758"
+              },
+              "tabularData": false,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          },
+          {
+            "label": "survey.tab",
+            "restricted": false,
+            "version": 3,
+            "datasetVersionId": 610169,
+            "dataFile": {
+              "id": 13389110,
+              "persistentId": "",
+              "filename": "survey.tab",
+              "contentType": "text/tab-separated-values",
+              "friendlyType": "Tab-Delimited",
+              "filesize": 265078,
+              "storageIdentifier": "s3://dvn-cloud:19bd6be522f-3c8c68629db0",
+              "originalFileFormat": "application/x-stata-14",
+              "originalFormatLabel": "Stata 14 Binary",
+              "originalFileSize": 319568,
+              "originalFileName": "survey.dta",
+              "UNF": "UNF:6:E4wuCAKDzQA5PqMoRlGKUg==",
+              "rootDataFileId": -1,
+              "md5": "215024b10512964766b760560e91671f",
+              "checksum": {
+                "type": "MD5",
+                "value": "215024b10512964766b760560e91671f"
+              },
+              "tabularData": true,
+              "creationDate": "2026-01-19",
+              "publicationDate": "2026-01-19",
+              "lastUpdateTime": "2026-01-19T15:14:03Z",
+              "fileAccessRequest": true
+            }
+          }
+        ]
+      }
+    }
+  }
+}

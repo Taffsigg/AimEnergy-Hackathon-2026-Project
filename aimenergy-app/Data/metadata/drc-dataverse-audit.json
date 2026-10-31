@@ -1,0 +1,576 @@
+{
+  "audit_version": 1,
+  "dataset_doi": "10.7910/DVN/KPDREF",
+  "paper_doi": "10.1016/j.eneco.2026.109141",
+  "source_folder": "repository-root/dataversefiles (override with --source)",
+  "measurement": "Administrative prepaid electricity purchases in kWh, used as a consumption proxy; not direct meter readings.",
+  "method_reference": "Authors' June 2025 working paper; final article methods not independently inspected.",
+  "files": [
+    {
+      "filename": "acled.dta",
+      "bytes": 8947,
+      "sha256": "dafa6d65b6e74449640116b4e3a122fdf2535fb2e7888b9f98e09cffa95f65a7",
+      "md5": "ff4adc17c2f44a47e71f7eae47c5f579",
+      "rows": 216,
+      "columns": [
+        "id",
+        "admin2",
+        "yrmth",
+        "conflict_n"
+      ],
+      "variable_labels": {
+        "id": "ID",
+        "admin2": "territory",
+        "yrmth": "year month",
+        "conflict_n": "count of conflict events"
+      },
+      "value_labels": {},
+      "missing": {
+        "yrmth": 1
+      }
+    },
+    {
+      "filename": "census.dta",
+      "bytes": 249079,
+      "sha256": "af399a7b94756f5a60e5bee0bd266aad3fc63f479f835a355406feb67c235eef",
+      "md5": "927fb072344d801b6b07bcc75d4c0dc7",
+      "rows": 27266,
+      "columns": [
+        "area",
+        "firm",
+        "constr_qual"
+      ],
+      "variable_labels": {
+        "area": "area",
+        "firm": "firm",
+        "constr_qual": "housing quality of construction"
+      },
+      "value_labels": {
+        "areas": {
+          "1": "Goma",
+          "2": "Lubero",
+          "3": "Mutwanga"
+        },
+        "constr_qual": {
+          "1": "very bad",
+          "2": "rather bad",
+          "3": "rather good",
+          "4": "very good"
+        },
+        "firm": {
+          "0": "household",
+          "1": "small business"
+        }
+      },
+      "missing": {}
+    },
+    {
+      "filename": "electricity1.dta",
+      "bytes": 15495,
+      "sha256": "531708bbc4099c35e8ccec6b2e13cf13ae2f962717dc903d59a21f83cea09a4e",
+      "md5": "17ab0ca97e6d8b86522bedd16159d3c9",
+      "rows": 175,
+      "columns": [
+        "area",
+        "ym",
+        "months_grid",
+        "rate",
+        "clients",
+        "clients_hh",
+        "clients_sme",
+        "kwh_month_av_hh",
+        "kwh_month_av_sme",
+        "kwh_month_tot_hh",
+        "kwh_month_tot_sme"
+      ],
+      "variable_labels": {
+        "area": "area",
+        "ym": "year month",
+        "months_grid": "months since grid installation",
+        "rate": "connection rate",
+        "clients": "clients ym/region",
+        "clients_hh": "hh clients ym/region",
+        "clients_sme": "sme clients ym/region",
+        "kwh_month_av_hh": "average E cons. hh",
+        "kwh_month_av_sme": "average E cons. sme",
+        "kwh_month_tot_hh": "total E cons. hh",
+        "kwh_month_tot_sme": "total E cons. sme"
+      },
+      "value_labels": {
+        "region2": {
+          "1": "Goma",
+          "2": "Lubero",
+          "3": "Mutwanga"
+        }
+      },
+      "missing": {
+        "kwh_month_av_hh": 3,
+        "kwh_month_av_sme": 5,
+        "kwh_month_tot_hh": 3,
+        "kwh_month_tot_sme": 3
+      }
+    },
+    {
+      "filename": "electricity2.dta",
+      "bytes": 164608,
+      "sha256": "a93efad5a51ace7cb3c7f5f165bef1b623937262fa5c762a4a5e11786c5ea987",
+      "md5": "b8f01599f89ff604db6e8ce997701d29",
+      "rows": 13479,
+      "columns": [
+        "area",
+        "client",
+        "kwh_client_av"
+      ],
+      "variable_labels": {
+        "area": "area",
+        "client": "type of VE client",
+        "kwh_client_av": "average monthly E cons."
+      },
+      "value_labels": {
+        "area": {
+          "1": "Mutwanga",
+          "2": "Goma",
+          "3": "Lubero"
+        },
+        "client": {
+          "1": "household",
+          "2": "SME"
+        }
+      },
+      "missing": {}
+    },
+    {
+      "filename": "electricity3.dta",
+      "bytes": 2739,
+      "sha256": "290fd434866de1b18a7b09d951696634cb82e55ba075f4aeadc762ea560e06fe",
+      "md5": "58c890a74ee031243affc11b0e5278c8",
+      "rows": 22,
+      "columns": [
+        "yrmth",
+        "kwh_hhnorm",
+        "kwh_smenorm"
+      ],
+      "variable_labels": {
+        "yrmth": "year month",
+        "kwh_hhnorm": "total HH consumption normalised at Dec.2024",
+        "kwh_smenorm": "total SME consumption normalised at Dec.2024"
+      },
+      "value_labels": {},
+      "missing": {}
+    },
+    {
+      "filename": "survey.dta",
+      "bytes": 319568,
+      "sha256": "23e1a35d6459f2da43aed14f8b91a7a3495bbf697bcb43938da03e3f73e48986",
+      "md5": "215024b10512964766b760560e91671f",
+      "rows": 1202,
+      "columns": [
+        "id",
+        "firm",
+        "area",
+        "male",
+        "age",
+        "education",
+        "hhsize",
+        "depratio",
+        "employment",
+        "solar",
+        "generator",
+        "appliances",
+        "energy_exp",
+        "energy_expln",
+        "income",
+        "incomeln",
+        "parcel_own",
+        "good_qual",
+        "constr_qual",
+        "sales",
+        "salesln",
+        "distance",
+        "distance_plus50m",
+        "enumerator",
+        "sector",
+        "connected",
+        "attrition",
+        "kwh",
+        "kwhln",
+        "weights",
+        "client_future",
+        "nomoney",
+        "renting",
+        "violence1",
+        "violence2",
+        "violence3",
+        "violence4",
+        "violence5",
+        "violence6",
+        "violence7",
+        "violence8",
+        "violence1_an",
+        "violence2_an",
+        "violence3_an",
+        "violence4_an",
+        "violence5_an",
+        "violence6_an",
+        "violence7_an",
+        "violence8_an",
+        "violence1_19",
+        "violence2_19",
+        "violence3_19",
+        "violence4_19",
+        "violence5_19",
+        "violence6_19",
+        "violence7_19",
+        "violence8_19",
+        "conflict_exposure",
+        "conflict12m",
+        "conflict19"
+      ],
+      "variable_labels": {
+        "id": "id",
+        "firm": "firm",
+        "area": "area",
+        "male": "male HH head / business owner",
+        "age": "age HH head / business owner",
+        "education": "secondary education or higher",
+        "hhsize": "household size",
+        "depratio": "dependency ratio",
+        "employment": "nr. employees (incl. owner)",
+        "solar": "owns solar panel",
+        "generator": "owns generator",
+        "appliances": "nr. of electrical appliances",
+        "energy_exp": "monthly energy expenditure",
+        "energy_expln": "log monthly energy expenditure",
+        "income": "monthly income",
+        "incomeln": "log monthly income",
+        "parcel_own": "owns parcel",
+        "good_qual": "(very) high construction quality",
+        "constr_qual": "construction quality",
+        "sales": "monthly sales",
+        "salesln": "log monthly sales",
+        "distance": "distance to grid",
+        "distance_plus50m": "located more than 50m from grid",
+        "enumerator": "Indiquez votre propre nom",
+        "sector": "business sector",
+        "connected": "connected to VE grid",
+        "attrition": "attritted at follow-up",
+        "kwh": "average monthly electricity consumption",
+        "kwhln": "log average monthly electricity consumption",
+        "weights": "sampling weights",
+        "client_future": "wants to connect to VE in future",
+        "nomoney": "not connected:lack of money",
+        "renting": "not connected:does not own parcel",
+        "violence1": "since 1994: robbery",
+        "violence2": "since 1994: displacement",
+        "violence3": "since 1994: forced labor",
+        "violence4": "since 1994: injury",
+        "violence5": "since 1994: witness murder or rape",
+        "violence6": "since 1994: kidnapping",
+        "violence7": "since 1994: hh member killed",
+        "violence8": "since 1994: sexual violence",
+        "violence1_an": "past year: robbery",
+        "violence2_an": "past year: displacement",
+        "violence3_an": "past year: forced labor",
+        "violence4_an": "past year: injury",
+        "violence5_an": "past year: witness murder or rape",
+        "violence6_an": "past year: kidnapping",
+        "violence7_an": "past year: hh member killed",
+        "violence8_an": "past year: sexual violence",
+        "violence1_19": "baseline-followup: robbery",
+        "violence2_19": "baseline-followup: displacement",
+        "violence3_19": "baseline-followup: forced labor",
+        "violence4_19": "baseline-followup: injury",
+        "violence5_19": "baseline-followup: witness murder or rape",
+        "violence6_19": "baseline-followup: kidnapping",
+        "violence7_19": "baseline-followup: hh member killed",
+        "violence8_19": "baseline-followup: sexual violence",
+        "conflict_exposure": "conflict exposure since 1994",
+        "conflict12m": "conflict exposure past year at baseline",
+        "conflict19": "conflict exposure between baseline and follow-up"
+      },
+      "value_labels": {
+        "education": {
+          "1": "at least secondary",
+          "0": "less than secondary"
+        },
+        "locality2": {
+          "1": "Goma",
+          "2": "Lubero",
+          "3": "Mutwanga",
+          "4": "goma control",
+          "5": "lubero CO",
+          "6": "lume"
+        },
+        "constr_qual": {
+          "1": "very bad",
+          "2": "rather bad",
+          "3": "rather good",
+          "4": "very good"
+        },
+        "male": {
+          "0": "Femme",
+          "1": "Homme"
+        },
+        "privatesolarpanel": {
+          "0": "Non",
+          "1": "Oui"
+        },
+        "firm": {
+          "1": "firm",
+          "0": "household"
+        },
+        "secteur3": {
+          "1": "small shops and traders",
+          "2": "services",
+          "3": "bars and restaurants"
+        }
+      },
+      "missing": {
+        "hhsize": 291,
+        "depratio": 291,
+        "employment": 911,
+        "generator": 911,
+        "income": 291,
+        "incomeln": 291,
+        "sales": 911,
+        "salesln": 911,
+        "distance": 4,
+        "distance_plus50m": 4,
+        "sector": 911,
+        "kwh": 690,
+        "kwhln": 690,
+        "client_future": 755,
+        "nomoney": 755,
+        "renting": 755,
+        "violence1": 14,
+        "violence2": 13,
+        "violence3": 12,
+        "violence4": 10,
+        "violence5": 11,
+        "violence6": 13,
+        "violence7": 9,
+        "violence8": 10,
+        "violence1_an": 14,
+        "violence2_an": 13,
+        "violence3_an": 12,
+        "violence4_an": 10,
+        "violence5_an": 11,
+        "violence6_an": 13,
+        "violence7_an": 9,
+        "violence8_an": 10,
+        "violence1_19": 257,
+        "violence2_19": 257,
+        "violence3_19": 257,
+        "violence4_19": 258,
+        "violence5_19": 258,
+        "violence6_19": 257,
+        "violence7_19": 257,
+        "violence8_19": 257,
+        "conflict19": 257
+      }
+    },
+    {
+      "filename": "readme.rtf",
+      "bytes": 2206,
+      "sha256": "b066151f39ba67ce7eb21f174917a59a360c10cb452b392f7f405cfde2d49c51",
+      "md5": "d5c79b6315c2dfabbe7e6fe88ce98edb"
+    },
+    {
+      "filename": "replication.do",
+      "bytes": 23844,
+      "sha256": "c4faca88066d5df706793b29d9dff074b028c7ced08728720cf6a09ff7093e2b",
+      "md5": "de94a2aa1a53f8339ea2aa01ffb13758"
+    }
+  ],
+  "monthly_area_records": [
+    {
+      "area": "Goma",
+      "rows": 67,
+      "start": "2019-05",
+      "end": "2024-12",
+      "duplicate_months": 0,
+      "absent_calendar_months": [
+        "2024-11"
+      ],
+      "missing_household_totals": 1,
+      "missing_sme_totals": 1
+    },
+    {
+      "area": "Lubero",
+      "rows": 39,
+      "start": "2021-10",
+      "end": "2024-12",
+      "duplicate_months": 0,
+      "absent_calendar_months": [],
+      "missing_household_totals": 2,
+      "missing_sme_totals": 2
+    },
+    {
+      "area": "Mutwanga",
+      "rows": 69,
+      "start": "2019-02",
+      "end": "2024-12",
+      "duplicate_months": 0,
+      "absent_calendar_months": [
+        "2021-07",
+        "2024-08"
+      ],
+      "missing_household_totals": 0,
+      "missing_sme_totals": 0
+    }
+  ],
+  "client_average_records": [
+    {
+      "area": "Mutwanga",
+      "client": "household",
+      "monthly_purchase_kwh_per_client": {
+        "observed": 1571,
+        "missing": 0,
+        "mean": 13.62705135345459,
+        "median": 9.179166793823242,
+        "min": 0.0,
+        "max": 432.6199951171875
+      }
+    },
+    {
+      "area": "Mutwanga",
+      "client": "SME",
+      "monthly_purchase_kwh_per_client": {
+        "observed": 114,
+        "missing": 0,
+        "mean": 68.63935852050781,
+        "median": 34.12895965576172,
+        "min": 0.0,
+        "max": 694.9896850585938
+      }
+    },
+    {
+      "area": "Goma",
+      "client": "household",
+      "monthly_purchase_kwh_per_client": {
+        "observed": 10632,
+        "missing": 0,
+        "mean": 41.327056884765625,
+        "median": 27.391502380371094,
+        "min": 0.0,
+        "max": 1515.83056640625
+      }
+    },
+    {
+      "area": "Goma",
+      "client": "SME",
+      "monthly_purchase_kwh_per_client": {
+        "observed": 374,
+        "missing": 0,
+        "mean": 354.6830749511719,
+        "median": 169.3326873779297,
+        "min": 0.0,
+        "max": 4435.0
+      }
+    },
+    {
+      "area": "Lubero",
+      "client": "household",
+      "monthly_purchase_kwh_per_client": {
+        "observed": 660,
+        "missing": 0,
+        "mean": 21.23198127746582,
+        "median": 9.332307815551758,
+        "min": 0.0,
+        "max": 518.3843383789062
+      }
+    },
+    {
+      "area": "Lubero",
+      "client": "SME",
+      "monthly_purchase_kwh_per_client": {
+        "observed": 128,
+        "missing": 0,
+        "mean": 165.93173217773438,
+        "median": 83.54954528808594,
+        "min": 0.0,
+        "max": 3399.70654296875
+      }
+    }
+  ],
+  "survey": {
+    "rows": 1202,
+    "unique_ids": 1202,
+    "duplicate_ids": 0,
+    "missing_ids": 0,
+    "groups": [
+      {
+        "area": "Goma",
+        "type": "household",
+        "rows": 299,
+        "connected": 220,
+        "observed_kwh": 220
+      },
+      {
+        "area": "Goma",
+        "type": "SME",
+        "rows": 98,
+        "connected": 51,
+        "observed_kwh": 51
+      },
+      {
+        "area": "Lubero",
+        "type": "household",
+        "rows": 300,
+        "connected": 30,
+        "observed_kwh": 30
+      },
+      {
+        "area": "Lubero",
+        "type": "SME",
+        "rows": 150,
+        "connected": 46,
+        "observed_kwh": 46
+      },
+      {
+        "area": "Mutwanga",
+        "type": "household",
+        "rows": 312,
+        "connected": 145,
+        "observed_kwh": 145
+      },
+      {
+        "area": "Mutwanga",
+        "type": "SME",
+        "rows": 43,
+        "connected": 20,
+        "observed_kwh": 20
+      }
+    ],
+    "observed_kwh": 512,
+    "missing_kwh": 690,
+    "unconnected_with_missing_kwh": 690,
+    "connected_with_missing_kwh": 0,
+    "attritors": 212,
+    "positive_finite_weights": true
+  },
+  "normalized_goma": {
+    "rows": 22,
+    "start": "2024-01",
+    "end": "2025-10",
+    "unit": "Index normalized to December 2024; not absolute kWh"
+  },
+  "checks": {
+    "monthly_area_month_unique": true,
+    "client_averages_nonnegative": true,
+    "survey_id_unique_nonmissing": true,
+    "area_mapping_differs_between_files": true
+  },
+  "limitations": [
+    "Three analysis areas under one operator, not 13,479 independent sites.",
+    "electricity2 is one average per client, with no released client ID or observation dates.",
+    "census has only area, firm and construction quality; no parcel ID, coordinates or individual linkage key.",
+    "The published client-month/transaction counts are not rows in this released package.",
+    "Survey outcome windows differ from client administrative averages; do not merge by row order.",
+    "Do not fill missing survey consumption with zero without defining a separate uptake-times-conditional-use target.",
+    "Future conflict, follow-up answers, attrition and outcome-derived fields must not become pre-grid predictors.",
+    "No AimEnergy prediction accuracy, unseen-site validation or Uganda transfer result has been established."
+  ],
+  "model_training_performed": false,
+  "raw_rows_exported": false
+}
